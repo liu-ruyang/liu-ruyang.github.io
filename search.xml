@@ -31,45 +31,6 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 ]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/04/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>VMware中的虚拟机与宿主机的文件共享</title>
-    <url>/2021/06/10/VMware%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8E%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/</url>
-    <content><![CDATA[<h1 id="简要说明"><a href="#简要说明" class="headerlink" title="简要说明"></a>简要说明</h1><h2 id="目前我知道的有如下几种方法"><a href="#目前我知道的有如下几种方法" class="headerlink" title="目前我知道的有如下几种方法"></a>目前我知道的有如下几种方法</h2><ol>
-<li><p>使用VMware Tools（这种方法功能很多，具体见下图，但由于本人尝试过很次，总是出现一些问题，所以本文暂不对此方法进行说明，等以后空闲时间在尝试摸索一番）</p>
-</li>
-<li><p>使用U盘（此方法较为简单，只是需要借助一个U盘）</p>
-</li>
-<li><p>建立共享文件夹（此方法也很简单，不需要借助其它设备，也不需要下载其他软件、插件）</p>
-</li>
-</ol>
-<h1 id="建立共享文件夹——方法阐述"><a href="#建立共享文件夹——方法阐述" class="headerlink" title="建立共享文件夹——方法阐述"></a>建立共享文件夹——方法阐述</h1><h2 id="步骤解析（来一波图片！）"><a href="#步骤解析（来一波图片！）" class="headerlink" title="步骤解析（来一波图片！）"></a>步骤解析（来一波图片！）</h2><p><img src="https://i.loli.net/2021/06/10/xBfFhSciIqE3QuC.png" alt="屏幕截图 2021-06-10 232743.png"><br><img src="https://i.loli.net/2021/06/10/8zA1hcRYtsSlqkX.png" alt="屏幕截图 2021-06-10 232628.png"></p>
-<p>下面这张图里选择的文件夹可以自己新建一个，比如就命名为“虚拟机共享文件夹”</p>
-<p><img src="https://i.loli.net/2021/06/10/avGApILn6HzRd5T.png" alt="屏幕截图 2021-06-10 232931.png"><br><img src="https://i.loli.net/2021/06/10/HPwhbdTkRf1XGVK.png" alt="屏幕截图 2021-06-10 233006.png"></p>
-<p>下面这张图里，根据个人所需设置，后期可以随时修改</p>
-<p><img src="https://i.loli.net/2021/06/10/KSz2lj5fxg1OYGQ.png" alt="屏幕截图 2021-06-10 233033.png"></p>
-<h2 id="虚拟机查看路径"><a href="#虚拟机查看路径" class="headerlink" title="虚拟机查看路径"></a>虚拟机查看路径</h2><p>在虚拟机里默认保存的地点路径如下：（再来一波图！）<br><img src="https://i.loli.net/2021/06/10/OBQWMaYqED7esdn.png" alt="屏幕截图 2021-06-10 233146.png"><br><img src="https://i.loli.net/2021/06/10/lf6HQ5ZSW7obnm2.png" alt="屏幕截图 2021-06-10 233212.png"><br><img src="https://i.loli.net/2021/06/10/tsArNLxDKh8vm7I.png" alt="屏幕截图 2021-06-10 233231.png"><br><img src="https://i.loli.net/2021/06/10/AijaIbQu5tCVLYk.png" alt="屏幕截图 2021-06-10 233246.png"></p>
-<p><strong>共享的文件夹的路径是：/mnt/hgfs</strong></p>
-<p>好了，下面虚拟机和宿主机就可以通过这个文件夹进行信息、文件等交流啦！</p>
-]]></content>
-  </entry>
-  <entry>
     <title>判断数组是否单调增/减</title>
     <url>/2021/05/27/%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%8D%95%E8%B0%83%E5%A2%9E-%E5%87%8F/</url>
     <content><![CDATA[<blockquote>
@@ -134,6 +95,45 @@ bool isMonotonic(int* A, int ASize) &#123;
 ]]></content>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/04/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>VMware中的虚拟机与宿主机的文件共享</title>
+    <url>/2021/06/10/VMware%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8E%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/</url>
+    <content><![CDATA[<h1 id="简要说明"><a href="#简要说明" class="headerlink" title="简要说明"></a>简要说明</h1><h2 id="目前我知道的有如下几种方法"><a href="#目前我知道的有如下几种方法" class="headerlink" title="目前我知道的有如下几种方法"></a>目前我知道的有如下几种方法</h2><ol>
+<li><p>使用VMware Tools（这种方法功能很多，具体见下图，但由于本人尝试过很次，总是出现一些问题，所以本文暂不对此方法进行说明，等以后空闲时间在尝试摸索一番）</p>
+</li>
+<li><p>使用U盘（此方法较为简单，只是需要借助一个U盘）</p>
+</li>
+<li><p>建立共享文件夹（此方法也很简单，不需要借助其它设备，也不需要下载其他软件、插件）</p>
+</li>
+</ol>
+<h1 id="建立共享文件夹——方法阐述"><a href="#建立共享文件夹——方法阐述" class="headerlink" title="建立共享文件夹——方法阐述"></a>建立共享文件夹——方法阐述</h1><h2 id="步骤解析（来一波图片！）"><a href="#步骤解析（来一波图片！）" class="headerlink" title="步骤解析（来一波图片！）"></a>步骤解析（来一波图片！）</h2><p><img src="https://i.loli.net/2021/06/10/xBfFhSciIqE3QuC.png" alt="屏幕截图 2021-06-10 232743.png"><br><img src="https://i.loli.net/2021/06/10/8zA1hcRYtsSlqkX.png" alt="屏幕截图 2021-06-10 232628.png"></p>
+<p>下面这张图里选择的文件夹可以自己新建一个，比如就命名为“虚拟机共享文件夹”</p>
+<p><img src="https://i.loli.net/2021/06/10/avGApILn6HzRd5T.png" alt="屏幕截图 2021-06-10 232931.png"><br><img src="https://i.loli.net/2021/06/10/HPwhbdTkRf1XGVK.png" alt="屏幕截图 2021-06-10 233006.png"></p>
+<p>下面这张图里，根据个人所需设置，后期可以随时修改</p>
+<p><img src="https://i.loli.net/2021/06/10/KSz2lj5fxg1OYGQ.png" alt="屏幕截图 2021-06-10 233033.png"></p>
+<h2 id="虚拟机查看路径"><a href="#虚拟机查看路径" class="headerlink" title="虚拟机查看路径"></a>虚拟机查看路径</h2><p>在虚拟机里默认保存的地点路径如下：（再来一波图！）<br><img src="https://i.loli.net/2021/06/10/OBQWMaYqED7esdn.png" alt="屏幕截图 2021-06-10 233146.png"><br><img src="https://i.loli.net/2021/06/10/lf6HQ5ZSW7obnm2.png" alt="屏幕截图 2021-06-10 233212.png"><br><img src="https://i.loli.net/2021/06/10/tsArNLxDKh8vm7I.png" alt="屏幕截图 2021-06-10 233231.png"><br><img src="https://i.loli.net/2021/06/10/AijaIbQu5tCVLYk.png" alt="屏幕截图 2021-06-10 233246.png"></p>
+<p><strong>共享的文件夹的路径是：/mnt/hgfs</strong></p>
+<p>好了，下面虚拟机和宿主机就可以通过这个文件夹进行信息、文件等交流啦！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>约瑟夫问题——坏人必须死</title>
     <url>/2021/05/27/%E7%BA%A6%E7%91%9F%E5%A4%AB%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E5%9D%8F%E4%BA%BA%E5%BF%85%E9%A1%BB%E6%AD%BB/</url>
     <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><img src="https://i.loli.net/2021/05/27/u1ylWdAFIU2B8jb.png" alt="Image.png"></p>
@@ -176,6 +176,29 @@ return 0;
 &#125;
 </code></pre>
 ]]></content>
+  </entry>
+  <entry>
+    <title>背包算法</title>
+    <url>/2021/05/27/%E8%83%8C%E5%8C%85%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="例题分析-gt-共同特性（理解重点）"><a href="#例题分析-gt-共同特性（理解重点）" class="headerlink" title="例题分析-&gt;共同特性（理解重点）"></a>例题分析-&gt;共同特性（理解重点）</h2><blockquote>
+<p>有N件物品和一个容量为V的背包，第i件物品的费用是value[i]，价值是weight[i]，求解将哪些物品装入背包可使这些物品的费用总和不超过背包容量，且价值总和最大？</p>
+</blockquote>
+<p>经过分析，我总结出，这一类的问题都有一下<strong>共同特点</strong>（<strong>都能分析出三个值：“最大量”、“属性1”、“属性2”</strong>）：</p>
+<ol>
+<li>有一个<strong>最大量</strong>，本题中这个最大限制量是<strong>容量</strong>（当然也可以是其他量，比如说我还碰到的“体力值”）（而有时候这个最大量是隐性给出，就是物体的个数）</li>
+<li>进行操作的每一个单位有<strong>两个属性值</strong>，本题中分别是<strong>重量</strong>和<strong>价值</strong></li>
+<li>2中所提及到的两个属性值，一个是用来和<strong>最大量</strong>进行比较，从而确定选取方案；另一个属性值是用来<strong>获取最值</strong>，比如说本题中的“价值总和最大”（这个属性值有时候是隐性给出的，例如只给出第一个属性，第二个属性值每一个物体默认是一样的）</li>
+</ol>
+<h2 id="通用的基础公式（理解重点）"><a href="#通用的基础公式（理解重点）" class="headerlink" title="通用的基础公式（理解重点）"></a>通用的基础公式（理解重点）</h2><p>定义**dp[i][j]**：表示前i个物品，在容量为j的时候，最佳方案所能得到的最大总价值。</p>
+<ol>
+<li><strong>约束条件：</strong>weight[x1]+weight[x2]+…… &lt; j（同时j&lt;=V，该条件可以用来作为循环遍历的约束条件）</li>
+<li><strong>通项公式：</strong><blockquote>
+<p>**dp[i][j] = dp[i-1][j]**，weight[i] &gt; j时，</p>
+<p>**dp[i][j] = max{dp[i-1][j]，dp[i-1][j-weight[i] + value[i]}**，j &gt;= weight[i]时</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="dp二维数组如下："><a href="#dp二维数组如下：" class="headerlink" title="dp二维数组如下："></a>dp二维数组如下：</h3>]]></content>
   </entry>
   <entry>
     <title>小新在windows10上安装kali双系统</title>
@@ -277,28 +300,5 @@ return 0;
 <p>到这就成功啦！！</p>
 <p>喝彩！！ </p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>背包算法</title>
-    <url>/2021/05/27/%E8%83%8C%E5%8C%85%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="例题分析-gt-共同特性（理解重点）"><a href="#例题分析-gt-共同特性（理解重点）" class="headerlink" title="例题分析-&gt;共同特性（理解重点）"></a>例题分析-&gt;共同特性（理解重点）</h2><blockquote>
-<p>有N件物品和一个容量为V的背包，第i件物品的费用是value[i]，价值是weight[i]，求解将哪些物品装入背包可使这些物品的费用总和不超过背包容量，且价值总和最大？</p>
-</blockquote>
-<p>经过分析，我总结出，这一类的问题都有一下<strong>共同特点</strong>（<strong>都能分析出三个值：“最大量”、“属性1”、“属性2”</strong>）：</p>
-<ol>
-<li>有一个<strong>最大量</strong>，本题中这个最大限制量是<strong>容量</strong>（当然也可以是其他量，比如说我还碰到的“体力值”）（而有时候这个最大量是隐性给出，就是物体的个数）</li>
-<li>进行操作的每一个单位有<strong>两个属性值</strong>，本题中分别是<strong>重量</strong>和<strong>价值</strong></li>
-<li>2中所提及到的两个属性值，一个是用来和<strong>最大量</strong>进行比较，从而确定选取方案；另一个属性值是用来<strong>获取最值</strong>，比如说本题中的“价值总和最大”（这个属性值有时候是隐性给出的，例如只给出第一个属性，第二个属性值每一个物体默认是一样的）</li>
-</ol>
-<h2 id="通用的基础公式（理解重点）"><a href="#通用的基础公式（理解重点）" class="headerlink" title="通用的基础公式（理解重点）"></a>通用的基础公式（理解重点）</h2><p>定义**dp[i][j]**：表示前i个物品，在容量为j的时候，最佳方案所能得到的最大总价值。</p>
-<ol>
-<li><strong>约束条件：</strong>weight[x1]+weight[x2]+…… &lt; j（同时j&lt;=V，该条件可以用来作为循环遍历的约束条件）</li>
-<li><strong>通项公式：</strong><blockquote>
-<p>**dp[i][j] = dp[i-1][j]**，weight[i] &gt; j时，</p>
-<p>**dp[i][j] = max{dp[i-1][j]，dp[i-1][j-weight[i] + value[i]}**，j &gt;= weight[i]时</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="dp二维数组如下："><a href="#dp二维数组如下：" class="headerlink" title="dp二维数组如下："></a>dp二维数组如下：</h3>]]></content>
   </entry>
 </search>

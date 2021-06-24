@@ -1,34 +1,545 @@
-extends _partial/layout.pug
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-block content
-  - var post = page
-  - var post_type = getPropertyByType(post.type)
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
 
-  #post
-    article.hty-card.post-block(itemscope, itemtype='https://schema.org/Article')
-      include _partial/post/post-schema.pug
-      header.post-header
-        h1.post-title(itemprop='name headline', style=post.type ? `color: ${post_type.color}` : '')
-          if post.type
-            +icon(post_type.icon)
-          | #{post.title}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="liu-ruyang" />
 
-          if theme.post_edit.enable
-            include _partial/post/post-edit.pug
 
-        include _partial/post/post-meta.pug
 
-        if post.url
-          a.hty-button.hty-button--raised(href=url_for(post.url), style=`margin-top: 1rem;background-color:${post_type.color}`)=__('post.view_link')
+<meta name="description" content="简要说明 在计算机中执行生成jar文件也会出现和本文中讨论的问题一样的错误，两种情况的原因是一样的，其解决方法可以参考我的另一篇文章：计算机执行所生成的jar文件报错：版本不支持  报错信息——java.lang.UnsupportedClassVersionError在编译运行的时候报如下的错误错误: 加载主类 Test 时出现 LinkageError java.lang.Unsupporte">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyEclipse——jdk版本不支持">
+<meta property="og:url" content="http://example.com/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/index.html">
+<meta property="og:site_name" content="终于盼到你嘞！">
+<meta property="og:description" content="简要说明 在计算机中执行生成jar文件也会出现和本文中讨论的问题一样的错误，两种情况的原因是一样的，其解决方法可以参考我的另一篇文章：计算机执行所生成的jar文件报错：版本不支持  报错信息——java.lang.UnsupportedClassVersionError在编译运行的时候报如下的错误错误: 加载主类 Test 时出现 LinkageError java.lang.Unsupporte">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/05/29/IlKuxRMXBepzTQq.png">
+<meta property="og:image" content="https://i.loli.net/2021/05/29/Y1OJycCIPq8aHAK.png">
+<meta property="og:image" content="https://i.loli.net/2021/05/29/BRp4XsO6WTI51mJ.png">
+<meta property="og:image" content="https://i.loli.net/2021/05/29/wHCYGEOyL8kvanZ.png">
+<meta property="og:image" content="https://i.loli.net/2021/05/29/FrywNIpWDX3mPeM.png">
+<meta property="og:image" content="https://i.loli.net/2021/05/29/XSBMowaq8DrLfEd.png">
+<meta property="og:image" content="https://i.loli.net/2021/05/29/LI6VqRWouS5QKkT.png">
+<meta property="og:image" content="https://i.loli.net/2021/05/29/ETzhQY87PFvcbfO.png">
+<meta property="article:published_time" content="2021-05-29T06:40:17.000Z">
+<meta property="article:modified_time" content="2021-06-13T11:29:56.067Z">
+<meta property="article:author" content="liu-ruyang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/05/29/IlKuxRMXBepzTQq.png">
 
-      section.post-body(itemprop='articleBody')
-        .post-content.markdown-body(style=`--smc-primary:${theme.colors.primary};`)!=post.content
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
-        if theme.reward.enable && page.reward !== false
-          include _partial/post/reward.pug
 
-        if theme.creative_commons.license && theme.creative_commons.post
-          include _partial/post/post-copyright.pug
+    <link rel="alternate" href="/atom.xml" title="终于盼到你嘞！" type="application/atom+xml">
 
-    if post.prev || post.next
-      include _partial/post/post-nav.pug
+
+
+    <link rel="shortcut icon" href="/img/bitbug_favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>MyEclipse——jdk版本不支持 | 终于盼到你嘞！</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: 
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar2.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar2.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-MyEclipse——jdk版本不支持" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/" class="article-date">
+      <time datetime="2021-05-29T06:40:17.000Z" itemprop="datePublished">2021-05-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MyEclipse——jdk版本不支持
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="简要说明"><a href="#简要说明" class="headerlink" title="简要说明"></a>简要说明</h2><ul>
+<li>在计算机中执行生成jar文件也会出现和本文中讨论的问题一样的错误，两种情况的原因是一样的，其解决方法可以参考我的另一篇文章：<a target="_blank" rel="noopener" href="https://liu-ruyang.github.io/2021/06/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%89%A7%E8%A1%8C%E6%89%80%E7%94%9F%E6%88%90%E7%9A%84jar%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99%E2%80%94%E2%80%94%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/">计算机执行所生成的jar文件报错：版本不支持</a></li>
+</ul>
+<h2 id="报错信息——java-lang-UnsupportedClassVersionError"><a href="#报错信息——java-lang-UnsupportedClassVersionError" class="headerlink" title="报错信息——java.lang.UnsupportedClassVersionError"></a>报错信息——java.lang.UnsupportedClassVersionError</h2><h3 id="在编译运行的时候报如下的错误"><a href="#在编译运行的时候报如下的错误" class="headerlink" title="在编译运行的时候报如下的错误"></a>在编译运行的时候报如下的错误</h3><pre><code>错误: 加载主类 Test 时出现 LinkageError
+java.lang.UnsupportedClassVersionError: Test has been compiled by a more recent version of the Java Runtime (class file version 58.0), this
+version of the Java Runtime only recognizes class file versions up to 55.0
+</code></pre>
+<p><img src="https://i.loli.net/2021/05/29/IlKuxRMXBepzTQq.png" alt="屏幕截图 2021-05-29 145337.png"></p>
+<p>放大看错误</p>
+<p><img src="https://i.loli.net/2021/05/29/Y1OJycCIPq8aHAK.png" alt="屏幕截图 2021-05-29 145604.png"></p>
+<h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><p><strong>这是因为MyEclipse所设置支持的编译器的版本和自己本项目所使用的jdk版本不同，需要手动改一下（二者随便改哪一个都行，目标都是改成一致的）</strong></p>
+<h3 id="解决办法①：查看、修改jdk版本"><a href="#解决办法①：查看、修改jdk版本" class="headerlink" title="解决办法①：查看、修改jdk版本"></a>解决办法①：查看、修改jdk版本</h3><p>例如：本人所使用的jdk版本是<strong>jdk11</strong></p>
+<p>修改jdk版本方法如下：</p>
+<p>①依次点击：<strong>Window - preference - java - installed JREs - add</strong>，出现下面界面（初始时列表里只有一个jdk版本的（即只有第一行那个））</p>
+<p><img src="https://i.loli.net/2021/05/29/BRp4XsO6WTI51mJ.png" alt="屏幕截图 2021-05-29 150338.png"></p>
+<p>②选择<strong>Standard VM</strong>，点击 <strong>Directory（选择自己的jdk）- 输入JRE name（随意）- Finish</strong></p>
+<p><img src="https://i.loli.net/2021/05/29/wHCYGEOyL8kvanZ.png" alt="屏幕截图 2021-05-29 150415.png"></p>
+<p><img src="https://i.loli.net/2021/05/29/FrywNIpWDX3mPeM.png" alt="屏幕截图 2021-05-29 150622.png"></p>
+<p>③勾选自己添加的jdk，然后点击Apply，然后结束。</p>
+<p><img src="https://i.loli.net/2021/05/29/XSBMowaq8DrLfEd.png" alt="屏幕截图 2021-05-29 150722.png"></p>
+<h3 id="解决方法②：查看、修改eclipse选择支持使用的编译器版本"><a href="#解决方法②：查看、修改eclipse选择支持使用的编译器版本" class="headerlink" title="解决方法②：查看、修改eclipse选择支持使用的编译器版本"></a>解决方法②：查看、修改eclipse选择支持使用的编译器版本</h3><p>①依次点击：<strong>Window - preference - java - Compiler</strong></p>
+<p><img src="https://i.loli.net/2021/05/29/LI6VqRWouS5QKkT.png" alt="屏幕截图 2021-05-29 152127.png"></p>
+<p>②将编译器版本改为自己想要使用的版本（与上面设置的那个版本相同就行了），点击Apply应用结束</p>
+<h3 id="修改效果"><a href="#修改效果" class="headerlink" title="修改效果"></a>修改效果</h3><p>编译运行成功</p>
+<p><img src="https://i.loli.net/2021/05/29/ETzhQY87PFvcbfO.png" alt="屏幕截图 2021-05-29 152341.png"></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/">MyEclipse——jdk版本不支持</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
+        <p><span>Created:</span>2021-05-29, 14:40:17</p>
+        <p><span>Updated:</span>2021-06-13, 19:29:56</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/" title="MyEclipse——jdk版本不支持">http://example.com/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/</a>
+            <span class="copy-path" data-clipboard-text="From http://example.com/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2021/06/08/%E5%B0%8F%E6%96%B0%E5%9C%A8windows10%E4%B8%8A%E5%AE%89%E8%A3%85kali%E5%8F%8C%E7%B3%BB%E7%BB%9F/">
+                    小新在windows10上安装kali双系统
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2021/05/27/%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%8D%95%E8%B0%83%E5%A2%9E-%E5%87%8F/">
+                    判断数组是否单调增/减
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E8%A6%81%E8%AF%B4%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">简要说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF%E2%80%94%E2%80%94java-lang-UnsupportedClassVersionError"><span class="toc-number">2.</span> <span class="toc-text">报错信息——java.lang.UnsupportedClassVersionError</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C%E7%9A%84%E6%97%B6%E5%80%99%E6%8A%A5%E5%A6%82%E4%B8%8B%E7%9A%84%E9%94%99%E8%AF%AF"><span class="toc-number">2.1.</span> <span class="toc-text">在编译运行的时候报如下的错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A"><span class="toc-number">2.2.</span> <span class="toc-text">解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%E2%91%A0%EF%BC%9A%E6%9F%A5%E7%9C%8B%E3%80%81%E4%BF%AE%E6%94%B9jdk%E7%89%88%E6%9C%AC"><span class="toc-number">2.3.</span> <span class="toc-text">解决办法①：查看、修改jdk版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E2%91%A1%EF%BC%9A%E6%9F%A5%E7%9C%8B%E3%80%81%E4%BF%AE%E6%94%B9eclipse%E9%80%89%E6%8B%A9%E6%94%AF%E6%8C%81%E4%BD%BF%E7%94%A8%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E7%89%88%E6%9C%AC"><span class="toc-number">2.4.</span> <span class="toc-text">解决方法②：查看、修改eclipse选择支持使用的编译器版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%95%88%E6%9E%9C"><span class="toc-number">2.5.</span> <span class="toc-text">修改效果</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"MyEclipse——jdk版本不支持　| 终于盼到你嘞！　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2021/06/08/%E5%B0%8F%E6%96%B0%E5%9C%A8windows10%E4%B8%8A%E5%AE%89%E8%A3%85kali%E5%8F%8C%E7%B3%BB%E7%BB%9F/" title="Pre: 小新在windows10上安装kali双系统">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2021/05/27/%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%8D%95%E8%B0%83%E5%A2%9E-%E5%87%8F/" title="Next: 判断数组是否单调增/减">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/06/17/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/06/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%89%A7%E8%A1%8C%E6%89%80%E7%94%9F%E6%88%90%E7%9A%84jar%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99%E2%80%94%E2%80%94%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/">计算机执行所生成的jar文件报错：版本不支持</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/06/10/VMware%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8E%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/">VMware中的虚拟机与宿主机的文件共享</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/06/08/%E5%B0%8F%E6%96%B0%E5%9C%A8windows10%E4%B8%8A%E5%AE%89%E8%A3%85kali%E5%8F%8C%E7%B3%BB%E7%BB%9F/">小新在windows10上安装kali双系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/">MyEclipse——jdk版本不支持</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/27/%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%8D%95%E8%B0%83%E5%A2%9E-%E5%87%8F/">判断数组是否单调增/减</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/27/%E7%BA%A6%E7%91%9F%E5%A4%AB%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E5%9D%8F%E4%BA%BA%E5%BF%85%E9%A1%BB%E6%AD%BB/">约瑟夫问题——坏人必须死</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/27/%E8%83%8C%E5%8C%85%E7%AE%97%E6%B3%95/">背包算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/23/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%A5%E4%BE%B5%E2%80%94%E2%80%94%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/">虚拟机之间的入侵——永恒之蓝</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2021 liu-ruyang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

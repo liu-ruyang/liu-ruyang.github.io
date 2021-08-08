@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>VMware中的虚拟机与宿主机的文件共享</title>
+    <url>/2021/06/10/VMware%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8E%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/</url>
+    <content><![CDATA[<h1 id="简要说明"><a href="#简要说明" class="headerlink" title="简要说明"></a>简要说明</h1><h2 id="目前我知道的有如下几种方法"><a href="#目前我知道的有如下几种方法" class="headerlink" title="目前我知道的有如下几种方法"></a>目前我知道的有如下几种方法</h2><ol>
+<li><p>使用VMware Tools（这种方法功能很多，具体见下图，但由于本人尝试过很次，总是出现一些问题，所以本文暂不对此方法进行说明，等以后空闲时间在尝试摸索一番）</p>
+</li>
+<li><p>使用U盘（此方法较为简单，只是需要借助一个U盘）</p>
+</li>
+<li><p>建立共享文件夹（此方法也很简单，不需要借助其它设备，也不需要下载其他软件、插件）</p>
+</li>
+</ol>
+<h1 id="建立共享文件夹——方法阐述"><a href="#建立共享文件夹——方法阐述" class="headerlink" title="建立共享文件夹——方法阐述"></a>建立共享文件夹——方法阐述</h1><h2 id="步骤解析（来一波图片！）"><a href="#步骤解析（来一波图片！）" class="headerlink" title="步骤解析（来一波图片！）"></a>步骤解析（来一波图片！）</h2><p><img src="https://i.loli.net/2021/06/10/xBfFhSciIqE3QuC.png" alt="屏幕截图 2021-06-10 232743.png"><br><img src="https://i.loli.net/2021/06/10/8zA1hcRYtsSlqkX.png" alt="屏幕截图 2021-06-10 232628.png"></p>
+<p>下面这张图里选择的文件夹可以自己新建一个，比如就命名为“虚拟机共享文件夹”</p>
+<p><img src="https://i.loli.net/2021/06/10/avGApILn6HzRd5T.png" alt="屏幕截图 2021-06-10 232931.png"><br><img src="https://i.loli.net/2021/06/10/HPwhbdTkRf1XGVK.png" alt="屏幕截图 2021-06-10 233006.png"></p>
+<p>下面这张图里，根据个人所需设置，后期可以随时修改</p>
+<p><img src="https://i.loli.net/2021/06/10/KSz2lj5fxg1OYGQ.png" alt="屏幕截图 2021-06-10 233033.png"></p>
+<h2 id="虚拟机查看路径"><a href="#虚拟机查看路径" class="headerlink" title="虚拟机查看路径"></a>虚拟机查看路径</h2><p>在虚拟机里默认保存的地点路径如下：（再来一波图！）<br><img src="https://i.loli.net/2021/06/10/OBQWMaYqED7esdn.png" alt="屏幕截图 2021-06-10 233146.png"><br><img src="https://i.loli.net/2021/06/10/lf6HQ5ZSW7obnm2.png" alt="屏幕截图 2021-06-10 233212.png"><br><img src="https://i.loli.net/2021/06/10/tsArNLxDKh8vm7I.png" alt="屏幕截图 2021-06-10 233231.png"><br><img src="https://i.loli.net/2021/06/10/AijaIbQu5tCVLYk.png" alt="屏幕截图 2021-06-10 233246.png"></p>
+<p><strong>共享的文件夹的路径是：/mnt/hgfs</strong></p>
+<p>好了，下面虚拟机和宿主机就可以通过这个文件夹进行信息、文件等交流啦！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>MyEclipse——jdk版本不支持</title>
     <url>/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/</url>
     <content><![CDATA[<h2 id="简要说明"><a href="#简要说明" class="headerlink" title="简要说明"></a>简要说明</h2><ul>
@@ -31,29 +52,8 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 ]]></content>
   </entry>
   <entry>
-    <title>VMware中的虚拟机与宿主机的文件共享</title>
-    <url>/2021/06/10/VMware%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8E%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/</url>
-    <content><![CDATA[<h1 id="简要说明"><a href="#简要说明" class="headerlink" title="简要说明"></a>简要说明</h1><h2 id="目前我知道的有如下几种方法"><a href="#目前我知道的有如下几种方法" class="headerlink" title="目前我知道的有如下几种方法"></a>目前我知道的有如下几种方法</h2><ol>
-<li><p>使用VMware Tools（这种方法功能很多，具体见下图，但由于本人尝试过很次，总是出现一些问题，所以本文暂不对此方法进行说明，等以后空闲时间在尝试摸索一番）</p>
-</li>
-<li><p>使用U盘（此方法较为简单，只是需要借助一个U盘）</p>
-</li>
-<li><p>建立共享文件夹（此方法也很简单，不需要借助其它设备，也不需要下载其他软件、插件）</p>
-</li>
-</ol>
-<h1 id="建立共享文件夹——方法阐述"><a href="#建立共享文件夹——方法阐述" class="headerlink" title="建立共享文件夹——方法阐述"></a>建立共享文件夹——方法阐述</h1><h2 id="步骤解析（来一波图片！）"><a href="#步骤解析（来一波图片！）" class="headerlink" title="步骤解析（来一波图片！）"></a>步骤解析（来一波图片！）</h2><p><img src="https://i.loli.net/2021/06/10/xBfFhSciIqE3QuC.png" alt="屏幕截图 2021-06-10 232743.png"><br><img src="https://i.loli.net/2021/06/10/8zA1hcRYtsSlqkX.png" alt="屏幕截图 2021-06-10 232628.png"></p>
-<p>下面这张图里选择的文件夹可以自己新建一个，比如就命名为“虚拟机共享文件夹”</p>
-<p><img src="https://i.loli.net/2021/06/10/avGApILn6HzRd5T.png" alt="屏幕截图 2021-06-10 232931.png"><br><img src="https://i.loli.net/2021/06/10/HPwhbdTkRf1XGVK.png" alt="屏幕截图 2021-06-10 233006.png"></p>
-<p>下面这张图里，根据个人所需设置，后期可以随时修改</p>
-<p><img src="https://i.loli.net/2021/06/10/KSz2lj5fxg1OYGQ.png" alt="屏幕截图 2021-06-10 233033.png"></p>
-<h2 id="虚拟机查看路径"><a href="#虚拟机查看路径" class="headerlink" title="虚拟机查看路径"></a>虚拟机查看路径</h2><p>在虚拟机里默认保存的地点路径如下：（再来一波图！）<br><img src="https://i.loli.net/2021/06/10/OBQWMaYqED7esdn.png" alt="屏幕截图 2021-06-10 233146.png"><br><img src="https://i.loli.net/2021/06/10/lf6HQ5ZSW7obnm2.png" alt="屏幕截图 2021-06-10 233212.png"><br><img src="https://i.loli.net/2021/06/10/tsArNLxDKh8vm7I.png" alt="屏幕截图 2021-06-10 233231.png"><br><img src="https://i.loli.net/2021/06/10/AijaIbQu5tCVLYk.png" alt="屏幕截图 2021-06-10 233246.png"></p>
-<p><strong>共享的文件夹的路径是：/mnt/hgfs</strong></p>
-<p>好了，下面虚拟机和宿主机就可以通过这个文件夹进行信息、文件等交流啦！</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Hello World</title>
-    <url>/2021/06/17/hello-world/</url>
+    <url>/2021/07/04/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -67,6 +67,18 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/08/08/%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E5%87%BA%E7%8E%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</url>
+    <content><![CDATA[<p>[toc]</p>
+<h2 id="导入项目的时候，出现中文乱码"><a href="#导入项目的时候，出现中文乱码" class="headerlink" title="导入项目的时候，出现中文乱码"></a>导入项目的时候，出现中文乱码</h2><h4 id="问题：中文出现乱码"><a href="#问题：中文出现乱码" class="headerlink" title="问题：中文出现乱码"></a>问题：中文出现乱码</h4><blockquote>
+<p>​    在导入其他人项目的时候，有时候会出现中文乱码的错误</p>
+</blockquote>
+<h4 id="解决方案：修改MyEclipse的字符编码格式"><a href="#解决方案：修改MyEclipse的字符编码格式" class="headerlink" title="解决方案：修改MyEclipse的字符编码格式"></a>解决方案：修改MyEclipse的字符编码格式</h4><p>![](C:\Users\刘汝杨\Desktop\屏幕截图 2021-08-08 181421.png)</p>
+<p><img src="C:\Users\刘汝杨\Desktop\QQ图片20210808181515.png"></p>
+<p>上面字符编码格式改为本身的编码格式</p>
 ]]></content>
   </entry>
   <entry>

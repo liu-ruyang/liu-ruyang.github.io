@@ -145,50 +145,6 @@ bool isMonotonic(int* A, int ASize) &#123;
 ]]></content>
   </entry>
   <entry>
-    <title>约瑟夫问题——坏人必须死</title>
-    <url>/2021/05/27/%E7%BA%A6%E7%91%9F%E5%A4%AB%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E5%9D%8F%E4%BA%BA%E5%BF%85%E9%A1%BB%E6%AD%BB/</url>
-    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><img src="https://i.loli.net/2021/05/27/u1ylWdAFIU2B8jb.png" alt="Image.png"></p>
-<h2 id="题意理解"><a href="#题意理解" class="headerlink" title="题意理解"></a>题意理解</h2><p>经思考，发现可以这么理解题意：有2m个人，然后进行报数，相当于前一个数字加上k，若结果大于m且小于等于2m，则为坏人，则需要总人数-1，即坏人还剩m-1人；若出现结果大于等于1且小于等于m的，则该k值不符合需求，需要将k++。直至坏人总数为0。</p>
-<ol>
-<li>需要注意的是，在不断地取余过程中，会出现0这个数，所以，我们最好用0来代替2m的意思</li>
-<li>此外，需要特别注意的有一点，就是每次加上k进行取余的过程中，需要注意原先位置是不是0，若是，则不许奥倒退（即减一），否则需要先倒退（即减一）后再进行取余，计算下一个位置</li>
-</ol>
-<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><pre><code>#include &lt;stdio.h&gt;
-
-int main() &#123;
-int m, n, k, rest, pos;
-while (scanf(&quot;%d&quot;, &amp;m) != EOF) &#123;
-    n = m * 2;
-    rest = m;
-    k = m;
-    pos = k % n;
-    while (rest != 0) &#123;
-        rest = m;
-        n = m * 2;
-        k++;
-        pos = k % n;
-        while (pos &gt; m &amp;&amp; pos &lt; n || (pos == 0 &amp;&amp; rest != 0)) &#123;
-            n--;
-            rest--;
-            //
-            if (pos == 0) &#123;        /*此情况易忽略*/
-                pos = (pos + k) % n;
-            &#125;
-            else &#123;
-                pos = (pos - 1 + k) % n;
-            &#125;
-            //
-            //pos = (pos - 1 + k) % n;    /*很容易写成这个情况*/
-        &#125;
-    &#125;
-    printf(&quot;%d\n&quot;, k);
-&#125;
-return 0;
-&#125;
-</code></pre>
-]]></content>
-  </entry>
-  <entry>
     <title>小新在windows10上安装kali双系统</title>
     <url>/2021/06/08/%E5%B0%8F%E6%96%B0%E5%9C%A8windows10%E4%B8%8A%E5%AE%89%E8%A3%85kali%E5%8F%8C%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ol>
@@ -243,6 +199,50 @@ return 0;
 </li>
 </ol>
 <h3 id="dp二维数组如下："><a href="#dp二维数组如下：" class="headerlink" title="dp二维数组如下："></a>dp二维数组如下：</h3>]]></content>
+  </entry>
+  <entry>
+    <title>约瑟夫问题——坏人必须死</title>
+    <url>/2021/05/27/%E7%BA%A6%E7%91%9F%E5%A4%AB%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E5%9D%8F%E4%BA%BA%E5%BF%85%E9%A1%BB%E6%AD%BB/</url>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p><img src="https://i.loli.net/2021/05/27/u1ylWdAFIU2B8jb.png" alt="Image.png"></p>
+<h2 id="题意理解"><a href="#题意理解" class="headerlink" title="题意理解"></a>题意理解</h2><p>经思考，发现可以这么理解题意：有2m个人，然后进行报数，相当于前一个数字加上k，若结果大于m且小于等于2m，则为坏人，则需要总人数-1，即坏人还剩m-1人；若出现结果大于等于1且小于等于m的，则该k值不符合需求，需要将k++。直至坏人总数为0。</p>
+<ol>
+<li>需要注意的是，在不断地取余过程中，会出现0这个数，所以，我们最好用0来代替2m的意思</li>
+<li>此外，需要特别注意的有一点，就是每次加上k进行取余的过程中，需要注意原先位置是不是0，若是，则不许奥倒退（即减一），否则需要先倒退（即减一）后再进行取余，计算下一个位置</li>
+</ol>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><pre><code>#include &lt;stdio.h&gt;
+
+int main() &#123;
+int m, n, k, rest, pos;
+while (scanf(&quot;%d&quot;, &amp;m) != EOF) &#123;
+    n = m * 2;
+    rest = m;
+    k = m;
+    pos = k % n;
+    while (rest != 0) &#123;
+        rest = m;
+        n = m * 2;
+        k++;
+        pos = k % n;
+        while (pos &gt; m &amp;&amp; pos &lt; n || (pos == 0 &amp;&amp; rest != 0)) &#123;
+            n--;
+            rest--;
+            //
+            if (pos == 0) &#123;        /*此情况易忽略*/
+                pos = (pos + k) % n;
+            &#125;
+            else &#123;
+                pos = (pos - 1 + k) % n;
+            &#125;
+            //
+            //pos = (pos - 1 + k) % n;    /*很容易写成这个情况*/
+        &#125;
+    &#125;
+    printf(&quot;%d\n&quot;, k);
+&#125;
+return 0;
+&#125;
+</code></pre>
+]]></content>
   </entry>
   <entry>
     <title>虚拟机之间的入侵——永恒之蓝</title>

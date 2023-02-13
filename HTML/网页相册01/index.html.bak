@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!-- 引入样式 -->
+		<link rel="stylesheet" type="text/css" href="./css/index.css" />
+		<title>网页相册01</title>
+	</head>
+	<body>
+		<div id="darg-container" class="darg">
+			<div id="spin-container">
+				<img src="./img/1.jpg">
+				<img src="./img/2.jpg">
+				<img src="./img/3.jpg">
+				<img src="./img/4.jpg">
+				<img src="./img/5.jpg">
+				<img src="./img/6.jpg">
+				<img src="./img/7.jpg">
+				<img src="./img/8.jpg">
+				<img src="./img/9.jpg">
+				<img src="./img/10.jpg">
+				<img src="./img/11.jpg">
+
+				<!-- 			<a target="_blank" href="">
+					<img src="https://wx3.sinaimg.cn/mw690/005O0Eg8gy1gpdup8vs01j30u00u0n50.jpg" alt="">
+				</a> -->
+
+
+				<video controls autoplay="autoplay" loop>
+					<source src="./video/video.mp4" type="video/mp4">
+				</video>
+				<p>小六猪制作</p>
+			</div>
+			<div id="ground"></div>
+		</div>
+		<!-- 引入脚本 -->
+		<script src="./js/index.js"></script>
+	</body>
+</html>

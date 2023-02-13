@@ -1,0 +1,100 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html, body{
+	height: 100%;
+}
+
+body{
+	/* 溢出的设置为隐藏 */
+	overflow: hidden;
+	background: #111;
+	display: flex;
+	/*  
+		当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身。
+		规定 3D 元素的透视效果。	
+		注释：perspective 属性只影响 3D 转换元素。 
+	*/
+	perspective: 1000px;
+	/* transform-style 设置元素的子元素是位于 3D 空间中还是平面中。 */
+	transform-style: preserve-3d;
+}
+
+#darg-container, #spin-container{
+	position: relative;
+	display: flex;
+	margin: auto;
+	/* 该元素的子元素保留在3D空间中 */
+	transform-style: preserve-3d;
+	transform: rotateX(-10deg);
+}
+
+#darg-container img, #darg-container video{
+	/* 该元素的子元素保留在3D空间中 */
+	transform-style: preserve-3d;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	
+	line-height: 200px;
+	font-size: 50px;
+	text-align: center;
+	box-shadow: 0 0 8px #fff;
+	
+	/* 倒影效果 */
+	-webkit-box-reflect:below 1px linear-gradient(transparent, transparent, #0005);	
+}
+
+#darg-container video{
+	left:-10%;
+	top: -20%;
+	width: 120%;
+	height: 120%;
+}
+
+#darg-container p{
+	font-family: serif;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	color: #fff;
+	
+	transform: translate(-50%, -50%) rotateX(90deg);
+}
+
+#ground {
+  width: 900px;
+  height: 900px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(90deg);
+  background: -webkit-radial-gradient(center center, farthest-side, #9993, transparent);
+}
+
+
+@keyframes spin{
+  from{
+    transform:rotateY(0deg);
+  }
+  to{
+    transform: rotateY(360deg);
+  }
+}
+
+/* #spin-container{
+  animation: spin 10s infinite linear;
+} */
+
+@keyframes spinRevert{
+  from{
+    transform:rotateY(360deg);
+  }
+  to{
+    transform: rotateY(0deg);
+  }
+}

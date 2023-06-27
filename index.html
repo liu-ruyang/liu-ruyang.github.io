@@ -292,10 +292,74 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-docker命令" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-主机连接虚拟机" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/06/25/docker%E5%91%BD%E4%BB%A4/" class="article-date">
+      <a href="/2023/06/26/%E4%B8%BB%E6%9C%BA%E8%BF%9E%E6%8E%A5%E8%99%9A%E6%8B%9F%E6%9C%BA/" class="article-date">
+      <time datetime="2023-06-26T09:50:24.000Z" itemprop="datePublished">2023-06-26</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/06/26/%E4%B8%BB%E6%9C%BA%E8%BF%9E%E6%8E%A5%E8%99%9A%E6%8B%9F%E6%9C%BA/">主机连接虚拟机</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="使用SSH"><a href="#使用SSH" class="headerlink" title="使用SSH"></a>使用SSH</h2>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2023/06/26/%E4%B8%BB%E6%9C%BA%E8%BF%9E%E6%8E%A5%E8%99%9A%E6%8B%9F%E6%9C%BA/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-docker使用入门文档" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/06/25/docker%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8%E6%96%87%E6%A1%A3/" class="article-date">
       <time datetime="2023-06-25T01:55:14.000Z" itemprop="datePublished">2023-06-25</time>
 </a>
 
@@ -311,7 +375,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/06/25/docker%E5%91%BD%E4%BB%A4/">docker命令</a>
+      <a class="article-title" href="/2023/06/25/docker%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8%E6%96%87%E6%A1%A3/">docker使用入门文档</a>
     </h1>
   
 
@@ -321,8 +385,213 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="Docker命令"><a href="#Docker命令" class="headerlink" title="Docker命令"></a>Docker命令</h2>
-          
+        <span id="more"></span>
+
+<p>[toc]</p>
+<h2 id="Linux下的命令"><a href="#Linux下的命令" class="headerlink" title="Linux下的命令"></a>Linux下的命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 开、关docker-desktop（非必要，因为docker-desktop集成了docker服务）</span></span><br><span class="line">systemctl --user start docker-desktop	<span class="comment"># 启动docker-desktop</span></span><br><span class="line">systemctl --user <span class="built_in">enable</span> docker-desktop	<span class="comment"># 开启自动启动</span></span><br><span class="line">systemctl --user stop docker-desktop	<span class="comment"># 关闭docker-desktop</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 开、关docker（docker服务必须开启）</span></span><br><span class="line">systemctl start docker	<span class="comment"># 启动docker服务</span></span><br><span class="line">service docker start	<span class="comment"># 效果同上</span></span><br><span class="line">systemctl stop docker 	<span class="comment"># 停止docker服务</span></span><br><span class="line">service docker stop		<span class="comment"># 效果同上</span></span><br><span class="line">systemctl restart docker	<span class="comment"># 重启docker服务</span></span><br><span class="line">service docker restart		<span class="comment"># 效果同上</span></span><br><span class="line"><span class="comment"># docker服务状态</span></span><br><span class="line">systemctl status docker		<span class="comment"># 查看docker服务状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 系统日志</span></span><br><span class="line">journalctl -xe	<span class="comment"># 查看系统日志</span></span><br><span class="line">	<span class="comment"># -x 相关目录（如：问题相关的网址）</span></span><br><span class="line">	<span class="comment"># -e`从结尾开始看（默认从正序从开头看）</span></span><br><span class="line">	<span class="comment"># -r 倒序查看（默认从正序从开头看）</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Window下的命令"><a href="#Window下的命令" class="headerlink" title="Window下的命令"></a>Window下的命令</h2><p>windows下的docker服务需要运行docker-desktop</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看</span></span><br><span class="line">wsl -l -v		<span class="comment"># 查看所有linux子系统的执行状态和版本</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker命令"><a href="#Docker命令" class="headerlink" title="Docker命令"></a>Docker命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.版本</span></span><br><span class="line">docker compose version</span><br><span class="line">docker --version</span><br><span class="line">docker version</span><br><span class="line">	</span><br><span class="line"><span class="comment"># 2.镜像</span></span><br><span class="line">docker images	 <span class="comment"># 查看所有镜像文件</span></span><br><span class="line">docker images	-a 	<span class="comment"># 或者--all，显示所有镜像文件</span></span><br><span class="line">docker images	-q	<span class="comment"># 或者--quit，仅显示镜像id</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.搜索</span></span><br><span class="line">docker search 镜像地址名称  [--filter=STARS=3000]   	<span class="comment"># 搜索镜像[搜索出来的镜像就是stars大于3000的]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.拉取</span></span><br><span class="line">docker pull镜像的仓库源[:tag]	   	<span class="comment"># 下载镜像（不指定tag时为latest版本）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.删除镜像</span></span><br><span class="line">docker rmi -f 镜像id          	 <span class="comment"># 删除指定的镜像</span></span><br><span class="line">docker rmi -f 镜像id 镜像id 镜像id    <span class="comment"># 删除多个镜像（空格分隔）</span></span><br><span class="line">docker rmi -f $(docker images -aq)    <span class="comment"># 删除全部的镜像</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------------ 容器 ------------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1.创建、启动</span></span><br><span class="line">docker run [可选参数] 镜像id|镜像名[:tag] [<span class="built_in">command</span> [args]]		<span class="comment"># 选择一个镜像，先创建一个容器，再启动该容器（容器运行后可选择执行命令）		★启动的运行方式一经确定，便不可更改（守护模式还是交互模式只能在run时候确定（即使停止了重启也不会改变））</span></span><br><span class="line">	<span class="comment"># --name=&quot;名字&quot;		指定容器的名称</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment"># -d			 	 ★后台方式运行该容器（是守护模式，执行exit后，不会终止容器）（最后不要加上/bin/bash）</span></span><br><span class="line">	<span class="comment"># -it			 	 ★使用交互方式运行，并创建一个伪终端，查看容器内容（是交互模式，执行exit后会终止容器）（此时命令最后最好加上/bin/bash）</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment"># -p ip:主机端口:容器端口   		配置主机端口映射到容器端口</span></span><br><span class="line">    <span class="comment"># -p 主机端口:容器端口				配置主机端口映射到容器端口</span></span><br><span class="line">    <span class="comment"># -p 容器端口					   配置主机端口映射到容器端口</span></span><br><span class="line">    <span class="comment"># -P 				  大写P，随机分配一个主机的端口</span></span><br><span class="line"><span class="comment">## 例</span></span><br><span class="line">docker run -d 镜像名		 <span class="comment"># 后台启动</span></span><br><span class="line">curl localhost:主机端口		<span class="comment"># 容器运行后，本机测试访问</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.退出</span></span><br><span class="line"><span class="built_in">exit</span>		<span class="comment"># 容器中有终端未关闭，则退出时仅关闭容器中的终端，不关闭容器；否则退出时，容器也将终止</span></span><br><span class="line">CTRL+P后CTRL+Q	<span class="comment"># 不关闭容器中的终端退出容器（容器中的终端不关闭，因此容器也不关闭）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.列表</span></span><br><span class="line">docker ps	<span class="comment"># 当前正在运行的容器</span></span><br><span class="line">	<span class="comment"># -a	# 所有容器的信息</span></span><br><span class="line">	<span class="comment"># -n=？ # 最近创建的n个容器（default -1）</span></span><br><span class="line">	<span class="comment"># -q	# 仅显示容器id</span></span><br><span class="line">	<span class="comment"># -s	# 总文件大小</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.删除</span></span><br><span class="line">docker rm 容器id		<span class="comment"># 删除容器（只有删除容器，数据才会删除）</span></span><br><span class="line">docker rm -f $(docker ps -aq)		<span class="comment"># 删除所有容器</span></span><br><span class="line">docker ps -a -q | xrags docker rm	<span class="comment"># 删除所有容器（竖线表示前面的结果作为后面的输入）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.启动</span></span><br><span class="line">docker start 容器id		<span class="comment"># 停止</span></span><br><span class="line">docker restart 容器id		<span class="comment"># 重启</span></span><br><span class="line">docker stop 容器id		<span class="comment"># 停止</span></span><br><span class="line">docker <span class="built_in">kill</span> 容器id		<span class="comment"># 强制停止</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.进容器</span></span><br><span class="line">docker <span class="built_in">exec</span> [options] container <span class="built_in">command</span> [args]		<span class="comment"># 进入正在运行的容器中</span></span><br><span class="line">	<span class="comment"># -d		分离模式：在后台运行</span></span><br><span class="line">	<span class="comment"># -i		交互模式，如果不加，则无法与用户交互（一般-it一块使用）</span></span><br><span class="line">	<span class="comment"># -t		分配一个伪终端，如果不加，则没有终端（一般-it一块使用）</span></span><br><span class="line">docker <span class="built_in">exec</span> -it 容器id /bin/bash		  <span class="comment"># 进入容器后开启一个新的终端，在其中操作（是守护模式，执行exit后不会终止容器）</span></span><br><span class="line">docker attach [options] container	   <span class="comment"># 进入容器上次的终端（且是交互模式，执行exit后会终止容器）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 6.容器中进程</span></span><br><span class="line">docker top 容器id			<span class="comment"># 容器中进程信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 7.元数据</span></span><br><span class="line">docker inspect [options] 容器name|镜像name	<span class="comment"># 容器或者镜像的元数据</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------------ 日志 ------------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 日志</span></span><br><span class="line">docker logs 参数 容器名/容器id</span><br><span class="line">	<span class="comment"># --details 			显示提供给日志的其他详细信息</span></span><br><span class="line">	<span class="comment"># --follow , -f 		实时跟踪日志输出</span></span><br><span class="line">	<span class="comment"># --since 				显示自某个timestamp之后的日志大于等于某个时间，或相对时间，如1h 就是1h）</span></span><br><span class="line">	<span class="comment"># --tail n				从末尾显示n条</span></span><br><span class="line">	<span class="comment"># -n  m或all 			m数，默认值为all 全部</span></span><br><span class="line">	<span class="comment"># --timestamps , -t 	日志每行显示日志时间戳</span></span><br><span class="line">	<span class="comment"># --until 				显示自某个timestamp之前的日志小于等于某个时间，或相对时间，如30m（即30分钟）</span></span><br><span class="line"><span class="comment">## 例</span></span><br><span class="line">docker logs -tf --tail 10 容器id		<span class="comment"># 倒序显示指定容器实时10条日志，每条带有时间戳</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------------ 其他指令 ------------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 拷贝</span></span><br><span class="line">docker cp 容器id:容器内路径 目的主机路径		<span class="comment"># 拷贝容器的文件到主机中</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建镜像</span></span><br><span class="line">docker commit [options] container [repository:tag]		<span class="comment"># 提交指定容器成为一个新的副本</span></span><br><span class="line"><span class="comment">## 例</span></span><br><span class="line">docker commit -m=<span class="string">&quot;描述信息，类似git的提交信息&quot;</span> -a=<span class="string">&quot;作者&quot;</span> 容器id 目标镜像名:[TAG]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="坑1：启动容器，自动停止"><a href="#坑1：启动容器，自动停止" class="headerlink" title="坑1：启动容器，自动停止"></a>坑1：启动容器，自动停止</h3><p><strong>可能1</strong>：docker容器使用后台运行，就必须要有一个<strong>前台进程</strong>，docker发现没有应用了，就会自动停止 。例如：nginx，容器启动后发现自己没有<strong>提供服务</strong>，就会立刻停止，就是没有程序了。</p>
+<p><strong>可能2</strong>：<code>docker run -d …</code>最后面加了<code>/bin/bash</code></p>
+<blockquote>
+<p> <strong>解决方案1</strong>：一般<code>-it</code>启动的时候后面会有一个<code>/bin/bash</code>。</p>
+</blockquote>
+<blockquote>
+<p><strong>解决方案2</strong>：父容器进程可能有一个子进程（即一个容器可能是一组进程）。</p>
+</blockquote>
+<blockquote>
+<p><strong>例如Nginx容器启动</strong>：当我们启动一个nginx服务时，它会启动一个父Nginx进程，然后父进程跨越进它的子进程，比如内存管理器、缓存加载器和工作器。</p>
+</blockquote>
+<h3 id="坑2：执行exit是否终止容器"><a href="#坑2：执行exit是否终止容器" class="headerlink" title="坑2：执行exit是否终止容器"></a>坑2：执行exit是否终止容器</h3><p>先进后出：</p>
+<table>
+<thead>
+<tr>
+<th>退出方式</th>
+<th>exec进入方式（进入守护模式，同守护模式启动）</th>
+<th>attach进入方式（进入非守护模式）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>exit退出方式</td>
+<td>容器还在</td>
+<td>容器不在</td>
+</tr>
+<tr>
+<td>ctrl+p+q退出方式（一定不终止容器）</td>
+<td>容器还在</td>
+<td>容器还在</td>
+</tr>
+</tbody></table>
+<h3 id="坑3：执行docker-attach卡住"><a href="#坑3：执行docker-attach卡住" class="headerlink" title="坑3：执行docker attach卡住"></a>坑3：执行docker attach卡住</h3><p>先出后进：<code>docker attach</code>能否成功进入容器，取决于容器在<code>run</code>启动时是<strong>交互模式</strong>还是<strong>守护模式</strong>启动的</p>
+<h2 id="常用Docker工具"><a href="#常用Docker工具" class="headerlink" title="常用Docker工具"></a>常用Docker工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.Docker UI</span></span><br><span class="line">docker search dockerui</span><br><span class="line">docker pull abh1nav/dockerui</span><br><span class="line">docker run -d --privileged --name dockerui -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock abh1nav/dockerui		<span class="comment">#放开物理机的9000端口对应Docker容器的9000端口</span></span><br><span class="line">curl localhost:9000			<span class="comment"># 访问地址：http://ip地址:9000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.Portainer</span></span><br><span class="line">docker search portainer</span><br><span class="line">docker pull portainer/portainer</span><br><span class="line">docker run -d --name portainerUI -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer</span><br><span class="line">curl localhost:9000			<span class="comment"># 访问地址：http://ip地址:9000</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="常见容器案例"><a href="#常见容器案例" class="headerlink" title="常见容器案例"></a>常见容器案例</h2><h3 id="1-Nginx"><a href="#1-Nginx" class="headerlink" title="1.Nginx"></a>1.Nginx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker search nginx				<span class="comment"># 查找镜像</span></span><br><span class="line">docker pull nginx				<span class="comment"># 下载镜像</span></span><br><span class="line">docker run -d --name nginx -p 3344:80 nginx		<span class="comment"># 创建并在后台运行容器</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">exec</span> -it nginx /bin/bash		<span class="comment"># 进入容器</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Tomcat"><a href="#2-Tomcat" class="headerlink" title="2.Tomcat"></a>2.Tomcat</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker pull tomcat 			<span class="comment"># 下载镜像</span></span><br><span class="line">docker run -d -p 3355:8080 --name tomcat01 tomcat	<span class="comment"># 后台启动</span></span><br><span class="line">docker <span class="built_in">exec</span> -it tomcat01 /bin/bash		<span class="comment"># 进入容器</span></span><br><span class="line"><span class="comment"># webapps下内容为空，阿里云默认时最小的镜像，所有不必要的都剔除了</span></span><br><span class="line"><span class="comment"># 保证最小运行环境即可</span></span><br><span class="line">cp -r webapps.dist/* webapps	<span class="comment"># 网站恢复访问</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="容器数据卷"><a href="#容器数据卷" class="headerlink" title="容器数据卷"></a>容器数据卷</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><ul>
+<li>数据持久化</li>
+<li>容器之间共享数据</li>
+</ul>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<li>生命周期：数据卷存在于宿主机的文件系统中，独立于容器，和容器的生命周期分离</li>
+<li>存在形式：目录或文件</li>
+<li>作用域：<ul>
+<li>容器和数据卷的数据变化<strong>实时同步</strong>发生。</li>
+<li>数据卷的数据变换不影响镜像变化</li>
+</ul>
+</li>
+<li>挂载时：<ul>
+<li>数据卷空，容器中目录非空，则容器中数据复制到数据卷中</li>
+<li>数据卷不空，容器中目录非空，则显示数据卷内容，容器目录仅显示数据卷中数据，其余被隐藏</li>
+</ul>
+</li>
+</ol>
+<h3 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">------------ 方式1：在docker run基础上，使用命令来挂载 -v ------------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker run -it -v 主机目录:容器内目录 container [<span class="built_in">command</span>] [args]</span><br><span class="line">	<span class="comment"># -v 容器内路径 		 			匿名挂载</span></span><br><span class="line">	<span class="comment"># -v 卷名:容器内路径	           具名挂载</span></span><br><span class="line">	<span class="comment"># -v /宿主机路径:容器内路径  	 指定路径挂载</span></span><br><span class="line"><span class="comment"># 挂载</span></span><br><span class="line">docker run -d -P --name nginx01 -v 容器内目录 container [<span class="built_in">command</span>] [args]	<span class="comment"># 匿名挂载，只写了容器内的路径，没有写容器外的路径</span></span><br><span class="line">docker run -d -P --name nginx01 -v [主机目录|主机文件名]:容器内目录 container [<span class="built_in">command</span>] [args]		<span class="comment"># 具名挂载</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据卷</span></span><br><span class="line">docker volume ls	<span class="comment"># 查看所有volume</span></span><br><span class="line">docker volume inspect [options] volume [volume2…]	<span class="comment"># 查看指定的数据卷的信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 没有指定目录（即使用主机文件名）时，数据在/var/lib/docker/volumes/xxxx/_data</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------------ 方式2：使用DockerFile来挂载 ------------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一步准备：创建文件dockerfile1，vim输入内容如下：</span></span><br><span class="line">from centos</span><br><span class="line">volume [<span class="string">&quot;volume01&quot;</span>,<span class="string">&quot;volume01&quot;</span>]		<span class="comment"># ★匿名挂载。在构建镜像时，生成这两个目录，并自动挂载到宿主机的数据卷目录中</span></span><br><span class="line">cmd <span class="built_in">echo</span> <span class="string">&quot;-----end-----&quot;</span></span><br><span class="line">cmd /bin/bash</span><br><span class="line"><span class="comment"># 以上一层代表一层镜像</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二步：build镜像</span></span><br><span class="line">docker build -f dockerfile1的文件地址 -t 目标镜像名称[:tag]  .		</span><br><span class="line">	<span class="comment"># 结尾的.符号，指的是在构建镜像的过程中的上下文环境的目录（比如在dockerfile文件中使用了copy等指令来操作文件，此处的.就指定了这些指令执行时的上下文环境地址）</span></span><br><span class="line">	<span class="comment">#挂载数据卷的目录在dockerfile的volume后面指定</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">------------ --volumes-from实现容器之间的数据同步 ------------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker run -it --name container02 --volumes-from container01 镜像:[tag]		</span><br><span class="line">	<span class="comment"># 通过--volumes-from做到两个容器之间的数据同步（同步挂载：son extend father）</span></span><br><span class="line">	<span class="comment"># 好处：多个容器时，只需挂载其中一个容器到数据卷，其余容器创建时只需要使用--volumes-from即可</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="DockerFile详解"><a href="#DockerFile详解" class="headerlink" title="DockerFile详解"></a>DockerFile详解</h2><p>构建发布镜像步骤：</p>
+<ol>
+<li>构建一个dockerfile文件</li>
+<li>docker build构建成为一个镜像</li>
+<li>docker run运行一个镜像</li>
+<li>docker push发布镜像（DockerHub、阿里云镜像仓库）</li>
+</ol>
+<h3 id="构建Dockerfile文件"><a href="#构建Dockerfile文件" class="headerlink" title="构建Dockerfile文件"></a>构建Dockerfile文件</h3><table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>作用</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>from</td>
+<td>指定父镜像</td>
+<td>指定dockerfile基于哪个image构建</td>
+</tr>
+<tr>
+<td>maintainer</td>
+<td>作者信息</td>
+<td>表明作者（姓名+邮箱）</td>
+</tr>
+<tr>
+<td>label</td>
+<td>标签</td>
+<td>表明dockerfile的标签，可以使用label代替maintainer，最终都是在docker image基本信息中可以查看</td>
+</tr>
+<tr>
+<td>run</td>
+<td>执行命令</td>
+<td>执行一段命令，默认是/bin/bash<br />格式：run command 或者 run [“command”, “param1”, “param”]<br /><strong>run对docker容器造成的改变会反映到创建的镜像上</strong></td>
+</tr>
+<tr>
+<td>cmd</td>
+<td>容器启动命令</td>
+<td>提供run容器时候的默认命令，和entrypoint配合使用<br />格式：cmd command param1 param2 或者cmd [“command”, “param1”, “param2”]<br />只有最后一个生效（一个dockerfile只有一个cmd）</td>
+</tr>
+<tr>
+<td>entrypoint</td>
+<td>入口</td>
+<td>一般在制作一些执行就关闭的容器中使用</td>
+</tr>
+<tr>
+<td>copy</td>
+<td>复制文件</td>
+<td>build时，复制文件到image中</td>
+</tr>
+<tr>
+<td>add</td>
+<td>添加文件</td>
+<td>build时，添加文件到image中<br />不仅仅局限于当前build上下文，可以来源于远程服务</td>
+</tr>
+<tr>
+<td>env</td>
+<td>环境变量</td>
+<td>指定build时候的环境变量<br />可以在启动的容器时，通过-e覆盖<br />格式：env name=value</td>
+</tr>
+<tr>
+<td>arg</td>
+<td>构建参数</td>
+<td>只在构建时候使用的参数<br />env相同名字的变量会覆盖arg的同名变量</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>定义外部可以挂载的数据卷</td>
+<td>指定build的image哪些目录可以启动的时候挂载到文件系统中<br />启动容器时，使用-v绑定 <br />格式：volume [“目录”]</td>
+</tr>
+<tr>
+<td>expose</td>
+<td>暴露端口</td>
+<td>定义容器运行时候监听的端口<br />启动容器时使用-p来绑定暴露端口<br />格式：expose 8080或者expose 8080/udp</td>
+</tr>
+<tr>
+<td>workdir</td>
+<td>工作目录</td>
+<td>指定容器内部的工作目录，如果没有创建则自动创建，如果指定/使用的时绝对地址，如果不是/开头那么是在上一条workdir的路径的相对地址<br />主要为run、cmd、entrypoint、copy、add指定工作目录</td>
+</tr>
+<tr>
+<td>user</td>
+<td>指定执行用户</td>
+<td>指定build或者启动的时候，用户在run cmd entrypoint执行的时候的用户<br /></td>
+</tr>
+<tr>
+<td>healthcheck</td>
+<td>健康检查</td>
+<td>指定监测当前容器的健康监测的命令，基本没用，通常应用本身有健康监测机制</td>
+</tr>
+<tr>
+<td>onbuild</td>
+<td>触发器</td>
+<td>当执行from完成之后会执行onbuild的命令<br />不影响当前镜像，用处不大</td>
+</tr>
+<tr>
+<td>stopsignal</td>
+<td>发送信号量到宿主机</td>
+<td>该指令设置将发送到容器的系统调用信号以退出</td>
+</tr>
+<tr>
+<td>shell</td>
+<td>指定执行脚本的shell</td>
+<td>指定run cmd entrypoint 执行命令的时候 使用的shell</td>
+</tr>
+</tbody></table>
+<ul>
+<li>workdir区别于docker build最后的path地址，前者指的时<strong>容器内的工作目录</strong>，后者是指镜像在构建过程中<strong>对主机中的资源操作时的上下文环境</strong></li>
+<li>cmd和entrypoint区别<ul>
+<li>cmd：指定这个容器启动时候要运行的命令，只有最后一个会生效，可替代</li>
+<li>entrypoint：指定这个容器启动时候要运行的命令，可以追加命令</li>
+</ul>
+</li>
+</ul>
+<h3 id="Dockerfile案例"><a href="#Dockerfile案例" class="headerlink" title="Dockerfile案例"></a>Dockerfile案例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">FROM centos:7						<span class="comment"># 设置镜像使用的基础镜像</span></span><br><span class="line">MAINTAINER lixingze&lt;lixingzee@gmail.com&gt;</span><br><span class="line"></span><br><span class="line">ENV MYPATH /user/<span class="built_in">local</span></span><br><span class="line">WORKDIR <span class="variable">$MYPATH</span>						<span class="comment"># docker run之后的工作目录</span></span><br><span class="line"></span><br><span class="line">RUN yum -y install vim				<span class="comment"># 安装vim到镜像中</span></span><br><span class="line">RUN yum -y install net-tools</span><br><span class="line"></span><br><span class="line">EXPOSE 80</span><br><span class="line"></span><br><span class="line">CMD <span class="built_in">echo</span> <span class="variable">$MYPATH</span></span><br><span class="line">CMD <span class="built_in">echo</span> <span class="string">&quot;-----end-----&quot;</span></span><br><span class="line">CMD /bin/bash</span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker网路"><a href="#Docker网路" class="headerlink" title="Docker网路"></a>Docker网路</h2><p>容器之间可以互相ping通。</p>
+<p>所有容器不指定网络情况下，都是docker0路由的，docker会给我们容器分配一个默认可用ip地址。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ip和网卡</span></span><br><span class="line">ip addr		<span class="comment"># 查看容器的内部网卡、ip地址（需要iproute2工具）</span></span><br><span class="line">或</span><br><span class="line">ifconfig	<span class="comment"># 查看容器的内部网卡、ip地址（需要net-tools工具）</span></span><br><span class="line"><span class="comment"># 如果命令找不到，安装net-tools、iproute2、iputils-ping（可以使用ping命令）</span></span><br></pre></td></tr></table></figure>
+
+<p>每个容器带来的网卡都是一对一对的，只要删除容器，对应网桥一对就没了。</p>
+<p>docker中所有网络接口都是虚拟的，虚拟的转发效率高！（内网传递文件）</p>
+<p>docker使用的时Linux的桥接，宿主机中是一个docker同期的网桥docker0。</p>
+<p><strong>docker0特点，默认，容器名不能访问， –link可以打通连接！（单向的，本质上在容器的hosts中增加了一个代理：<code>172.17.0.3 tomcat02 56140c84bab0</code>）</strong></p>
+<p>所以，需要<strong>自定义网络！不使用Docker0！</strong></p>
+<h3 id="自定义网络"><a href="#自定义网络" class="headerlink" title="自定义网络"></a>自定义网络</h3><p>网络模式：</p>
+<ul>
+<li>bridge：桥接模式，docker默认方式，自定义的网络也是bridge模式</li>
+<li>none：不配置网络</li>
+<li>host：和宿主机共享网络</li>
+<li>container：容器网络联通（用的很好，局限大）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看</span></span><br><span class="line">docker network ls		<span class="comment"># 查看所有网络</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 例</span></span><br><span class="line">docker run -d -P --name tomcat01 tomcat</span><br><span class="line">docker run -d -P --name tomcat01 --net bridge tomcat		<span class="comment"># 默认就是bridge，而这个bridge就代表的docker0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义一个网络</span></span><br><span class="line">docker network create --driver 网络模式 --subnet 子网的网络号/子网掩码 --gateway 网关设置 网络名称			<span class="comment"># 创建一个自定义网络，指定网络模式、网络地址规定、网关地址、网络名称</span></span><br><span class="line">docker network create --driver bridge --subnet 192.168.0.0/16 --gateway 192.168.0.1 mynet</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动容器（指定网络）</span></span><br><span class="line">docker run -d -P --name 容器名称 --net 网络名称 镜像文件	<span class="comment"># 启动一个容器，指明自定义的网络名称（若不指定，则默认是docker0），就可以通过容器名字实现容器之间的互相访问</span></span><br><span class="line"></span><br><span class="line">docker network inspect 容器id</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p> <em>等接触到集群的时候再继续更新docker中集群的知识</em></p>
+</blockquote>
+
       
     </div>
     
@@ -332,13 +601,9 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a href="/2023/06/25/docker%E5%91%BD%E4%BB%A4/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -846,70 +1111,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-git pull和git push发生冲突" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2023/02/16/git%20pull%E5%92%8Cgit%20push%E5%8F%91%E7%94%9F%E5%86%B2%E7%AA%81/" class="article-date">
-      <time datetime="2023-02-16T01:37:42.000Z" itemprop="datePublished">2023-02-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/02/16/git%20pull%E5%92%8Cgit%20push%E5%8F%91%E7%94%9F%E5%86%B2%E7%AA%81/">git pull和git push发生冲突</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ul>
-<li>git pull发生冲突：首先 git pull = git fetch + git merge，所有只要执行git pull即可（在此之前，需要将有冲突的文件执行git add . 和 git commit -m “备注”，该命令也为了保存自己做了哪些修改）；然后比较不同之处，手动进行最终修改即可。</li>
-<li>git push冲突：首先执行git pull，合并后，手动修改，决定最终要留的内容版本，然后重新执行git add . 和git commit -m “备注”</li>
-<li>如果时git push，还可以考虑使用git pull –rebase进行变基，来强行将远程仓库的内容换到本地工作区。</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li></ul>
     </div>
 
       

@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>23种设计模式（0）-总览</title>
+    <url>/2021/10/20/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%880%EF%BC%89-%E6%80%BB%E8%A7%88/</url>
+    <content><![CDATA[<h2 id="设计模式的分类"><a href="#设计模式的分类" class="headerlink" title="设计模式的分类"></a>设计模式的分类</h2><span id="more"></span>
+
+<p>总体来说，设计模式分为三大类：</p>
+<p><strong>创建型模式，共五种：</strong>工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式</p>
+<p><strong>结构型模式，共七种：</strong>适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式</p>
+<p><strong>行为性模式，共十一种：</strong>策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。</p>
+]]></content>
+      <tags>
+        <tag>设计模式</tag>
+        <tag>设计模式总览</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>23种设计模式（1）-单例模式</title>
     <url>/2021/10/24/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%881%EF%BC%89-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><span id="more"></span>
@@ -36,21 +51,6 @@
         <tag>同步锁</tag>
         <tag>反射</tag>
         <tag>enum枚举</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>23种设计模式（0）-总览</title>
-    <url>/2021/10/20/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%880%EF%BC%89-%E6%80%BB%E8%A7%88/</url>
-    <content><![CDATA[<h2 id="设计模式的分类"><a href="#设计模式的分类" class="headerlink" title="设计模式的分类"></a>设计模式的分类</h2><span id="more"></span>
-
-<p>总体来说，设计模式分为三大类：</p>
-<p><strong>创建型模式，共五种：</strong>工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式</p>
-<p><strong>结构型模式，共七种：</strong>适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式</p>
-<p><strong>行为性模式，共十一种：</strong>策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。</p>
-]]></content>
-      <tags>
-        <tag>设计模式</tag>
-        <tag>设计模式总览</tag>
       </tags>
   </entry>
   <entry>
@@ -372,6 +372,23 @@
       </tags>
   </entry>
   <entry>
+    <title>JAVA中UDP和TCP协议的简单使用流程</title>
+    <url>/2021/08/31/JAVA%E4%B8%ADUDP%E5%92%8CTCP%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="JAVA中UDP和TCP协议的简单使用"><a href="#JAVA中UDP和TCP协议的简单使用" class="headerlink" title="JAVA中UDP和TCP协议的简单使用"></a>JAVA中UDP和TCP协议的简单使用</h2><span id="more"></span>
+
+<p><img src="https://i.loli.net/2021/08/31/zVGoNJrIRnCtUDB.png" alt="image-20210831120154422"></p>
+<p><img src="https://i.loli.net/2021/08/31/eSj6trpk78V9IaT.png" alt="image-20210831120308018"></p>
+<p><img src="https://i.loli.net/2021/08/31/DzV4XUWLlkpCf82.png" alt="image-20210831120224998"></p>
+]]></content>
+      <tags>
+        <tag>TCP</tag>
+        <tag>Socket</tag>
+        <tag>UDP</tag>
+        <tag>DatagramSocket</tag>
+        <tag>DatagramPacket</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JVM的位置和体系结构</title>
     <url>/2021/10/23/JVM%E7%9A%84%E4%BD%8D%E7%BD%AE%E5%92%8C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/</url>
     <content><![CDATA[<h2 id="JAV体系结构"><a href="#JAV体系结构" class="headerlink" title="JAV体系结构"></a>JAV体系结构</h2><span id="more"></span>
@@ -405,23 +422,6 @@
         <tag>JVM</tag>
         <tag>JVM体系结构</tag>
         <tag>内存分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA中UDP和TCP协议的简单使用流程</title>
-    <url>/2021/08/31/JAVA%E4%B8%ADUDP%E5%92%8CTCP%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="JAVA中UDP和TCP协议的简单使用"><a href="#JAVA中UDP和TCP协议的简单使用" class="headerlink" title="JAVA中UDP和TCP协议的简单使用"></a>JAVA中UDP和TCP协议的简单使用</h2><span id="more"></span>
-
-<p><img src="https://i.loli.net/2021/08/31/zVGoNJrIRnCtUDB.png" alt="image-20210831120154422"></p>
-<p><img src="https://i.loli.net/2021/08/31/eSj6trpk78V9IaT.png" alt="image-20210831120308018"></p>
-<p><img src="https://i.loli.net/2021/08/31/DzV4XUWLlkpCf82.png" alt="image-20210831120224998"></p>
-]]></content>
-      <tags>
-        <tag>TCP</tag>
-        <tag>Socket</tag>
-        <tag>UDP</tag>
-        <tag>DatagramSocket</tag>
-        <tag>DatagramPacket</tag>
       </tags>
   </entry>
   <entry>
@@ -645,28 +645,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux解、压缩命令</title>
-    <url>/2022/12/31/Linux%E8%A7%A3%E3%80%81%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h2 id="内置tar命令"><a href="#内置tar命令" class="headerlink" title="内置tar命令"></a>内置tar命令</h2><span id="more"></span>
-
-<p>linux压缩命令一般可用tar命令，因为tar属于linux系统内置的命令，所以无需额外安装直接可用。</p>
-<h3 id="tar命令参数说明"><a href="#tar命令参数说明" class="headerlink" title="tar命令参数说明"></a>tar命令参数说明</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-c: 建立压缩档案</span><br><span class="line">-x：解压</span><br><span class="line">-t：查看内容</span><br><span class="line">-r：向压缩归档文件末尾追加文件</span><br><span class="line">-u：更新原压缩包中的文件</span><br><span class="line"></span><br><span class="line">以上5个是独立的命令，压缩解压都要用到其中1个，可以和别的命令连用但只能用其中1个。</span><br></pre></td></tr></table></figure>
-
-<h3 id="下面的参数是根据需要在压缩或解压档案时可选的"><a href="#下面的参数是根据需要在压缩或解压档案时可选的" class="headerlink" title="下面的参数是根据需要在压缩或解压档案时可选的"></a>下面的参数是根据需要在压缩或解压档案时可选的</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-z：有gzip属性的</span><br><span class="line">-j：有bz2属性的</span><br><span class="line">-Z：有compress属性的</span><br><span class="line">-v：显示所有过程</span><br><span class="line">-O：将文件解开到标准输出 </span><br></pre></td></tr></table></figure>
-
-<h3 id="下面的参数-f是必须的："><a href="#下面的参数-f是必须的：" class="headerlink" title="下面的参数-f是必须的："></a>下面的参数-f是必须的：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-f: 使用档案名字，这个参数要放在最后，后面只能接档案名（文件名）。</span><br></pre></td></tr></table></figure>
-<p>另外，linux的压缩命令可用的还有zip、rar、7z等等，但一般要先进行安装对应的软件。</p>
-<h2 id="常用示例"><a href="#常用示例" class="headerlink" title="常用示例"></a>常用示例</h2><h3 id="tar-打包压缩文件命令："><a href="#tar-打包压缩文件命令：" class="headerlink" title="tar 打包压缩文件命令："></a>tar 打包压缩文件命令：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar zcvf test.zip.tar  test.png</span><br></pre></td></tr></table></figure>
-
-<h3 id="tar-打包压缩文件夹命令："><a href="#tar-打包压缩文件夹命令：" class="headerlink" title="tar 打包压缩文件夹命令："></a>tar 打包压缩文件夹命令：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar zcvf test.zip.tar  test&#x2F;</span><br></pre></td></tr></table></figure>
-
-<h3 id="tar-压缩文件解压："><a href="#tar-压缩文件解压：" class="headerlink" title="tar 压缩文件解压："></a>tar 压缩文件解压：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar zxvf test.zip.tar</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Lambda表达式</title>
     <url>/2021/08/31/Lamda%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
     <content><![CDATA[<h2 id="函数式接口的定义"><a href="#函数式接口的定义" class="headerlink" title="函数式接口的定义"></a>函数式接口的定义</h2><span id="more"></span>
@@ -694,6 +672,28 @@
       <tags>
         <tag>函数式接口</tag>
         <tag>lambda表达式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux解、压缩命令</title>
+    <url>/2022/12/31/Linux%E8%A7%A3%E3%80%81%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="内置tar命令"><a href="#内置tar命令" class="headerlink" title="内置tar命令"></a>内置tar命令</h2><span id="more"></span>
+
+<p>linux压缩命令一般可用tar命令，因为tar属于linux系统内置的命令，所以无需额外安装直接可用。</p>
+<h3 id="tar命令参数说明"><a href="#tar命令参数说明" class="headerlink" title="tar命令参数说明"></a>tar命令参数说明</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-c: 建立压缩档案</span><br><span class="line">-x：解压</span><br><span class="line">-t：查看内容</span><br><span class="line">-r：向压缩归档文件末尾追加文件</span><br><span class="line">-u：更新原压缩包中的文件</span><br><span class="line"></span><br><span class="line">以上5个是独立的命令，压缩解压都要用到其中1个，可以和别的命令连用但只能用其中1个。</span><br></pre></td></tr></table></figure>
+
+<h3 id="下面的参数是根据需要在压缩或解压档案时可选的"><a href="#下面的参数是根据需要在压缩或解压档案时可选的" class="headerlink" title="下面的参数是根据需要在压缩或解压档案时可选的"></a>下面的参数是根据需要在压缩或解压档案时可选的</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-z：有gzip属性的</span><br><span class="line">-j：有bz2属性的</span><br><span class="line">-Z：有compress属性的</span><br><span class="line">-v：显示所有过程</span><br><span class="line">-O：将文件解开到标准输出 </span><br></pre></td></tr></table></figure>
+
+<h3 id="下面的参数-f是必须的："><a href="#下面的参数-f是必须的：" class="headerlink" title="下面的参数-f是必须的："></a>下面的参数-f是必须的：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-f: 使用档案名字，这个参数要放在最后，后面只能接档案名（文件名）。</span><br></pre></td></tr></table></figure>
+<p>另外，linux的压缩命令可用的还有zip、rar、7z等等，但一般要先进行安装对应的软件。</p>
+<h2 id="常用示例"><a href="#常用示例" class="headerlink" title="常用示例"></a>常用示例</h2><h3 id="tar-打包压缩文件命令："><a href="#tar-打包压缩文件命令：" class="headerlink" title="tar 打包压缩文件命令："></a>tar 打包压缩文件命令：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar zcvf test.zip.tar  test.png</span><br></pre></td></tr></table></figure>
+
+<h3 id="tar-打包压缩文件夹命令："><a href="#tar-打包压缩文件夹命令：" class="headerlink" title="tar 打包压缩文件夹命令："></a>tar 打包压缩文件夹命令：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar zcvf test.zip.tar  test&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h3 id="tar-压缩文件解压："><a href="#tar-压缩文件解压：" class="headerlink" title="tar 压缩文件解压："></a>tar 压缩文件解压：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tar zxvf test.zip.tar</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -785,6 +785,21 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
+    <title>OkHttp3爬虫+FastJson解析json+Jsoup解析Document节点+文本写入文件</title>
+    <url>/2022/06/06/OkHttp3%E7%88%AC%E8%99%AB-FastJson%E8%A7%A3%E6%9E%90json-Jsoup%E8%A7%A3%E6%9E%90Document%E8%8A%82%E7%82%B9+%E6%96%87%E6%9C%AC%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<h2 id="爬虫-JSON-Document-文件写入"><a href="#爬虫-JSON-Document-文件写入" class="headerlink" title="爬虫 + JSON + Document + 文件写入"></a>爬虫 + JSON + Document + 文件写入</h2><span id="more"></span>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String url = <span class="string">&quot;www.baidu.com&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用okhttp3中的OKHttpClient请求，获取到Response（网络请求）</span></span><br><span class="line"><span class="comment">//注意①：Okhttp中的请求头不允许有中文，解决方法：将含有中文的请求头信息进行编码</span></span><br><span class="line"><span class="comment">//注意②：如果Cookie太长，直接通过复制值粘贴，则可能出现复制不全的情况，导致网络请求失败或者错误</span></span><br><span class="line">OkHttpClient httpClient = <span class="keyword">new</span> OkHttpClient();</span><br><span class="line">Request request = <span class="keyword">new</span> Request.Builder()</span><br><span class="line">    .addHeader(<span class="string">&quot;User-Agent&quot;</span>, <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36&quot;</span>)</span><br><span class="line">    .url(url)</span><br><span class="line">    .build();</span><br><span class="line">Response response = httpClient.newCall(request).execute();</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用alibaba的fastjson进行字符串和JSON格式的转换（JSON格式）</span></span><br><span class="line"><span class="comment">//注意：如果请求到的是json格式，若不先转为json格式，再取相对应的xml内容，则字符串将会一直是Unicode编码（即看不到utf-8的中文）</span></span><br><span class="line">String responseString = response.body().string();</span><br><span class="line">System.out.println(responseString);</span><br><span class="line">JSONObject jsonObject = JSONObject.parseObject(responseString, JSONObject.class);</span><br><span class="line">JSONObject jsonObject1 = jsonObject.getJSONObject(<span class="string">&quot;html&quot;</span>);</span><br><span class="line">String html = jsonObject1.getString(<span class="string">&quot;list&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//将获取到的内容（字符类型）写进文件中</span></span><br><span class="line">File file = <span class="keyword">new</span> File(<span class="string">&quot;C:\\Users\\用户名\\Desktop\\新建文本文档.txt&quot;</span>);</span><br><span class="line">FileOutputStream fileOutputStream = <span class="keyword">new</span> FileOutputStream(file);</span><br><span class="line">fileOutputStream.write(html.getBytes());</span><br><span class="line"><span class="comment">//关闭文件写入流</span></span><br><span class="line">fileOutputStream.close();</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用Jsoup将字符串转为Document格式（XML格式），方便获取到指定的节点标签的内容</span></span><br><span class="line">Document document = Jsoup.parse(html);</span><br><span class="line">Elements imgs = document.getElementsByTag(<span class="string">&quot;h3&quot;</span>);</span><br><span class="line">Element element = imgs.get(<span class="number">0</span>);                  <span class="comment">//获取elements中第一个element元素</span></span><br><span class="line">System.out.println(element.text());             <span class="comment">//得到标签中的文本内容</span></span><br><span class="line">System.out.println(element.nodeName());         <span class="comment">//得到标签名</span></span><br><span class="line">System.out.println(element.tagName());          <span class="comment">//得到标签名</span></span><br><span class="line">element.tagName(<span class="string">&quot;lry&quot;</span>);     <span class="comment">//修改元素的标签名</span></span><br><span class="line">System.out.println(element.isBlock());          <span class="comment">//测试元素是否是块级元素</span></span><br><span class="line">System.out.println(element.parent());           <span class="comment">//得到父节点</span></span><br><span class="line">System.out.println(element.parents());          <span class="comment">//得到元素的父类和祖先节点直到文档的根。返回元素最接近的一个父类的堆栈</span></span><br><span class="line">System.out.println(element.children());         <span class="comment">//得到子元素集</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>爬虫</tag>
+        <tag>Json解析</tag>
+        <tag>Document解析</tag>
+        <tag>写文件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Node和npm的配置</title>
     <url>/2022/04/24/Node%E5%92%8Cnpm%E7%9A%84%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="配置下载地址和命令、依赖引用路径"><a href="#配置下载地址和命令、依赖引用路径" class="headerlink" title="配置下载地址和命令、依赖引用路径"></a>配置下载地址和命令、依赖引用路径</h2><span id="more"></span>
@@ -806,21 +821,6 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
-    <title>OkHttp3爬虫+FastJson解析json+Jsoup解析Document节点+文本写入文件</title>
-    <url>/2022/06/06/OkHttp3%E7%88%AC%E8%99%AB-FastJson%E8%A7%A3%E6%9E%90json-Jsoup%E8%A7%A3%E6%9E%90Document%E8%8A%82%E7%82%B9+%E6%96%87%E6%9C%AC%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<h2 id="爬虫-JSON-Document-文件写入"><a href="#爬虫-JSON-Document-文件写入" class="headerlink" title="爬虫 + JSON + Document + 文件写入"></a>爬虫 + JSON + Document + 文件写入</h2><span id="more"></span>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String url = <span class="string">&quot;www.baidu.com&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用okhttp3中的OKHttpClient请求，获取到Response（网络请求）</span></span><br><span class="line"><span class="comment">//注意①：Okhttp中的请求头不允许有中文，解决方法：将含有中文的请求头信息进行编码</span></span><br><span class="line"><span class="comment">//注意②：如果Cookie太长，直接通过复制值粘贴，则可能出现复制不全的情况，导致网络请求失败或者错误</span></span><br><span class="line">OkHttpClient httpClient = <span class="keyword">new</span> OkHttpClient();</span><br><span class="line">Request request = <span class="keyword">new</span> Request.Builder()</span><br><span class="line">    .addHeader(<span class="string">&quot;User-Agent&quot;</span>, <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36&quot;</span>)</span><br><span class="line">    .url(url)</span><br><span class="line">    .build();</span><br><span class="line">Response response = httpClient.newCall(request).execute();</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用alibaba的fastjson进行字符串和JSON格式的转换（JSON格式）</span></span><br><span class="line"><span class="comment">//注意：如果请求到的是json格式，若不先转为json格式，再取相对应的xml内容，则字符串将会一直是Unicode编码（即看不到utf-8的中文）</span></span><br><span class="line">String responseString = response.body().string();</span><br><span class="line">System.out.println(responseString);</span><br><span class="line">JSONObject jsonObject = JSONObject.parseObject(responseString, JSONObject.class);</span><br><span class="line">JSONObject jsonObject1 = jsonObject.getJSONObject(<span class="string">&quot;html&quot;</span>);</span><br><span class="line">String html = jsonObject1.getString(<span class="string">&quot;list&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//将获取到的内容（字符类型）写进文件中</span></span><br><span class="line">File file = <span class="keyword">new</span> File(<span class="string">&quot;C:\\Users\\用户名\\Desktop\\新建文本文档.txt&quot;</span>);</span><br><span class="line">FileOutputStream fileOutputStream = <span class="keyword">new</span> FileOutputStream(file);</span><br><span class="line">fileOutputStream.write(html.getBytes());</span><br><span class="line"><span class="comment">//关闭文件写入流</span></span><br><span class="line">fileOutputStream.close();</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用Jsoup将字符串转为Document格式（XML格式），方便获取到指定的节点标签的内容</span></span><br><span class="line">Document document = Jsoup.parse(html);</span><br><span class="line">Elements imgs = document.getElementsByTag(<span class="string">&quot;h3&quot;</span>);</span><br><span class="line">Element element = imgs.get(<span class="number">0</span>);                  <span class="comment">//获取elements中第一个element元素</span></span><br><span class="line">System.out.println(element.text());             <span class="comment">//得到标签中的文本内容</span></span><br><span class="line">System.out.println(element.nodeName());         <span class="comment">//得到标签名</span></span><br><span class="line">System.out.println(element.tagName());          <span class="comment">//得到标签名</span></span><br><span class="line">element.tagName(<span class="string">&quot;lry&quot;</span>);     <span class="comment">//修改元素的标签名</span></span><br><span class="line">System.out.println(element.isBlock());          <span class="comment">//测试元素是否是块级元素</span></span><br><span class="line">System.out.println(element.parent());           <span class="comment">//得到父节点</span></span><br><span class="line">System.out.println(element.parents());          <span class="comment">//得到元素的父类和祖先节点直到文档的根。返回元素最接近的一个父类的堆栈</span></span><br><span class="line">System.out.println(element.children());         <span class="comment">//得到子元素集</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>爬虫</tag>
-        <tag>Json解析</tag>
-        <tag>Document解析</tag>
-        <tag>写文件</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Typora利用PicGo配置Gitee图床</title>
     <url>/2022/05/03/PicGo%E4%B8%AD%E7%9A%84Gitee%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="Gitee图床配置"><a href="#Gitee图床配置" class="headerlink" title="Gitee图床配置"></a>Gitee图床配置</h2><span id="more"></span>
@@ -834,28 +834,6 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 ]]></content>
       <tags>
         <tag>Typora图床配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Promise在前端的作用</title>
-    <url>/2021/10/21/Promise%E5%9C%A8%E5%89%8D%E7%AB%AF%E7%9A%84%E4%BD%9C%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="Promise的执行规则"><a href="#Promise的执行规则" class="headerlink" title="Promise的执行规则"></a>Promise的执行规则</h2><span id="more"></span>
-
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;  </span><br><span class="line">                <span class="comment">//resolve(&quot;第一个参数&quot;);     </span></span><br><span class="line">                reject(<span class="string">&quot;第二个参数&quot;</span>);       </span><br><span class="line">            &#125;, <span class="number">2000</span>)</span><br><span class="line">        &#125;).then(<span class="function"><span class="params">val</span> =&gt;</span> &#123; </span><br><span class="line">    		<span class="built_in">console</span>.log(<span class="string">&quot;执行了resolve&quot;</span>)</span><br><span class="line">        &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&quot;执行了reject&quot;</span>);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h3><p><strong>读懂代码如何执行，就懂了promise的使用了</strong></p>
-<p><strong>一定要看懂它们！！！</strong></p>
-<p><strong>一定要看懂它们！！！</strong></p>
-<p><strong>一定要看懂它们！！！</strong></p>
-<p>Promise的构造函数中，是一个函数（暂时本文私底下就叫它“小涵“吧），这个函数也需要两个参数（一般命名为resolve、reject），resolve和reject这两个参数也是函数。<strong>巧妙之处就在于：</strong>当Promise构造函数的参数”小涵“中执行了resolve（可传参）这个函数，就会执行Promise后面的then函数，同时resolve的实参，会传给then中形参；同理，如果执行了reject（可传参）函数，就会执行Promise后面的catch函数，同时reject的实参，会传给catch中的形参。</p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>根据上面分析的promise的特点，前端通常会用它辅助Axios网络请求一块使用。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      axios(&#123;	<span class="comment">//在Promise的内部可以执行一个axios的一个网络请求，然后根据axios的执行结果，选择执行resolve和reject函数</span></span><br><span class="line">            url: url</span><br><span class="line">            method: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">              resolve(res.data);	<span class="comment">//请求成功，执行resolve</span></span><br><span class="line">              <span class="comment">// console.log(res);</span></span><br><span class="line">          &#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">              reject(error);		<span class="comment">//请求失败，执行reject</span></span><br><span class="line">              <span class="comment">// console.log(error);</span></span><br><span class="line">          &#125;);</span><br><span class="line">    &#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    	<span class="built_in">console</span>.log(<span class="string">&quot;执行成功，请求结果为：&quot;</span> + data);</span><br><span class="line">	&#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    	<span class="built_in">console</span>.log(<span class="string">&quot;执行失败，失败信息为：&quot;</span> + err);</span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>在执行axios请求的时候，我们一般还会在Promise内部，在加一层setTimeOut（function（）{}，1000），将axios请求的代码，放到setTimeOut中去。</p>
-]]></content>
-      <tags>
-        <tag>Promise的使用</tag>
-        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -1097,6 +1075,28 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
+    <title>Promise在前端的作用</title>
+    <url>/2021/10/21/Promise%E5%9C%A8%E5%89%8D%E7%AB%AF%E7%9A%84%E4%BD%9C%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="Promise的执行规则"><a href="#Promise的执行规则" class="headerlink" title="Promise的执行规则"></a>Promise的执行规则</h2><span id="more"></span>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;  </span><br><span class="line">                <span class="comment">//resolve(&quot;第一个参数&quot;);     </span></span><br><span class="line">                reject(<span class="string">&quot;第二个参数&quot;</span>);       </span><br><span class="line">            &#125;, <span class="number">2000</span>)</span><br><span class="line">        &#125;).then(<span class="function"><span class="params">val</span> =&gt;</span> &#123; </span><br><span class="line">    		<span class="built_in">console</span>.log(<span class="string">&quot;执行了resolve&quot;</span>)</span><br><span class="line">        &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&quot;执行了reject&quot;</span>);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h3><p><strong>读懂代码如何执行，就懂了promise的使用了</strong></p>
+<p><strong>一定要看懂它们！！！</strong></p>
+<p><strong>一定要看懂它们！！！</strong></p>
+<p><strong>一定要看懂它们！！！</strong></p>
+<p>Promise的构造函数中，是一个函数（暂时本文私底下就叫它“小涵“吧），这个函数也需要两个参数（一般命名为resolve、reject），resolve和reject这两个参数也是函数。<strong>巧妙之处就在于：</strong>当Promise构造函数的参数”小涵“中执行了resolve（可传参）这个函数，就会执行Promise后面的then函数，同时resolve的实参，会传给then中形参；同理，如果执行了reject（可传参）函数，就会执行Promise后面的catch函数，同时reject的实参，会传给catch中的形参。</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>根据上面分析的promise的特点，前端通常会用它辅助Axios网络请求一块使用。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      axios(&#123;	<span class="comment">//在Promise的内部可以执行一个axios的一个网络请求，然后根据axios的执行结果，选择执行resolve和reject函数</span></span><br><span class="line">            url: url</span><br><span class="line">            method: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">              resolve(res.data);	<span class="comment">//请求成功，执行resolve</span></span><br><span class="line">              <span class="comment">// console.log(res);</span></span><br><span class="line">          &#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">              reject(error);		<span class="comment">//请求失败，执行reject</span></span><br><span class="line">              <span class="comment">// console.log(error);</span></span><br><span class="line">          &#125;);</span><br><span class="line">    &#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    	<span class="built_in">console</span>.log(<span class="string">&quot;执行成功，请求结果为：&quot;</span> + data);</span><br><span class="line">	&#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    	<span class="built_in">console</span>.log(<span class="string">&quot;执行失败，失败信息为：&quot;</span> + err);</span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>在执行axios请求的时候，我们一般还会在Promise内部，在加一层setTimeOut（function（）{}，1000），将axios请求的代码，放到setTimeOut中去。</p>
+]]></content>
+      <tags>
+        <tag>Promise的使用</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SDK、Language Level和Compiler version</title>
     <url>/2022/02/26/SDK%E3%80%81Language%20Level%E5%92%8CCompiler%20version/</url>
     <content><![CDATA[<h2 id="SDK、Language-Level是什么？"><a href="#SDK、Language-Level是什么？" class="headerlink" title="SDK、Language Level是什么？"></a>SDK、Language Level是什么？</h2><span id="more"></span>
@@ -1135,6 +1135,31 @@ version of the Java Runtime only recognizes class file versions up to 55.0
         <tag>SSM</tag>
         <tag>maven依赖包</tag>
         <tag>maven导入资源</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Servlet文件上传</title>
+    <url>/2021/10/23/Servlet%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</url>
+    <content><![CDATA[<h2 id="Servlet实现文件上传"><a href="#Servlet实现文件上传" class="headerlink" title="Servlet实现文件上传"></a>Servlet实现文件上传</h2><span id="more"></span>
+
+<p>由于步骤相对比较固定，所以本文只记录核心步骤，其他步骤一般可以想出来，想不出来去翻这一篇博客：<a href="https://www.cnblogs.com/th11/p/15102759.html">servlet-文件上传-狂神笔记 - 你我不在年少 - 博客园 (cnblogs.com)</a></p>
+<p><img src="https://i.loli.net/2021/10/23/vRdYaOitK4ADVuP.png" alt="Servlet实现文件上传.drawio"></p>
+<h3 id="步骤一：导入包"><a href="#步骤一：导入包" class="headerlink" title="步骤一：导入包"></a>步骤一：导入包</h3><p>①commons-io依赖</p>
+<p>②commons-fileupload依赖</p>
+<p><img src="https://i.loli.net/2021/10/23/GNUp3yojSxtHuez.png" alt="image-20211023120138825"></p>
+<h3 id="步骤二：获取DiskFileItemFactory对象"><a href="#步骤二：获取DiskFileItemFactory对象" class="headerlink" title="步骤二：获取DiskFileItemFactory对象"></a>步骤二：获取DiskFileItemFactory对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取DiskFileItemFactory对象</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> tempfile 文件临时存储路径</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> DiskFileItemFactory <span class="title">getDiskFileItemFactory</span><span class="params">(File tempfile)</span> </span>&#123;</span><br><span class="line">    DiskFileItemFactory factory = <span class="keyword">new</span> DiskFileItemFactory();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//文件大于2M，由内存转存到临时文件中</span></span><br><span class="line">    factory.setSizeThreshold(<span class="number">1024</span> * <span class="number">1024</span> * <span class="number">2</span>);</span><br><span class="line">    <span class="comment">//临时文件存储路径</span></span><br><span class="line">    factory.setRepository(tempfile);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> factory;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤三：获取ServletFileUpload对象"><a href="#步骤三：获取ServletFileUpload对象" class="headerlink" title="步骤三：获取ServletFileUpload对象"></a>步骤三：获取ServletFileUpload对象</h3><p><strong>构造方法中可以传入步骤二中获取到的DiskFileItemFactory对象</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 获取ServletFileUpload对象</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> factory</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ServletFileUpload <span class="title">getServletFileUpload</span><span class="params">(DiskFileItemFactory factory)</span> </span>&#123;</span><br><span class="line">    ServletFileUpload upload = <span class="keyword">new</span> ServletFileUpload(factory);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//读取单个部分标题时，设置编码格式</span></span><br><span class="line">    upload.setHeaderEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">    <span class="comment">//单个文件最大20M</span></span><br><span class="line">    upload.setFileSizeMax(<span class="number">1024</span> * <span class="number">1024</span> * <span class="number">100</span>);</span><br><span class="line">    <span class="comment">//最多上传20M</span></span><br><span class="line">    upload.setSizeMax(<span class="number">1024</span> * <span class="number">1024</span> * <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//监听上传进程</span></span><br><span class="line">    upload.setProgressListener(<span class="keyword">new</span> ProgressListener() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">long</span> pBytesRead, <span class="keyword">long</span> pContentLength, <span class="keyword">int</span> pItems)</span> </span>&#123;</span><br><span class="line">            <span class="comment">//计算百分比</span></span><br><span class="line">            <span class="comment">//                double percentResult = (pBytesRead / (double) pContentLength);</span></span><br><span class="line">            System.out.println(<span class="string">&quot;总大小：&quot;</span> + pContentLength + <span class="string">&quot;    已上传&quot;</span> + pBytesRead);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> upload;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤三：解析请求，获取文件，返回结果"><a href="#步骤三：解析请求，获取文件，返回结果" class="headerlink" title="步骤三：解析请求，获取文件，返回结果"></a>步骤三：解析请求，获取文件，返回结果</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//解析请求并返回结果</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">parseUploadRequest</span><span class="params">(HttpServletRequest request, ServletFileUpload upload, String uploadPath)</span> <span class="keyword">throws</span> FileUploadException, IOException </span>&#123;</span><br><span class="line">    List&lt;FileItem&gt; fileItems = upload.parseRequest(request);</span><br><span class="line">    String msg = <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (FileItem fileItem : fileItems) &#123;</span><br><span class="line">        <span class="keyword">if</span> (fileItem.isFormField()) &#123;</span><br><span class="line">            <span class="comment">//如果是简单的表单字段，返回true；如果代表上传的文件，返回false</span></span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (fileItem.getName().trim().equals(<span class="string">&quot;&quot;</span>) || fileItem.getName() == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">//文件名不合乎规则</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//文件名</span></span><br><span class="line">                String uploadFileName = fileItem.getName();</span><br><span class="line">                System.out.println(<span class="string">&quot;uploadFileName&quot;</span> + uploadFileName);</span><br><span class="line"></span><br><span class="line">                <span class="comment">//一般uploadFileName是单纯的文件名，但有些浏览器也会把路径给带上去，所以这里要再过滤一下</span></span><br><span class="line">                <span class="comment">//lastindexof找不到返回-1</span></span><br><span class="line">                <span class="comment">//substring从下标0开始</span></span><br><span class="line">                String fileName = uploadFileName.substring(uploadFileName.lastIndexOf(<span class="string">&quot;/&quot;</span>) + <span class="number">1</span>);</span><br><span class="line">                System.out.println(<span class="string">&quot;fileName:&quot;</span> + fileName);</span><br><span class="line">                <span class="comment">//后缀名</span></span><br><span class="line">                String fileExtName = uploadFileName.substring(uploadFileName.lastIndexOf(<span class="string">&quot;.&quot;</span>) + <span class="number">1</span>);</span><br><span class="line">                System.out.println(<span class="string">&quot;fileExtName:&quot;</span> + fileExtName);</span><br><span class="line"></span><br><span class="line">                <span class="comment">//输出到服务器上</span></span><br><span class="line">                <span class="comment">//可能需要用到UUID</span></span><br><span class="line">                InputStream inputStream = fileItem.getInputStream();</span><br><span class="line">                <span class="comment">//                FileOutputStream fos = new FileOutputStream(uploadPath + &quot;/&quot; + fileName + &quot;.&quot; + fileExtName);</span></span><br><span class="line">                <span class="comment">//使用UUID确保文件名唯一性</span></span><br><span class="line">                String uuidStirng = UUID.randomUUID().toString();</span><br><span class="line">                FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(uploadPath + <span class="string">&quot;/&quot;</span> + uuidStirng + <span class="string">&quot;.&quot;</span> + fileExtName);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span> * <span class="number">1024</span>];</span><br><span class="line"></span><br><span class="line">                <span class="keyword">while</span> (inputStream.read(buffer) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    fos.write(buffer);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                fos.flush();</span><br><span class="line">                fos.close();</span><br><span class="line"></span><br><span class="line">                inputStream.close();</span><br><span class="line">                msg = <span class="string">&quot;文件上传成功&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        fileItem.delete();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> msg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>步骤相对固定。但其中还会有些许其他小技巧，如：获取文件名、借助UUID编号保持文件名唯一性。</p>
+]]></content>
+      <tags>
+        <tag>Servlet</tag>
+        <tag>文件上传</tag>
+        <tag>UUID</tag>
       </tags>
   </entry>
   <entry>
@@ -1203,31 +1228,6 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
-    <title>Servlet文件上传</title>
-    <url>/2021/10/23/Servlet%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</url>
-    <content><![CDATA[<h2 id="Servlet实现文件上传"><a href="#Servlet实现文件上传" class="headerlink" title="Servlet实现文件上传"></a>Servlet实现文件上传</h2><span id="more"></span>
-
-<p>由于步骤相对比较固定，所以本文只记录核心步骤，其他步骤一般可以想出来，想不出来去翻这一篇博客：<a href="https://www.cnblogs.com/th11/p/15102759.html">servlet-文件上传-狂神笔记 - 你我不在年少 - 博客园 (cnblogs.com)</a></p>
-<p><img src="https://i.loli.net/2021/10/23/vRdYaOitK4ADVuP.png" alt="Servlet实现文件上传.drawio"></p>
-<h3 id="步骤一：导入包"><a href="#步骤一：导入包" class="headerlink" title="步骤一：导入包"></a>步骤一：导入包</h3><p>①commons-io依赖</p>
-<p>②commons-fileupload依赖</p>
-<p><img src="https://i.loli.net/2021/10/23/GNUp3yojSxtHuez.png" alt="image-20211023120138825"></p>
-<h3 id="步骤二：获取DiskFileItemFactory对象"><a href="#步骤二：获取DiskFileItemFactory对象" class="headerlink" title="步骤二：获取DiskFileItemFactory对象"></a>步骤二：获取DiskFileItemFactory对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取DiskFileItemFactory对象</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> tempfile 文件临时存储路径</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> DiskFileItemFactory <span class="title">getDiskFileItemFactory</span><span class="params">(File tempfile)</span> </span>&#123;</span><br><span class="line">    DiskFileItemFactory factory = <span class="keyword">new</span> DiskFileItemFactory();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//文件大于2M，由内存转存到临时文件中</span></span><br><span class="line">    factory.setSizeThreshold(<span class="number">1024</span> * <span class="number">1024</span> * <span class="number">2</span>);</span><br><span class="line">    <span class="comment">//临时文件存储路径</span></span><br><span class="line">    factory.setRepository(tempfile);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> factory;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="步骤三：获取ServletFileUpload对象"><a href="#步骤三：获取ServletFileUpload对象" class="headerlink" title="步骤三：获取ServletFileUpload对象"></a>步骤三：获取ServletFileUpload对象</h3><p><strong>构造方法中可以传入步骤二中获取到的DiskFileItemFactory对象</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 获取ServletFileUpload对象</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> factory</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ServletFileUpload <span class="title">getServletFileUpload</span><span class="params">(DiskFileItemFactory factory)</span> </span>&#123;</span><br><span class="line">    ServletFileUpload upload = <span class="keyword">new</span> ServletFileUpload(factory);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//读取单个部分标题时，设置编码格式</span></span><br><span class="line">    upload.setHeaderEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">    <span class="comment">//单个文件最大20M</span></span><br><span class="line">    upload.setFileSizeMax(<span class="number">1024</span> * <span class="number">1024</span> * <span class="number">100</span>);</span><br><span class="line">    <span class="comment">//最多上传20M</span></span><br><span class="line">    upload.setSizeMax(<span class="number">1024</span> * <span class="number">1024</span> * <span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//监听上传进程</span></span><br><span class="line">    upload.setProgressListener(<span class="keyword">new</span> ProgressListener() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">long</span> pBytesRead, <span class="keyword">long</span> pContentLength, <span class="keyword">int</span> pItems)</span> </span>&#123;</span><br><span class="line">            <span class="comment">//计算百分比</span></span><br><span class="line">            <span class="comment">//                double percentResult = (pBytesRead / (double) pContentLength);</span></span><br><span class="line">            System.out.println(<span class="string">&quot;总大小：&quot;</span> + pContentLength + <span class="string">&quot;    已上传&quot;</span> + pBytesRead);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> upload;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="步骤三：解析请求，获取文件，返回结果"><a href="#步骤三：解析请求，获取文件，返回结果" class="headerlink" title="步骤三：解析请求，获取文件，返回结果"></a>步骤三：解析请求，获取文件，返回结果</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//解析请求并返回结果</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">parseUploadRequest</span><span class="params">(HttpServletRequest request, ServletFileUpload upload, String uploadPath)</span> <span class="keyword">throws</span> FileUploadException, IOException </span>&#123;</span><br><span class="line">    List&lt;FileItem&gt; fileItems = upload.parseRequest(request);</span><br><span class="line">    String msg = <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (FileItem fileItem : fileItems) &#123;</span><br><span class="line">        <span class="keyword">if</span> (fileItem.isFormField()) &#123;</span><br><span class="line">            <span class="comment">//如果是简单的表单字段，返回true；如果代表上传的文件，返回false</span></span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (fileItem.getName().trim().equals(<span class="string">&quot;&quot;</span>) || fileItem.getName() == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">//文件名不合乎规则</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//文件名</span></span><br><span class="line">                String uploadFileName = fileItem.getName();</span><br><span class="line">                System.out.println(<span class="string">&quot;uploadFileName&quot;</span> + uploadFileName);</span><br><span class="line"></span><br><span class="line">                <span class="comment">//一般uploadFileName是单纯的文件名，但有些浏览器也会把路径给带上去，所以这里要再过滤一下</span></span><br><span class="line">                <span class="comment">//lastindexof找不到返回-1</span></span><br><span class="line">                <span class="comment">//substring从下标0开始</span></span><br><span class="line">                String fileName = uploadFileName.substring(uploadFileName.lastIndexOf(<span class="string">&quot;/&quot;</span>) + <span class="number">1</span>);</span><br><span class="line">                System.out.println(<span class="string">&quot;fileName:&quot;</span> + fileName);</span><br><span class="line">                <span class="comment">//后缀名</span></span><br><span class="line">                String fileExtName = uploadFileName.substring(uploadFileName.lastIndexOf(<span class="string">&quot;.&quot;</span>) + <span class="number">1</span>);</span><br><span class="line">                System.out.println(<span class="string">&quot;fileExtName:&quot;</span> + fileExtName);</span><br><span class="line"></span><br><span class="line">                <span class="comment">//输出到服务器上</span></span><br><span class="line">                <span class="comment">//可能需要用到UUID</span></span><br><span class="line">                InputStream inputStream = fileItem.getInputStream();</span><br><span class="line">                <span class="comment">//                FileOutputStream fos = new FileOutputStream(uploadPath + &quot;/&quot; + fileName + &quot;.&quot; + fileExtName);</span></span><br><span class="line">                <span class="comment">//使用UUID确保文件名唯一性</span></span><br><span class="line">                String uuidStirng = UUID.randomUUID().toString();</span><br><span class="line">                FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(uploadPath + <span class="string">&quot;/&quot;</span> + uuidStirng + <span class="string">&quot;.&quot;</span> + fileExtName);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span> * <span class="number">1024</span>];</span><br><span class="line"></span><br><span class="line">                <span class="keyword">while</span> (inputStream.read(buffer) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    fos.write(buffer);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                fos.flush();</span><br><span class="line">                fos.close();</span><br><span class="line"></span><br><span class="line">                inputStream.close();</span><br><span class="line">                msg = <span class="string">&quot;文件上传成功&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        fileItem.delete();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> msg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>步骤相对固定。但其中还会有些许其他小技巧，如：获取文件名、借助UUID编号保持文件名唯一性。</p>
-]]></content>
-      <tags>
-        <tag>Servlet</tag>
-        <tag>文件上传</tag>
-        <tag>UUID</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>css设置div垂直水平居中</title>
     <url>/2021/12/23/css%E8%AE%BE%E7%BD%AEdiv%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/</url>
     <content><![CDATA[<h2 id="CSS设置div垂直水平居中"><a href="#CSS设置div垂直水平居中" class="headerlink" title="CSS设置div垂直水平居中"></a>CSS设置div垂直水平居中</h2><span id="more"></span>
@@ -1263,26 +1263,6 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2023/02/13/hello-world/</url>
-    <content><![CDATA[<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>git提交项目到github</title>
     <url>/2022/01/04/git%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="Git操作步骤"><a href="#Git操作步骤" class="headerlink" title="Git操作步骤"></a>Git操作步骤</h2><span id="more"></span>
@@ -1308,6 +1288,47 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       <tags>
         <tag>git</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>java-使用HttpClient爬虫</title>
+    <url>/2022/04/27/java-%E4%BD%BF%E7%94%A8HttpClient%E7%88%AC%E8%99%AB/</url>
+    <content><![CDATA[<h2 id="大致思路"><a href="#大致思路" class="headerlink" title="大致思路"></a>大致思路</h2><span id="more"></span>
+
+<p>使用的工具为Httpclient<br>主要分为两种：1、不需要登录就能访问的网页        2、需要登录才可以访问的网页</p>
+<p>1、不需要登录的网页<br>    ①构建浏览器<br>    ②确定访问的uri<br>    ③获取到响应并解析</p>
+<p>2、需要登录才可以访问的网页<br>    ①构建浏览器<br>    ②获取cookie（一般情况下只需要cookie，有的时候还需要其他的请求头，例如<code>authorization</code>请求头）<br>           第一种：静态获取：直接在浏览器中复制即可（有时候cookie没有用，换一个浏览器可能可以）<br>           第二种：模拟程序获取：如果不知道登录的请求uri和参数，可以先在浏览器中输入错误的账号、密码，得到用于登录的请求uri以及需要提交的表单的参数；<br>                                    然后在程序中想这个uri提交正确的表单，得到response，并得到Cookie<br>    ③按照浏览器中这个网址指定的请求方式，在程序中确定正式网页的请求uri和请求方式<br>    ④添加必要的几个请求头（例如Cookie、User-Agent等）<br>    ⑤获取到响应，并解析</p>
+<p>完工！</p>
+<h2 id="简单的HttpClient使用模板"><a href="#简单的HttpClient使用模板" class="headerlink" title="简单的HttpClient使用模板"></a>简单的HttpClient使用模板</h2><blockquote>
+<p>如果是采用模拟程序获取Cookie的话，通常是显示用Post提交表单，获取到Cookie，然后在通过Get方式携带Cookie，爬取到想要的网页信息</p>
+</blockquote>
+<h3 id="Get方式请求"><a href="#Get方式请求" class="headerlink" title="Get方式请求"></a>Get方式请求</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 三步走：</span></span><br><span class="line"><span class="comment"> * ①创建CloseableHttpClient对象，作为客户端</span></span><br><span class="line"><span class="comment"> * ②创建HttpGet响应（先创建URIBuilder对象，再设置参数，参数设置结束后就创建HttpGet对象）</span></span><br><span class="line"><span class="comment"> * ③获取CloseableResponse响应</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;</span></span><br><span class="line"><span class="comment"> * ④开始解析响应</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpGetParamTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// ① 创建HttpClient对象</span></span><br><span class="line">        CloseableHttpClient httpClient = HttpClients.createDefault();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置请求的地址是：http://yun.itheima.com/search?key=java</span></span><br><span class="line">        <span class="comment">// ②① 创建URIBuilder</span></span><br><span class="line">        URIBuilder uriBuilder = <span class="keyword">new</span> URIBuilder(<span class="string">&quot;https://mooc1.chaoxing.com/exam/test/reVersionPaperMarkContentNew?courseId=222650590&quot;</span> +</span><br><span class="line">                                               <span class="string">&quot;&amp;classId=50617144&amp;p=1&amp;id=57211393&amp;ut=s&amp;cpi=95361626&amp;newMooc=true&amp;openc=cfd40dfe5645b94bd7f0740626b30614&quot;</span>);</span><br><span class="line">        <span class="comment">// ②② 设置参数</span></span><br><span class="line">        <span class="comment">//uriBuilder.setParameter(&quot;courseId&quot;, &quot;222650590&quot;);//可以添加多个setParameter()</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// ③ 创建HttpGet对象，设置URL访问地址</span></span><br><span class="line">        HttpGet httpGet = <span class="keyword">new</span> HttpGet(uriBuilder.build());</span><br><span class="line">        <span class="comment">// ④ 如果是需要登录的网页的内容，则需要添加Cookie头的信息（注意：有时候edge对应的Cookie没有用，比如这一次的就是用的ie浏览器中展示出来的Cookie值）</span></span><br><span class="line">        httpGet.addHeader(<span class="string">&quot;Cookie&quot;</span>, <span class="string">&quot;两种方式获取到的Cookie&quot;</span>);</span><br><span class="line"></span><br><span class="line">        httpGet.addHeader(<span class="string">&quot;User-Agent&quot;</span>, <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100&quot;</span> +</span><br><span class="line">                          <span class="string">&quot;.0.4896.127 Safari/537.36 Edg/100.0.1185.50&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// ⑤ 使用HttpClient发起请求，获取response</span></span><br><span class="line">        CloseableHttpResponse response = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            response = httpClient.execute(httpGet);</span><br><span class="line">            <span class="comment">//解析响应</span></span><br><span class="line">            <span class="keyword">if</span> (response.getStatusLine().getStatusCode() == <span class="number">200</span>) &#123;</span><br><span class="line">                String content = EntityUtils.toString(response.getEntity(), <span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">                System.out.println(content);</span><br><span class="line">                System.out.println(WriteToFile.write(content));</span><br><span class="line">                <span class="comment">//                System.out.println(content.length());</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="comment">//关闭Response</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                response.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">//关闭HttpClient</span></span><br><span class="line">                httpClient.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Post方式请求"><a href="#Post方式请求" class="headerlink" title="Post方式请求"></a>Post方式请求</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 带参数的POST请求，四步走：</span></span><br><span class="line"><span class="comment"> * ①创建CloseableHttpClient客户端</span></span><br><span class="line"><span class="comment"> * ②创建HttpPost对象（声明一个List集合——&gt;存放参数NameValuePair类型——&gt;使用该List集合创建表单实体UrlEncodedFormEntity对象——&gt;设置表单的Entity对象到Post</span></span><br><span class="line"><span class="comment"> * 请求当中——&gt;构建出HttpPost对象）</span></span><br><span class="line"><span class="comment"> * ③获取CloseableHttpResponse响应</span></span><br><span class="line"><span class="comment"> * ④解析响应，获取content（String类型）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpPostParamTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> UnsupportedEncodingException </span>&#123;</span><br><span class="line">        <span class="comment">//创建HttpClient对象</span></span><br><span class="line">        CloseableHttpClient httpClient = HttpClients.createDefault();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建HttpPost对象，设置URL访问地址</span></span><br><span class="line">        HttpPost httpPost = <span class="keyword">new</span> HttpPost(<span class="string">&quot;https://mooc1.chaoxing.com/exam/test/reVersionPaperMarkContentNew&quot;</span>);</span><br><span class="line">        <span class="comment">//声明List集合，封装表单中的参数</span></span><br><span class="line">        List&lt;NameValuePair&gt; params = <span class="keyword">new</span> ArrayList&lt;NameValuePair&gt;();        <span class="comment">//post发送构造函数只接受List&lt;? extends</span></span><br><span class="line">        <span class="comment">// NameValuePair&gt;为参数，所以不能使用map</span></span><br><span class="line">        params.add(<span class="keyword">new</span> BasicNameValuePair(<span class="string">&quot;courseId&quot;</span>, <span class="string">&quot;222650590&quot;</span>));</span><br><span class="line">        params.add(<span class="keyword">new</span> BasicNameValuePair(<span class="string">&quot;cpi&quot;</span>, <span class="string">&quot;95361626&quot;</span>));</span><br><span class="line">        params.add(<span class="keyword">new</span> BasicNameValuePair(<span class="string">&quot;newMooc&quot;</span>, <span class="string">&quot;true&quot;</span>));</span><br><span class="line">        params.add(<span class="keyword">new</span> BasicNameValuePair(<span class="string">&quot;openc&quot;</span>, <span class="string">&quot;cfd40dfe5645b94bd7f0740626b30614&quot;</span>));</span><br><span class="line">        <span class="comment">//创建表单的Entity对象，第一个参数是表单，第二个参数是编码</span></span><br><span class="line">        UrlEncodedFormEntity formEntity = <span class="keyword">new</span> UrlEncodedFormEntity(params, <span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">        <span class="comment">//设置表单的Entity的对象到Post请求中</span></span><br><span class="line">        httpPost.setEntity(formEntity);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用HttpClient发起请求，获取response</span></span><br><span class="line">        CloseableHttpResponse response = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            response = httpClient.execute(httpPost);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//解析响应</span></span><br><span class="line">            <span class="keyword">if</span> (response.getStatusLine().getStatusCode() == <span class="number">200</span>) &#123;      <span class="comment">//状态码200表示请求成功</span></span><br><span class="line">                String content = EntityUtils.toString(response.getEntity(), <span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">                System.out.println(<span class="string">&quot;========================响应数据长度：&quot;</span> + content.length());</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="comment">//关闭Response</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                response.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">//关闭httpClient</span></span><br><span class="line">                httpClient.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>爬虫</tag>
+        <tag>HttpClient</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/02/13/hello-world/</url>
+    <content><![CDATA[<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>idea中使用maven不依赖其模板创建javaweb项目，java源文件夹不编译</title>
@@ -1352,27 +1373,6 @@ version of the Java Runtime only recognizes class file versions up to 55.0
         <tag>javaweb项目</tag>
         <tag>java源文件不编译</tag>
         <tag>IDEA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java-使用HttpClient爬虫</title>
-    <url>/2022/04/27/java-%E4%BD%BF%E7%94%A8HttpClient%E7%88%AC%E8%99%AB/</url>
-    <content><![CDATA[<h2 id="大致思路"><a href="#大致思路" class="headerlink" title="大致思路"></a>大致思路</h2><span id="more"></span>
-
-<p>使用的工具为Httpclient<br>主要分为两种：1、不需要登录就能访问的网页        2、需要登录才可以访问的网页</p>
-<p>1、不需要登录的网页<br>    ①构建浏览器<br>    ②确定访问的uri<br>    ③获取到响应并解析</p>
-<p>2、需要登录才可以访问的网页<br>    ①构建浏览器<br>    ②获取cookie（一般情况下只需要cookie，有的时候还需要其他的请求头，例如<code>authorization</code>请求头）<br>           第一种：静态获取：直接在浏览器中复制即可（有时候cookie没有用，换一个浏览器可能可以）<br>           第二种：模拟程序获取：如果不知道登录的请求uri和参数，可以先在浏览器中输入错误的账号、密码，得到用于登录的请求uri以及需要提交的表单的参数；<br>                                    然后在程序中想这个uri提交正确的表单，得到response，并得到Cookie<br>    ③按照浏览器中这个网址指定的请求方式，在程序中确定正式网页的请求uri和请求方式<br>    ④添加必要的几个请求头（例如Cookie、User-Agent等）<br>    ⑤获取到响应，并解析</p>
-<p>完工！</p>
-<h2 id="简单的HttpClient使用模板"><a href="#简单的HttpClient使用模板" class="headerlink" title="简单的HttpClient使用模板"></a>简单的HttpClient使用模板</h2><blockquote>
-<p>如果是采用模拟程序获取Cookie的话，通常是显示用Post提交表单，获取到Cookie，然后在通过Get方式携带Cookie，爬取到想要的网页信息</p>
-</blockquote>
-<h3 id="Get方式请求"><a href="#Get方式请求" class="headerlink" title="Get方式请求"></a>Get方式请求</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 三步走：</span></span><br><span class="line"><span class="comment"> * ①创建CloseableHttpClient对象，作为客户端</span></span><br><span class="line"><span class="comment"> * ②创建HttpGet响应（先创建URIBuilder对象，再设置参数，参数设置结束后就创建HttpGet对象）</span></span><br><span class="line"><span class="comment"> * ③获取CloseableResponse响应</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;</span></span><br><span class="line"><span class="comment"> * ④开始解析响应</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpGetParamTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// ① 创建HttpClient对象</span></span><br><span class="line">        CloseableHttpClient httpClient = HttpClients.createDefault();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置请求的地址是：http://yun.itheima.com/search?key=java</span></span><br><span class="line">        <span class="comment">// ②① 创建URIBuilder</span></span><br><span class="line">        URIBuilder uriBuilder = <span class="keyword">new</span> URIBuilder(<span class="string">&quot;https://mooc1.chaoxing.com/exam/test/reVersionPaperMarkContentNew?courseId=222650590&quot;</span> +</span><br><span class="line">                                               <span class="string">&quot;&amp;classId=50617144&amp;p=1&amp;id=57211393&amp;ut=s&amp;cpi=95361626&amp;newMooc=true&amp;openc=cfd40dfe5645b94bd7f0740626b30614&quot;</span>);</span><br><span class="line">        <span class="comment">// ②② 设置参数</span></span><br><span class="line">        <span class="comment">//uriBuilder.setParameter(&quot;courseId&quot;, &quot;222650590&quot;);//可以添加多个setParameter()</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// ③ 创建HttpGet对象，设置URL访问地址</span></span><br><span class="line">        HttpGet httpGet = <span class="keyword">new</span> HttpGet(uriBuilder.build());</span><br><span class="line">        <span class="comment">// ④ 如果是需要登录的网页的内容，则需要添加Cookie头的信息（注意：有时候edge对应的Cookie没有用，比如这一次的就是用的ie浏览器中展示出来的Cookie值）</span></span><br><span class="line">        httpGet.addHeader(<span class="string">&quot;Cookie&quot;</span>, <span class="string">&quot;两种方式获取到的Cookie&quot;</span>);</span><br><span class="line"></span><br><span class="line">        httpGet.addHeader(<span class="string">&quot;User-Agent&quot;</span>, <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100&quot;</span> +</span><br><span class="line">                          <span class="string">&quot;.0.4896.127 Safari/537.36 Edg/100.0.1185.50&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// ⑤ 使用HttpClient发起请求，获取response</span></span><br><span class="line">        CloseableHttpResponse response = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            response = httpClient.execute(httpGet);</span><br><span class="line">            <span class="comment">//解析响应</span></span><br><span class="line">            <span class="keyword">if</span> (response.getStatusLine().getStatusCode() == <span class="number">200</span>) &#123;</span><br><span class="line">                String content = EntityUtils.toString(response.getEntity(), <span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">                System.out.println(content);</span><br><span class="line">                System.out.println(WriteToFile.write(content));</span><br><span class="line">                <span class="comment">//                System.out.println(content.length());</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="comment">//关闭Response</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                response.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">//关闭HttpClient</span></span><br><span class="line">                httpClient.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Post方式请求"><a href="#Post方式请求" class="headerlink" title="Post方式请求"></a>Post方式请求</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 带参数的POST请求，四步走：</span></span><br><span class="line"><span class="comment"> * ①创建CloseableHttpClient客户端</span></span><br><span class="line"><span class="comment"> * ②创建HttpPost对象（声明一个List集合——&gt;存放参数NameValuePair类型——&gt;使用该List集合创建表单实体UrlEncodedFormEntity对象——&gt;设置表单的Entity对象到Post</span></span><br><span class="line"><span class="comment"> * 请求当中——&gt;构建出HttpPost对象）</span></span><br><span class="line"><span class="comment"> * ③获取CloseableHttpResponse响应</span></span><br><span class="line"><span class="comment"> * ④解析响应，获取content（String类型）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpPostParamTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> UnsupportedEncodingException </span>&#123;</span><br><span class="line">        <span class="comment">//创建HttpClient对象</span></span><br><span class="line">        CloseableHttpClient httpClient = HttpClients.createDefault();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建HttpPost对象，设置URL访问地址</span></span><br><span class="line">        HttpPost httpPost = <span class="keyword">new</span> HttpPost(<span class="string">&quot;https://mooc1.chaoxing.com/exam/test/reVersionPaperMarkContentNew&quot;</span>);</span><br><span class="line">        <span class="comment">//声明List集合，封装表单中的参数</span></span><br><span class="line">        List&lt;NameValuePair&gt; params = <span class="keyword">new</span> ArrayList&lt;NameValuePair&gt;();        <span class="comment">//post发送构造函数只接受List&lt;? extends</span></span><br><span class="line">        <span class="comment">// NameValuePair&gt;为参数，所以不能使用map</span></span><br><span class="line">        params.add(<span class="keyword">new</span> BasicNameValuePair(<span class="string">&quot;courseId&quot;</span>, <span class="string">&quot;222650590&quot;</span>));</span><br><span class="line">        params.add(<span class="keyword">new</span> BasicNameValuePair(<span class="string">&quot;cpi&quot;</span>, <span class="string">&quot;95361626&quot;</span>));</span><br><span class="line">        params.add(<span class="keyword">new</span> BasicNameValuePair(<span class="string">&quot;newMooc&quot;</span>, <span class="string">&quot;true&quot;</span>));</span><br><span class="line">        params.add(<span class="keyword">new</span> BasicNameValuePair(<span class="string">&quot;openc&quot;</span>, <span class="string">&quot;cfd40dfe5645b94bd7f0740626b30614&quot;</span>));</span><br><span class="line">        <span class="comment">//创建表单的Entity对象，第一个参数是表单，第二个参数是编码</span></span><br><span class="line">        UrlEncodedFormEntity formEntity = <span class="keyword">new</span> UrlEncodedFormEntity(params, <span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">        <span class="comment">//设置表单的Entity的对象到Post请求中</span></span><br><span class="line">        httpPost.setEntity(formEntity);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用HttpClient发起请求，获取response</span></span><br><span class="line">        CloseableHttpResponse response = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            response = httpClient.execute(httpPost);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//解析响应</span></span><br><span class="line">            <span class="keyword">if</span> (response.getStatusLine().getStatusCode() == <span class="number">200</span>) &#123;      <span class="comment">//状态码200表示请求成功</span></span><br><span class="line">                String content = EntityUtils.toString(response.getEntity(), <span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">                System.out.println(<span class="string">&quot;========================响应数据长度：&quot;</span> + content.length());</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="comment">//关闭Response</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                response.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">//关闭httpClient</span></span><br><span class="line">                httpClient.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>爬虫</tag>
-        <tag>HttpClient</tag>
       </tags>
   </entry>
   <entry>
@@ -1486,6 +1486,22 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
+    <title>java中的IO流使用</title>
+    <url>/2021/09/07/java%E4%B8%AD%E7%9A%84IO%E6%B5%81%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="IO流体系"><a href="#IO流体系" class="headerlink" title="IO流体系"></a>IO流体系</h2><span id="more"></span>
+
+<h3 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h3><p><img src="https://i.loli.net/2021/11/01/SegF6hJp2XWVUtK.jpg" alt="img"></p>
+<h3 id="完整API体系"><a href="#完整API体系" class="headerlink" title="完整API体系"></a>完整API体系</h3><p>序列化时，还学习到了<strong>ByteArrayOutputStream流</strong> </p>
+<p><strong>ByteArrayOutputStream 对byte类型数据进行写入的类 相当于一个中间缓冲层，将类写入到文件等其他outputStream。它是对字节进行操作，属于内存操作流</strong></p>
+<p><img src="https://i.loli.net/2021/11/01/nRey7Ogr1PI8Hql.jpg" alt="img"></p>
+<p><img src="https://i.loli.net/2021/11/01/OeoYDKUvqTIgyV4.jpg" alt="img"></p>
+<h2 id="从控制台读取输入流（三种方法）"><a href="#从控制台读取输入流（三种方法）" class="headerlink" title="从控制台读取输入流（三种方法）"></a>从控制台读取输入流（三种方法）</h2><p><img src="https://i.loli.net/2021/11/01/4GPOydoXVN5cqiJ.jpg" alt="img"></p>
+]]></content>
+      <tags>
+        <tag>IO流</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>javascript中的this指向</title>
     <url>/2022/02/22/javascript%E4%B8%AD%E7%9A%84this%E6%8C%87%E5%90%91/</url>
     <content><![CDATA[<h2 id="this指向的全部情况"><a href="#this指向的全部情况" class="headerlink" title="this指向的全部情况"></a>this指向的全部情况</h2><span id="more"></span>
@@ -1588,22 +1604,6 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 ]]></content>
       <tags>
         <tag>java相对路径</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java中的IO流使用</title>
-    <url>/2021/09/07/java%E4%B8%AD%E7%9A%84IO%E6%B5%81%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="IO流体系"><a href="#IO流体系" class="headerlink" title="IO流体系"></a>IO流体系</h2><span id="more"></span>
-
-<h3 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h3><p><img src="https://i.loli.net/2021/11/01/SegF6hJp2XWVUtK.jpg" alt="img"></p>
-<h3 id="完整API体系"><a href="#完整API体系" class="headerlink" title="完整API体系"></a>完整API体系</h3><p>序列化时，还学习到了<strong>ByteArrayOutputStream流</strong> </p>
-<p><strong>ByteArrayOutputStream 对byte类型数据进行写入的类 相当于一个中间缓冲层，将类写入到文件等其他outputStream。它是对字节进行操作，属于内存操作流</strong></p>
-<p><img src="https://i.loli.net/2021/11/01/nRey7Ogr1PI8Hql.jpg" alt="img"></p>
-<p><img src="https://i.loli.net/2021/11/01/OeoYDKUvqTIgyV4.jpg" alt="img"></p>
-<h2 id="从控制台读取输入流（三种方法）"><a href="#从控制台读取输入流（三种方法）" class="headerlink" title="从控制台读取输入流（三种方法）"></a>从控制台读取输入流（三种方法）</h2><p><img src="https://i.loli.net/2021/11/01/4GPOydoXVN5cqiJ.jpg" alt="img"></p>
-]]></content>
-      <tags>
-        <tag>IO流</tag>
       </tags>
   </entry>
   <entry>
@@ -1861,37 +1861,6 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
-    <title>java内存分析（4）new一个对象，底层做了哪些事情</title>
-    <url>/2021/10/23/java%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%EF%BC%884%EF%BC%89%E2%80%94%E2%80%94new%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%BA%95%E5%B1%82%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E4%BA%8B%E6%83%85/</url>
-    <content><![CDATA[<h2 id="创建对象过程"><a href="#创建对象过程" class="headerlink" title="创建对象过程"></a>创建对象过程</h2><span id="more"></span>
-
-<p>我们知道：<strong>程序运行最开始，编译器会将.java文件编译为.class文件</strong></p>
-<h3 id="举例："><a href="#举例：" class="headerlink" title="举例："></a>举例：</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String name = <span class="string">&quot;lion&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age = <span class="number">5555</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Lion is eating!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Animal animal1 = <span class="keyword">new</span> Animal();</span><br><span class="line">        Animal animal2 = <span class="keyword">new</span> Animal();</span><br><span class="line">        </span><br><span class="line">        System.out.println(animal1.name == animal2.name);	<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.loli.net/2021/10/23/M8jXEIh4KkZSPls.png" alt="image-20211023144946776"></p>
-<p>对上面new一个对象（以Animal类为例）流程解释如下（辅助图中解释一块看）：</p>
-<ol>
-<li>当需要new一个Animal对象时，首先看方法区中，有无Animal.class的模板：<ul>
-<li>若无，则通过<a href="https://liu-ruyang.github.io/2021/08/19/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90">类加载器</a>将Animal.class加载进方法区中；同时，Animal中的<a href="">静态成员需要被加载进静态方法区中</a>。</li>
-<li>若有,直接进行下一步。</li>
-</ul>
-</li>
-<li>new一个对象，将对象存放在堆中</li>
-<li>是否需要一个该对象的引用变量。如果需要，就在栈的栈顶生成一个该对象的引用变量</li>
-</ol>
-<p><strong>注意：</strong></p>
-<p><strong>①上面的Animal1和Animal2由于是局部变量，所以存储在栈中；</strong></p>
-<p><strong>②而name、age是成员变量，所以跟随着对象存储在堆中</strong></p>
-<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><p>在上面的例子中，我们还涉及到了常量池的概念，有关常量池的概念，见博客：<a href="https://liu-ruyang.github.io/2021/10/23/java%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%EF%BC%883%EF%BC%89%E2%80%94%E2%80%94java%E7%9A%84%E5%B8%B8%E9%87%8F%E6%B1%A0%E7%9A%84%E7%90%86%E8%A7%A3/">java中常量池的理解</a></p>
-]]></content>
-      <tags>
-        <tag>JVM内存分析</tag>
-        <tag>java基础</tag>
-        <tag>new关键字</tag>
-        <tag>创建对象</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java装箱和拆箱</title>
     <url>/2021/10/16/java%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1/</url>
     <content><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><span id="more"></span>
@@ -1962,6 +1931,52 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
+    <title>java内存分析（4）new一个对象，底层做了哪些事情</title>
+    <url>/2021/10/23/java%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%EF%BC%884%EF%BC%89%E2%80%94%E2%80%94new%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%BA%95%E5%B1%82%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E4%BA%8B%E6%83%85/</url>
+    <content><![CDATA[<h2 id="创建对象过程"><a href="#创建对象过程" class="headerlink" title="创建对象过程"></a>创建对象过程</h2><span id="more"></span>
+
+<p>我们知道：<strong>程序运行最开始，编译器会将.java文件编译为.class文件</strong></p>
+<h3 id="举例："><a href="#举例：" class="headerlink" title="举例："></a>举例：</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String name = <span class="string">&quot;lion&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age = <span class="number">5555</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Lion is eating!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Animal animal1 = <span class="keyword">new</span> Animal();</span><br><span class="line">        Animal animal2 = <span class="keyword">new</span> Animal();</span><br><span class="line">        </span><br><span class="line">        System.out.println(animal1.name == animal2.name);	<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/10/23/M8jXEIh4KkZSPls.png" alt="image-20211023144946776"></p>
+<p>对上面new一个对象（以Animal类为例）流程解释如下（辅助图中解释一块看）：</p>
+<ol>
+<li>当需要new一个Animal对象时，首先看方法区中，有无Animal.class的模板：<ul>
+<li>若无，则通过<a href="https://liu-ruyang.github.io/2021/08/19/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90">类加载器</a>将Animal.class加载进方法区中；同时，Animal中的<a href="">静态成员需要被加载进静态方法区中</a>。</li>
+<li>若有,直接进行下一步。</li>
+</ul>
+</li>
+<li>new一个对象，将对象存放在堆中</li>
+<li>是否需要一个该对象的引用变量。如果需要，就在栈的栈顶生成一个该对象的引用变量</li>
+</ol>
+<p><strong>注意：</strong></p>
+<p><strong>①上面的Animal1和Animal2由于是局部变量，所以存储在栈中；</strong></p>
+<p><strong>②而name、age是成员变量，所以跟随着对象存储在堆中</strong></p>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><p>在上面的例子中，我们还涉及到了常量池的概念，有关常量池的概念，见博客：<a href="https://liu-ruyang.github.io/2021/10/23/java%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%EF%BC%883%EF%BC%89%E2%80%94%E2%80%94java%E7%9A%84%E5%B8%B8%E9%87%8F%E6%B1%A0%E7%9A%84%E7%90%86%E8%A7%A3/">java中常量池的理解</a></p>
+]]></content>
+      <tags>
+        <tag>JVM内存分析</tag>
+        <tag>java基础</tag>
+        <tag>new关键字</tag>
+        <tag>创建对象</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>log4j.properties的配置</title>
+    <url>/2021/10/26/log4j-properties%E7%9A%84%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="log4j的常用配置"><a href="#log4j的常用配置" class="headerlink" title="log4j的常用配置"></a>log4j的常用配置</h2><span id="more"></span>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">### 全局日志等级配置,输出标准设置 ###  </span><br><span class="line">log4j.rootLogger&#x3D;debug,stdout,DDD,EEE  </span><br><span class="line">### 输出信息到控制台 ###  </span><br><span class="line">log4j.appender.stdout&#x3D;org.apache.log4j.ConsoleAppender  </span><br><span class="line">log4j.appender.stdout.Target&#x3D;System.out  </span><br><span class="line">log4j.appender.stdout.layout&#x3D;org.apache.log4j.PatternLayout  </span><br><span class="line">log4j.appender.stdout.layout.ConversionPattern&#x3D;[%-5p] %d&#123;yyyy-MM-dd HH:mm:ss,SSS&#125; method:%l%n%m%n  </span><br><span class="line">### 输出DEBUG 级别以上的日志到&#x3D;&#x2F;Users&#x2F;tinybye&#x2F;Documents&#x2F;log4j&#x2F;debug.log ###  </span><br><span class="line">log4j.appender.DDD&#x3D;org.apache.log4j.DailyRollingFileAppender  </span><br><span class="line">log4j.appender.DDD.File&#x3D;&#x2F;Users&#x2F;tinybye&#x2F;Documents&#x2F;log4j&#x2F;debug.log  </span><br><span class="line">log4j.appender.DDD.Append&#x3D;true  </span><br><span class="line">log4j.appender.DDD.Threshold&#x3D;DEBUG  </span><br><span class="line">log4j.appender.DDD.layout&#x3D;org.apache.log4j.PatternLayout  </span><br><span class="line">log4j.appender.DDD.layout.ConversionPattern&#x3D;%-d&#123;yyyy-MM-dd HH:mm:ss&#125; [ %t:%r ] - [ %p ] %m%n  </span><br><span class="line">### 输出ERROR 级别以上的日志到&#x3D;&#x2F;Users&#x2F;tinybye&#x2F;Documents&#x2F;log4j&#x2F;error.log ###  </span><br><span class="line">log4j.appender.EEE&#x3D;org.apache.log4j.DailyRollingFileAppender  </span><br><span class="line">log4j.appender.EEE.File&#x3D;&#x2F;Users&#x2F;tinybye&#x2F;Documents&#x2F;log4j&#x2F;error.log  </span><br><span class="line">log4j.appender.EEE.Append&#x3D;true  </span><br><span class="line">log4j.appender.EEE.Threshold&#x3D;ERROR  </span><br><span class="line">log4j.appender.EEE.layout&#x3D;org.apache.log4j.PatternLayout  </span><br><span class="line">log4j.appender.EEE.layout.ConversionPattern&#x3D;%-d&#123;yyyy-MM-dd HH:mm:ss&#125; [ %t:%r ] - [ %p ] %m%n</span><br></pre></td></tr></table></figure>
+
+<h2 id="作用详解"><a href="#作用详解" class="headerlink" title="作用详解"></a>作用详解</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#全局日志等级配置,输出位置</span><br><span class="line">#log4j.rootLogger  &#x3D;   [ level ]   ,  appenderName1 ,  appenderName2 ,  …</span><br><span class="line">log4j.rootLogger&#x3D;error, stdout,logfile</span><br><span class="line">#stdout控制器（标准输出）</span><br><span class="line">log4j.appender.stdout&#x3D;org.apache.log4j.ConsoleAppender #设置Appender</span><br><span class="line">log4j.appender.stdout.Target&#x3D;System.out  #设置输出目标</span><br><span class="line">log4j.appender.stdout.layout&#x3D;org.apache.log4j.PatternLayout #设置布局</span><br><span class="line">log4j.appender.stdout.layout.ConversionPattern&#x3D;%d %p [%c]:%L - %m%n #设置输出格式</span><br><span class="line">#输出日志文件</span><br><span class="line">log4j.appender.logfile&#x3D;org.apache.log4j.RollingFileAppender  #设置Appender</span><br><span class="line">log4j.appender.logfile.File&#x3D;pss.log #默认输出到tomcat的根路径或者运行测试工程的根路径</span><br><span class="line">log4j.appender.logfile.MaxFileSize&#x3D;512KB #设置日志文件的最大内存大小</span><br><span class="line"># Keep three backup files.</span><br><span class="line">log4j.appender.logfile.MaxBackupIndex&#x3D;3  #设置日志文件的最大数量，当日志文件达到最大指定内存时则另外再生成一个文件存放日志</span><br><span class="line">log4j.appender.logfile.Append &#x3D; true #ture则将日志信息增加到指定文件中，false则将日志信息覆盖指定文件内容，默认是true</span><br><span class="line">log4j.appender.logfile.Threshold &#x3D; ERROR  #设置只输出ERROR级别以上的日志</span><br><span class="line"># Pattern to output: date priority [category] - message</span><br><span class="line">log4j.appender.logfile.layout&#x3D;org.apache.log4j.PatternLayout #设置布局</span><br><span class="line">log4j.appender.logfile.layout.ConversionPattern&#x3D;%d %p [%c] - %m%n #设置输出格式</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>日志</tag>
+        <tag>log4j</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>js创建、插入节点</title>
     <url>/2023/06/21/js%E5%88%9B%E5%BB%BA%E3%80%81%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9/</url>
     <content><![CDATA[<h2 id="JavaScript中和插入节点"><a href="#JavaScript中和插入节点" class="headerlink" title="JavaScript中和插入节点"></a>JavaScript中和插入节点</h2><span id="more"></span>
@@ -1979,18 +1994,19 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
-    <title>log4j.properties的配置</title>
-    <url>/2021/10/26/log4j-properties%E7%9A%84%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="log4j的常用配置"><a href="#log4j的常用配置" class="headerlink" title="log4j的常用配置"></a>log4j的常用配置</h2><span id="more"></span>
+    <title>springMVC的web.xml配置</title>
+    <url>/2021/11/10/springMVC%E7%9A%84web-xml%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="springMVC的web-xml配置"><a href="#springMVC的web-xml配置" class="headerlink" title="springMVC的web.xml配置"></a>springMVC的web.xml配置</h2><span id="more"></span>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">### 全局日志等级配置,输出标准设置 ###  </span><br><span class="line">log4j.rootLogger&#x3D;debug,stdout,DDD,EEE  </span><br><span class="line">### 输出信息到控制台 ###  </span><br><span class="line">log4j.appender.stdout&#x3D;org.apache.log4j.ConsoleAppender  </span><br><span class="line">log4j.appender.stdout.Target&#x3D;System.out  </span><br><span class="line">log4j.appender.stdout.layout&#x3D;org.apache.log4j.PatternLayout  </span><br><span class="line">log4j.appender.stdout.layout.ConversionPattern&#x3D;[%-5p] %d&#123;yyyy-MM-dd HH:mm:ss,SSS&#125; method:%l%n%m%n  </span><br><span class="line">### 输出DEBUG 级别以上的日志到&#x3D;&#x2F;Users&#x2F;tinybye&#x2F;Documents&#x2F;log4j&#x2F;debug.log ###  </span><br><span class="line">log4j.appender.DDD&#x3D;org.apache.log4j.DailyRollingFileAppender  </span><br><span class="line">log4j.appender.DDD.File&#x3D;&#x2F;Users&#x2F;tinybye&#x2F;Documents&#x2F;log4j&#x2F;debug.log  </span><br><span class="line">log4j.appender.DDD.Append&#x3D;true  </span><br><span class="line">log4j.appender.DDD.Threshold&#x3D;DEBUG  </span><br><span class="line">log4j.appender.DDD.layout&#x3D;org.apache.log4j.PatternLayout  </span><br><span class="line">log4j.appender.DDD.layout.ConversionPattern&#x3D;%-d&#123;yyyy-MM-dd HH:mm:ss&#125; [ %t:%r ] - [ %p ] %m%n  </span><br><span class="line">### 输出ERROR 级别以上的日志到&#x3D;&#x2F;Users&#x2F;tinybye&#x2F;Documents&#x2F;log4j&#x2F;error.log ###  </span><br><span class="line">log4j.appender.EEE&#x3D;org.apache.log4j.DailyRollingFileAppender  </span><br><span class="line">log4j.appender.EEE.File&#x3D;&#x2F;Users&#x2F;tinybye&#x2F;Documents&#x2F;log4j&#x2F;error.log  </span><br><span class="line">log4j.appender.EEE.Append&#x3D;true  </span><br><span class="line">log4j.appender.EEE.Threshold&#x3D;ERROR  </span><br><span class="line">log4j.appender.EEE.layout&#x3D;org.apache.log4j.PatternLayout  </span><br><span class="line">log4j.appender.EEE.layout.ConversionPattern&#x3D;%-d&#123;yyyy-MM-dd HH:mm:ss&#125; [ %t:%r ] - [ %p ] %m%n</span><br></pre></td></tr></table></figure>
 
-<h2 id="作用详解"><a href="#作用详解" class="headerlink" title="作用详解"></a>作用详解</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#全局日志等级配置,输出位置</span><br><span class="line">#log4j.rootLogger  &#x3D;   [ level ]   ,  appenderName1 ,  appenderName2 ,  …</span><br><span class="line">log4j.rootLogger&#x3D;error, stdout,logfile</span><br><span class="line">#stdout控制器（标准输出）</span><br><span class="line">log4j.appender.stdout&#x3D;org.apache.log4j.ConsoleAppender #设置Appender</span><br><span class="line">log4j.appender.stdout.Target&#x3D;System.out  #设置输出目标</span><br><span class="line">log4j.appender.stdout.layout&#x3D;org.apache.log4j.PatternLayout #设置布局</span><br><span class="line">log4j.appender.stdout.layout.ConversionPattern&#x3D;%d %p [%c]:%L - %m%n #设置输出格式</span><br><span class="line">#输出日志文件</span><br><span class="line">log4j.appender.logfile&#x3D;org.apache.log4j.RollingFileAppender  #设置Appender</span><br><span class="line">log4j.appender.logfile.File&#x3D;pss.log #默认输出到tomcat的根路径或者运行测试工程的根路径</span><br><span class="line">log4j.appender.logfile.MaxFileSize&#x3D;512KB #设置日志文件的最大内存大小</span><br><span class="line"># Keep three backup files.</span><br><span class="line">log4j.appender.logfile.MaxBackupIndex&#x3D;3  #设置日志文件的最大数量，当日志文件达到最大指定内存时则另外再生成一个文件存放日志</span><br><span class="line">log4j.appender.logfile.Append &#x3D; true #ture则将日志信息增加到指定文件中，false则将日志信息覆盖指定文件内容，默认是true</span><br><span class="line">log4j.appender.logfile.Threshold &#x3D; ERROR  #设置只输出ERROR级别以上的日志</span><br><span class="line"># Pattern to output: date priority [category] - message</span><br><span class="line">log4j.appender.logfile.layout&#x3D;org.apache.log4j.PatternLayout #设置布局</span><br><span class="line">log4j.appender.logfile.layout.ConversionPattern&#x3D;%d %p [%c] - %m%n #设置输出格式</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">version</span>=<span class="string">&quot;4.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--注册servlet--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>SpringMVC<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--初始化Spring配置文件的位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:applicationContext.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--启动顺序，数字越小，启动越早--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--所有的请求都会被SpringMVC拦截--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>SpringMVC<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--这是使用注解开发时固定的配置--&gt;</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
-        <tag>日志</tag>
-        <tag>log4j</tag>
+        <tag>配置模板</tag>
+        <tag>SSM</tag>
+        <tag>SpringMVC</tag>
+        <tag>web.xml配置</tag>
       </tags>
   </entry>
   <entry>
@@ -2017,19 +2033,26 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
-    <title>springMVC的web.xml配置</title>
-    <url>/2021/11/10/springMVC%E7%9A%84web-xml%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="springMVC的web-xml配置"><a href="#springMVC的web-xml配置" class="headerlink" title="springMVC的web.xml配置"></a>springMVC的web.xml配置</h2><span id="more"></span>
-
-
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">version</span>=<span class="string">&quot;4.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--注册servlet--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>SpringMVC<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--初始化Spring配置文件的位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:applicationContext.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--启动顺序，数字越小，启动越早--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--所有的请求都会被SpringMVC拦截--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>SpringMVC<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--这是使用注解开发时固定的配置--&gt;</span></span><br></pre></td></tr></table></figure>
-
+    <title>vue项目和springboot项目部署到服务器</title>
+    <url>/2023/07/07/vue%E9%A1%B9%E7%9B%AE%E5%92%8Cspringboot%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>首先简要说明一下，真个过程中大概涉及到一下知识点：<strong>数据库</strong>、<strong>项目打包</strong>、<strong>请求代理</strong>、<strong>防火墙</strong></p>
+<ol>
+<li><p>数据库：<br>服务器创建数据库mysql<br>redis服务开启状态<br>后端修改mysql的ip、账号、密码<br>后端修改redis的ip、账号、密码</p>
+</li>
+<li><p>前端请求后端接口（注意请求代理是否只是再开发环境下生效的）<br>前端确认请求的后端的ip地址（可以还是localhost，二者都在服务器中）<br>请求代理的配置（如果之前的请求代理仅在开发环境生效，则要么前端打包前在创建一个.<strong>env</strong>文件写明一下，要么在下面的<strong>nginx中配置</strong>一下）</p>
+</li>
+<li><p>前后端打包：<br>后端使用maven打包成jar，放到服务器（建议使用maven的打包方式，可以避免直接build会出现的找不到mainfest问题）<br>前端项目打包，放到服务器</p>
+</li>
+<li><p>配置nginx<br>服务器的nginx.conf中添加server（如果前端的请求代理之前没有配置，即之前仅为开发环境下的，那么部署到服务器中不会生效，可以在nginx中的server中通过location形式添加一个请求代理）（否则会报404错误）</p>
+</li>
+<li><p>配置防火墙<br>server中的端口再防火墙中确认打开放行，未放行则添加放行端口，并重启防火墙</p>
+</li>
+<li><p>最后<br>指定nginx.conf文件重新启动nginx</p>
+</li>
+</ol>
 ]]></content>
       <tags>
-        <tag>配置模板</tag>
-        <tag>SSM</tag>
-        <tag>SpringMVC</tag>
-        <tag>web.xml配置</tag>
+        <tag>部署项目</tag>
       </tags>
   </entry>
   <entry>
@@ -2146,22 +2169,6 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
-    <title>主机连接虚拟机</title>
-    <url>/2023/06/26/%E4%B8%BB%E6%9C%BA%E8%BF%9E%E6%8E%A5%E8%99%9A%E6%8B%9F%E6%9C%BA/</url>
-    <content><![CDATA[<h2 id="使用SSH"><a href="#使用SSH" class="headerlink" title="使用SSH"></a>使用SSH</h2><span id="more"></span>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade		<span class="comment"># 更新软件源</span></span><br><span class="line">sudo apt install opoenssh-server	<span class="comment"># ssh服务器的包由OpenSSH的openssh-server组件提供</span></span><br><span class="line">service ssh status			<span class="comment"># 检查ssh服务器状态</span></span><br><span class="line">sudo systemctl status ssh	<span class="comment"># 检查ssh服务器状态</span></span><br><span class="line"></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> --now ssh		<span class="comment"># 如果ssh服务器没有运行，执行该命令运行ssh</span></span><br></pre></td></tr></table></figure>
-
-<p>Ubuntu 带有名为<code>UFW</code>（*简单的防火墙(Uncomplicated Firewall)*）的防火墙，这是管理网络规则的 <code>iptables</code> 的一个接口。如果启动了防火墙，它可能会阻止你连接服务器。</p>
-<p>想要配置 UFW 允许你的接入，你需要运行如下命令：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo ufw allow ssh		<span class="comment"># 允许ssh通过防火墙</span></span><br><span class="line">sudo ufw status 		<span class="comment"># ufw的运行状态</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>五种I/O模式</title>
     <url>/2023/01/16/%E4%BA%94%E7%A7%8DI-O%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><span id="more"></span>
@@ -2178,6 +2185,114 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       <tags>
         <tag>概念</tag>
         <tag>I/O</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>主机连接虚拟机</title>
+    <url>/2023/06/26/%E4%B8%BB%E6%9C%BA%E8%BF%9E%E6%8E%A5%E8%99%9A%E6%8B%9F%E6%9C%BA/</url>
+    <content><![CDATA[<h2 id="使用SSH"><a href="#使用SSH" class="headerlink" title="使用SSH"></a>使用SSH</h2><span id="more"></span>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade		<span class="comment"># 更新软件源</span></span><br><span class="line">sudo apt install opoenssh-server	<span class="comment"># ssh服务器的包由OpenSSH的openssh-server组件提供</span></span><br><span class="line">service ssh status			<span class="comment"># 检查ssh服务器状态</span></span><br><span class="line">sudo systemctl status ssh	<span class="comment"># 检查ssh服务器状态</span></span><br><span class="line"></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> --now ssh		<span class="comment"># 如果ssh服务器没有运行，执行该命令运行ssh</span></span><br></pre></td></tr></table></figure>
+
+<p>Ubuntu 带有名为<code>UFW</code>（*简单的防火墙(Uncomplicated Firewall)*）的防火墙，这是管理网络规则的 <code>iptables</code> 的一个接口。如果启动了防火墙，它可能会阻止你连接服务器。</p>
+<p>想要配置 UFW 允许你的接入，你需要运行如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo ufw allow ssh		<span class="comment"># 允许ssh通过防火墙</span></span><br><span class="line">sudo ufw status 		<span class="comment"># ufw的运行状态</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>判断数组是否单调增/减</title>
+    <url>/2021/05/27/%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%8D%95%E8%B0%83%E5%A2%9E-%E5%87%8F/</url>
+    <content><![CDATA[<h2 id="思路一：两次遍历"><a href="#思路一：两次遍历" class="headerlink" title="思路一：两次遍历"></a>思路一：两次遍历</h2><span id="more"></span>
+
+<blockquote>
+<p>如果对于所有 i &lt;= j，A[i] &lt;= A[j]，那么数组 A 是单调递增的。 如果对于所有 i &lt;= j，A[i]&gt; = A[j]，那么数组 A 是单调递减的。<br>当给定的数组 A 是单调数组时返回 true，否则返回 false。</p>
+</blockquote>
+<p> 分别遍历是否是<strong>单调增</strong>或<strong>单调减</strong><br>    bool isSorted(int* A, int ASize, bool increasing) {<br>    if (increasing) {<br>        for (int i = 0; i &lt; ASize - 1; ++i) {<br>            if (A[i] &gt; A[i + 1]) {<br>                return false;<br>            }<br>        }<br>    } else {<br>        for (int i = 0; i &lt; ASize - 1; ++i) {<br>            if (A[i] &lt; A[i + 1]) {<br>                return false;<br>            }<br>        }<br>    }<br>    return true;<br>    }</p>
+<pre><code>bool isMonotonic(int* A, int ASize) &#123;
+    return isSorted(A, ASize, true) || isSorted(A, ASize, false);
+&#125;
+</code></pre>
+<h2 id="思路二：一次遍历"><a href="#思路二：一次遍历" class="headerlink" title="思路二：一次遍历"></a>思路二：一次遍历</h2><p>遍历数组A，若既遇到了<code>A[i] &gt; A[i+1]</code>，也遇到了<code>A[i]&lt;A[i+1]</code>，则说明：既不是单调递减的，也不是单调递增的</p>
+<h3 id="写法一"><a href="#写法一" class="headerlink" title="写法一"></a>写法一</h3><pre><code>bool isMonotonic(int* A, int ASize) &#123;
+    bool inc = true, dec = true;
+    int n = ASize;
+    for (int i = 0; i &lt; n - 1; ++i) &#123;
+        if (A[i] &gt; A[i + 1]) &#123;
+            inc = false;
+        &#125;
+        if (A[i] &lt; A[i + 1]) &#123;
+            dec = false;
+        &#125;
+    &#125;
+    return inc || dec;
+&#125;
+</code></pre>
+<h3 id="写法二"><a href="#写法二" class="headerlink" title="写法二"></a>写法二</h3><pre><code>bool isMonotonic(int* A, int ASize)&#123;
+    int a = 0, b = 0;
+    for(int i = 0; i &lt; ASize - 1; i++)&#123;
+        if(A[i] &lt;= A[i+1])&#123;
+            a++;
+        &#125;
+        if(A[i] &gt;= A[i+1]) &#123;
+            b++;
+        &#125;
+    &#125;
+    if(a == ASize - 1 || b == ASize - 1)&#123;
+        return true;
+    &#125;
+    else&#123;
+        return false;
+    &#125;
+&#125;
+</code></pre>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>两种思路的时间复杂度都是：O(n)</strong></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>命令行运行jar文件和点击运行jar文件区别</title>
+    <url>/2022/02/20/%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BF%90%E8%A1%8Cjar%E6%96%87%E4%BB%B6%E5%92%8C%E7%82%B9%E5%87%BB%E8%BF%90%E8%A1%8Cjar%E6%96%87%E4%BB%B6%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h2 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a>共同点</h2><span id="more"></span>
+
+<p><img src="https://s2.loli.net/2022/02/20/1mPEyZlcGMQgzJS.png" alt="image-20220220174307272"></p>
+<p>①应用程序都可以成功运行</p>
+<p>②可能会生成一些其他文件</p>
+<p><img src="https://s2.loli.net/2022/02/20/vq1sck58zLWEyD7.png" alt="image-20220220175111112"></p>
+<h2 id="二者区别"><a href="#二者区别" class="headerlink" title="二者区别"></a>二者区别</h2><h3 id="①点击运行jar文件"><a href="#①点击运行jar文件" class="headerlink" title="①点击运行jar文件"></a>①点击运行jar文件</h3><p>jar文件可以得到运行，同时区别于命令行运行在于：①在windows后台里<strong>会有</strong><code>java(TM)platform se binary</code>服务在运行</p>
+<p><img src="https://s2.loli.net/2022/02/20/S3qAdHmZJBfY17e.png" alt="image-20220220174028561"></p>
+<p><strong>注意：要删除生成的文件，需要先结束这个服务的运行</strong></p>
+<h3 id="②命令行运行jar文件"><a href="#②命令行运行jar文件" class="headerlink" title="②命令行运行jar文件"></a>②命令行运行jar文件</h3><p><img src="https://s2.loli.net/2022/02/20/cWVJPYpe5q9AtRB.png" alt="image-20220220174543702"></p>
+<p>jar文件可以成功运行，区别在于：①在windows后台里<strong>不会有</strong><code>java(TM)platform se binary</code>服务在运行</p>
+<p><img src="https://s2.loli.net/2022/02/20/9txvJu82OVLyG6d.png" alt="image-20220220174842366"></p>
+]]></content>
+      <tags>
+        <tag>jar文件</tag>
+        <tag>windows后台应用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端问题和经验总结</title>
+    <url>/2023/05/29/%E5%89%8D%E7%AB%AF%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="经验总结"><a href="#经验总结" class="headerlink" title="经验总结"></a>经验总结</h2><span id="more"></span>
+
+<ol>
+<li>在fixed的div中，滚轮的滚动事件失效</li>
+<li>浏览器禁止直接访问本地资源文件，如果仍要将图片放在本地，可以使用node搭建一个简单的本地服务器，用来访问本地图片</li>
+<li>前端使用input上传图片之后获取不到文件的全路径名</li>
+<li>在vue中，axios请求可能还未结束，导致需要渲染组件或者使用的数据不存在，从而报错（即使在then中执行打印，也可能在请求之前打印，导致数据不存在出错）</li>
+<li>$router：是路由操作对象，只写对象；$route：路由信息对象，只读对象<br>所以前者一般用于路由跳转，后者用于跳转后获取参数</li>
+<li>axios的请求发生时机：axios.get()方法被调用后，它会异步创建一个Http请求。这个请求不会立即发出，而是先被加到一个队列中。在事件循环的下一个Tick中，Axios会从队列中取出请求，并将其发送给服务器。<br>当服务器响应请求时，Axios会将响应数据封装成一个对象，并作为Promise对象的参数来resolve它。此时，你可以在Promise的then方法中访问响应数据，并对其进行处理。<br>因此，虽然axios.get()方法的执行可能很快就完成了，但实际上它所发起的请求要经历一段时间的等待和处理，才能最终得到响应数据。</li>
+<li>axios.all(axiosList)            // 并发处理多个Promise组成的集合<pre><code>    .then(axios.spread((...result) =&gt; &#123;&#125;))     // then中的函数会在axiosList中所有的Promise返回响应后再执行    axios.spread()中可以用函数作为参数，且该参数函数的形参的顺序和Promise的顺序保持一致（该参数函数的形参也可以是数组）
+    .catch(异常处理)
+</code></pre>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -2235,77 +2350,6 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
-    <title>判断数组是否单调增/减</title>
-    <url>/2021/05/27/%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%8D%95%E8%B0%83%E5%A2%9E-%E5%87%8F/</url>
-    <content><![CDATA[<h2 id="思路一：两次遍历"><a href="#思路一：两次遍历" class="headerlink" title="思路一：两次遍历"></a>思路一：两次遍历</h2><span id="more"></span>
-
-<blockquote>
-<p>如果对于所有 i &lt;= j，A[i] &lt;= A[j]，那么数组 A 是单调递增的。 如果对于所有 i &lt;= j，A[i]&gt; = A[j]，那么数组 A 是单调递减的。<br>当给定的数组 A 是单调数组时返回 true，否则返回 false。</p>
-</blockquote>
-<p> 分别遍历是否是<strong>单调增</strong>或<strong>单调减</strong><br>    bool isSorted(int* A, int ASize, bool increasing) {<br>    if (increasing) {<br>        for (int i = 0; i &lt; ASize - 1; ++i) {<br>            if (A[i] &gt; A[i + 1]) {<br>                return false;<br>            }<br>        }<br>    } else {<br>        for (int i = 0; i &lt; ASize - 1; ++i) {<br>            if (A[i] &lt; A[i + 1]) {<br>                return false;<br>            }<br>        }<br>    }<br>    return true;<br>    }</p>
-<pre><code>bool isMonotonic(int* A, int ASize) &#123;
-    return isSorted(A, ASize, true) || isSorted(A, ASize, false);
-&#125;
-</code></pre>
-<h2 id="思路二：一次遍历"><a href="#思路二：一次遍历" class="headerlink" title="思路二：一次遍历"></a>思路二：一次遍历</h2><p>遍历数组A，若既遇到了<code>A[i] &gt; A[i+1]</code>，也遇到了<code>A[i]&lt;A[i+1]</code>，则说明：既不是单调递减的，也不是单调递增的</p>
-<h3 id="写法一"><a href="#写法一" class="headerlink" title="写法一"></a>写法一</h3><pre><code>bool isMonotonic(int* A, int ASize) &#123;
-    bool inc = true, dec = true;
-    int n = ASize;
-    for (int i = 0; i &lt; n - 1; ++i) &#123;
-        if (A[i] &gt; A[i + 1]) &#123;
-            inc = false;
-        &#125;
-        if (A[i] &lt; A[i + 1]) &#123;
-            dec = false;
-        &#125;
-    &#125;
-    return inc || dec;
-&#125;
-</code></pre>
-<h3 id="写法二"><a href="#写法二" class="headerlink" title="写法二"></a>写法二</h3><pre><code>bool isMonotonic(int* A, int ASize)&#123;
-    int a = 0, b = 0;
-    for(int i = 0; i &lt; ASize - 1; i++)&#123;
-        if(A[i] &lt;= A[i+1])&#123;
-            a++;
-        &#125;
-        if(A[i] &gt;= A[i+1]) &#123;
-            b++;
-        &#125;
-    &#125;
-    if(a == ASize - 1 || b == ASize - 1)&#123;
-        return true;
-    &#125;
-    else&#123;
-        return false;
-    &#125;
-&#125;
-</code></pre>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>两种思路的时间复杂度都是：O(n)</strong></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>前端问题和经验总结</title>
-    <url>/2023/05/29/%E5%89%8D%E7%AB%AF%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="经验总结"><a href="#经验总结" class="headerlink" title="经验总结"></a>经验总结</h2><span id="more"></span>
-
-<ol>
-<li>在fixed的div中，滚轮的滚动事件失效</li>
-<li>浏览器禁止直接访问本地资源文件，如果仍要将图片放在本地，可以使用node搭建一个简单的本地服务器，用来访问本地图片</li>
-<li>前端使用input上传图片之后获取不到文件的全路径名</li>
-<li>在vue中，axios请求可能还未结束，导致需要渲染组件或者使用的数据不存在，从而报错（即使在then中执行打印，也可能在请求之前打印，导致数据不存在出错）</li>
-<li>$router：是路由操作对象，只写对象；$route：路由信息对象，只读对象<br>所以前者一般用于路由跳转，后者用于跳转后获取参数</li>
-<li>axios的请求发生时机：axios.get()方法被调用后，它会异步创建一个Http请求。这个请求不会立即发出，而是先被加到一个队列中。在事件循环的下一个Tick中，Axios会从队列中取出请求，并将其发送给服务器。<br>当服务器响应请求时，Axios会将响应数据封装成一个对象，并作为Promise对象的参数来resolve它。此时，你可以在Promise的then方法中访问响应数据，并对其进行处理。<br>因此，虽然axios.get()方法的执行可能很快就完成了，但实际上它所发起的请求要经历一段时间的等待和处理，才能最终得到响应数据。</li>
-<li>axios.all(axiosList)            // 并发处理多个Promise组成的集合<pre><code>    .then(axios.spread((...result) =&gt; &#123;&#125;))     // then中的函数会在axiosList中所有的Promise返回响应后再执行    axios.spread()中可以用函数作为参数，且该参数函数的形参的顺序和Promise的顺序保持一致（该参数函数的形参也可以是数组）
-    .catch(异常处理)
-</code></pre>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>后端和数据库经验</title>
     <url>/2023/05/29/%E5%90%8E%E7%AB%AF%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%8F%E9%AA%8C/</url>
     <content><![CDATA[<h2 id="后端和数据库经验"><a href="#后端和数据库经验" class="headerlink" title="后端和数据库经验"></a>后端和数据库经验</h2><span id="more"></span>
@@ -2330,27 +2374,6 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       <tags>
         <tag>后端</tag>
         <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>命令行运行jar文件和点击运行jar文件区别</title>
-    <url>/2022/02/20/%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BF%90%E8%A1%8Cjar%E6%96%87%E4%BB%B6%E5%92%8C%E7%82%B9%E5%87%BB%E8%BF%90%E8%A1%8Cjar%E6%96%87%E4%BB%B6%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h2 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a>共同点</h2><span id="more"></span>
-
-<p><img src="https://s2.loli.net/2022/02/20/1mPEyZlcGMQgzJS.png" alt="image-20220220174307272"></p>
-<p>①应用程序都可以成功运行</p>
-<p>②可能会生成一些其他文件</p>
-<p><img src="https://s2.loli.net/2022/02/20/vq1sck58zLWEyD7.png" alt="image-20220220175111112"></p>
-<h2 id="二者区别"><a href="#二者区别" class="headerlink" title="二者区别"></a>二者区别</h2><h3 id="①点击运行jar文件"><a href="#①点击运行jar文件" class="headerlink" title="①点击运行jar文件"></a>①点击运行jar文件</h3><p>jar文件可以得到运行，同时区别于命令行运行在于：①在windows后台里<strong>会有</strong><code>java(TM)platform se binary</code>服务在运行</p>
-<p><img src="https://s2.loli.net/2022/02/20/S3qAdHmZJBfY17e.png" alt="image-20220220174028561"></p>
-<p><strong>注意：要删除生成的文件，需要先结束这个服务的运行</strong></p>
-<h3 id="②命令行运行jar文件"><a href="#②命令行运行jar文件" class="headerlink" title="②命令行运行jar文件"></a>②命令行运行jar文件</h3><p><img src="https://s2.loli.net/2022/02/20/cWVJPYpe5q9AtRB.png" alt="image-20220220174543702"></p>
-<p>jar文件可以成功运行，区别在于：①在windows后台里<strong>不会有</strong><code>java(TM)platform se binary</code>服务在运行</p>
-<p><img src="https://s2.loli.net/2022/02/20/9txvJu82OVLyG6d.png" alt="image-20220220174842366"></p>
-]]></content>
-      <tags>
-        <tag>jar文件</tag>
-        <tag>windows后台应用</tag>
       </tags>
   </entry>
   <entry>
@@ -2587,6 +2610,22 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
+    <title>导入项目，出现中文乱码</title>
+    <url>/2021/08/08/%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%87%BA%E7%8E%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</url>
+    <content><![CDATA[<h2 id="导入项目的时候，出现中文乱码"><a href="#导入项目的时候，出现中文乱码" class="headerlink" title="导入项目的时候，出现中文乱码"></a>导入项目的时候，出现中文乱码</h2><span id="more"></span>
+
+<h4 id="问题：中文出现乱码"><a href="#问题：中文出现乱码" class="headerlink" title="问题：中文出现乱码"></a>问题：中文出现乱码</h4><blockquote>
+<p>​    在导入其他人项目的时候，有时候会出现中文乱码的错误</p>
+</blockquote>
+<h4 id="解决方案：修改MyEclipse的字符编码格式"><a href="#解决方案：修改MyEclipse的字符编码格式" class="headerlink" title="解决方案：修改MyEclipse的字符编码格式"></a>解决方案：修改MyEclipse的字符编码格式</h4><p><img src="https://i.loli.net/2021/08/13/EIKfDFC4RQN9nAg.png" alt="屏幕截图 2021-08-08 181421"></p>
+<p><img src="https://i.loli.net/2021/08/13/4xhuGtLqykF1NYf.png" alt="QQ图片20210808181515"></p>
+<p>上面字符编码格式改为本身的编码格式</p>
+]]></content>
+      <tags>
+        <tag>中文乱码</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>安装VMwareTools</title>
     <url>/2023/06/23/%E5%AE%89%E8%A3%85VMwareTools/</url>
     <content><![CDATA[<h2 id="安装VMware-Tools"><a href="#安装VMware-Tools" class="headerlink" title="安装VMware Tools"></a>安装VMware Tools</h2><span id="more"></span>
@@ -2641,22 +2680,6 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
-    <title>导入项目，出现中文乱码</title>
-    <url>/2021/08/08/%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%87%BA%E7%8E%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</url>
-    <content><![CDATA[<h2 id="导入项目的时候，出现中文乱码"><a href="#导入项目的时候，出现中文乱码" class="headerlink" title="导入项目的时候，出现中文乱码"></a>导入项目的时候，出现中文乱码</h2><span id="more"></span>
-
-<h4 id="问题：中文出现乱码"><a href="#问题：中文出现乱码" class="headerlink" title="问题：中文出现乱码"></a>问题：中文出现乱码</h4><blockquote>
-<p>​    在导入其他人项目的时候，有时候会出现中文乱码的错误</p>
-</blockquote>
-<h4 id="解决方案：修改MyEclipse的字符编码格式"><a href="#解决方案：修改MyEclipse的字符编码格式" class="headerlink" title="解决方案：修改MyEclipse的字符编码格式"></a>解决方案：修改MyEclipse的字符编码格式</h4><p><img src="https://i.loli.net/2021/08/13/EIKfDFC4RQN9nAg.png" alt="屏幕截图 2021-08-08 181421"></p>
-<p><img src="https://i.loli.net/2021/08/13/4xhuGtLqykF1NYf.png" alt="QQ图片20210808181515"></p>
-<p>上面字符编码格式改为本身的编码格式</p>
-]]></content>
-      <tags>
-        <tag>中文乱码</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>常用CSS属性</title>
     <url>/2023/05/29/%E5%B8%B8%E7%94%A8CSS%E5%B1%9E%E6%80%A7/</url>
     <content><![CDATA[<h2 id="常用CSS属性"><a href="#常用CSS属性" class="headerlink" title="常用CSS属性"></a>常用CSS属性</h2><span id="more"></span>
@@ -2666,6 +2689,23 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 ]]></content>
       <tags>
         <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据库常用sql语句</title>
+    <url>/2021/10/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B8%B8%E7%94%A8sql%E8%AF%AD%E5%8F%A5/</url>
+    <content><![CDATA[<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><span id="more"></span>
+
+<h3 id="常用SQL语句"><a href="#常用SQL语句" class="headerlink" title="常用SQL语句"></a>常用SQL语句</h3><p>MySQL中常用的SQL语句如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> 1 ALTER TABLE：添加，修改，删除表的列，约束等表的定义。     </span><br><span class="line"> 2 查看列：desc 表名;  </span><br><span class="line"> 3 修改表名：alter table t_book rename to bbb;  </span><br><span class="line"> 4 添加列：alter table 表名 add column 列名 varchar(30);  </span><br><span class="line"> 5 删除列：alter table 表名 drop column 列名;  </span><br><span class="line"> 6 修改列名MySQL： alter table bbb change nnnnn hh int;  </span><br><span class="line"> 7 修改列名SQLServer：exec sp_rename&#39;t_student.name&#39;,&#39;nn&#39;,&#39;column&#39;;  </span><br><span class="line"> 8 修改列名Oracle：lter table bbb rename column nnnnn to hh int;  </span><br><span class="line"> 9 修改列属性：alter table t_book modify name varchar(22);  </span><br><span class="line">10 sp_rename：SQLServer 内置的存储过程，用与修改表的定义。 </span><br><span class="line"> </span><br><span class="line">   添加字段  </span><br><span class="line"> 1 alter table user add COLUMN new1 VARCHAR(20) DEFAULT NULL; &#x2F;&#x2F;增加一个字段，默认为空  </span><br><span class="line"> 2 alter table user add COLUMN new2 VARCHAR(20) NOT NULL;  &#x2F;&#x2F;增加一个字段，默认不能为空</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MySQL 查看约束，添加约束，删除约束 添加列，修改列，删除列  </span><br><span class="line"> 1 查看表的字段信息：desc 表名;  </span><br><span class="line"> 2 查看表的所有信息：show create table 表名;  </span><br><span class="line"> 3 添加主键约束：alter table 表名 add constraint 主键 （形如：PK_表名） primary key 表名(主键字段);  </span><br><span class="line"> 4 添加外键约束：alter table 从表 add constraint 外键（形如：FK_从表_主表） foreign key 从表(外键字段) references 主表(主键字段);  </span><br><span class="line"> 5 删除主键约束：alter table 表名 drop primary key;  </span><br><span class="line"> 6 删除外键约束：alter table 表名 drop foreign key 外键（区分大小写）;  </span><br><span class="line"> 7 修改表名：alter table t_book rename to bbb;  </span><br><span class="line"> 8 添加列：alter table 表名 add column 列名 varchar(30);  </span><br><span class="line"> 9 删除列：alter table 表名 drop column 列名;  </span><br><span class="line">10 修改列名MySQL： alter table bbb change nnnnn hh int;  </span><br><span class="line">11 修改列名SQLServer：exec sp_rename&#39;t_student.name&#39;,&#39;nn&#39;,&#39;column&#39;;  </span><br><span class="line">12 修改列名Oracle：alter table bbb rename column nnnnn to hh int;  </span><br><span class="line">13 修改列属性：alter table t_book modify name varchar(22);  </span><br><span class="line">14 sp_rename：SQLServer 内置的存储过程，用与修改表的定义。  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Mysql在表的某一位置增加一列的命令</span><br><span class="line"> 如果想在一个已经建好的表中添加一列，可以用诸如：</span><br><span class="line"> alter table t1 add column addr varchar(20) not null;</span><br><span class="line"></span><br><span class="line"> 这条语句会向已有的表t1中加入一列addr，这一列在表的最后一列位置。如果我们希望添加在指定的一列，可以用：</span><br><span class="line"> alter table t1 add column addr varchar(20) not null after user1;</span><br><span class="line"></span><br><span class="line"> 注意，上面这个命令的意思是说添加addr列到user1这一列后面。如果想添加到第一列的话，可以用：</span><br><span class="line"> alter table t1 add column addr varchar(20) not null first;</span><br></pre></td></tr></table></figure>
+
+<h3 id="语句执行顺序"><a href="#语句执行顺序" class="headerlink" title="语句执行顺序"></a>语句执行顺序</h3><p><img src="https://i.loli.net/2021/10/24/2oOPsryxkp1XGlZ.png" alt="image-20211024153315160"></p>
+]]></content>
+      <tags>
+        <tag>数据库</tag>
+        <tag>sql语句</tag>
       </tags>
   </entry>
   <entry>
@@ -2710,33 +2750,6 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
-    <title>数据库常用sql语句</title>
-    <url>/2021/10/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B8%B8%E7%94%A8sql%E8%AF%AD%E5%8F%A5/</url>
-    <content><![CDATA[<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><span id="more"></span>
-
-<h3 id="常用SQL语句"><a href="#常用SQL语句" class="headerlink" title="常用SQL语句"></a>常用SQL语句</h3><p>MySQL中常用的SQL语句如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> 1 ALTER TABLE：添加，修改，删除表的列，约束等表的定义。     </span><br><span class="line"> 2 查看列：desc 表名;  </span><br><span class="line"> 3 修改表名：alter table t_book rename to bbb;  </span><br><span class="line"> 4 添加列：alter table 表名 add column 列名 varchar(30);  </span><br><span class="line"> 5 删除列：alter table 表名 drop column 列名;  </span><br><span class="line"> 6 修改列名MySQL： alter table bbb change nnnnn hh int;  </span><br><span class="line"> 7 修改列名SQLServer：exec sp_rename&#39;t_student.name&#39;,&#39;nn&#39;,&#39;column&#39;;  </span><br><span class="line"> 8 修改列名Oracle：lter table bbb rename column nnnnn to hh int;  </span><br><span class="line"> 9 修改列属性：alter table t_book modify name varchar(22);  </span><br><span class="line">10 sp_rename：SQLServer 内置的存储过程，用与修改表的定义。 </span><br><span class="line"> </span><br><span class="line">   添加字段  </span><br><span class="line"> 1 alter table user add COLUMN new1 VARCHAR(20) DEFAULT NULL; &#x2F;&#x2F;增加一个字段，默认为空  </span><br><span class="line"> 2 alter table user add COLUMN new2 VARCHAR(20) NOT NULL;  &#x2F;&#x2F;增加一个字段，默认不能为空</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MySQL 查看约束，添加约束，删除约束 添加列，修改列，删除列  </span><br><span class="line"> 1 查看表的字段信息：desc 表名;  </span><br><span class="line"> 2 查看表的所有信息：show create table 表名;  </span><br><span class="line"> 3 添加主键约束：alter table 表名 add constraint 主键 （形如：PK_表名） primary key 表名(主键字段);  </span><br><span class="line"> 4 添加外键约束：alter table 从表 add constraint 外键（形如：FK_从表_主表） foreign key 从表(外键字段) references 主表(主键字段);  </span><br><span class="line"> 5 删除主键约束：alter table 表名 drop primary key;  </span><br><span class="line"> 6 删除外键约束：alter table 表名 drop foreign key 外键（区分大小写）;  </span><br><span class="line"> 7 修改表名：alter table t_book rename to bbb;  </span><br><span class="line"> 8 添加列：alter table 表名 add column 列名 varchar(30);  </span><br><span class="line"> 9 删除列：alter table 表名 drop column 列名;  </span><br><span class="line">10 修改列名MySQL： alter table bbb change nnnnn hh int;  </span><br><span class="line">11 修改列名SQLServer：exec sp_rename&#39;t_student.name&#39;,&#39;nn&#39;,&#39;column&#39;;  </span><br><span class="line">12 修改列名Oracle：alter table bbb rename column nnnnn to hh int;  </span><br><span class="line">13 修改列属性：alter table t_book modify name varchar(22);  </span><br><span class="line">14 sp_rename：SQLServer 内置的存储过程，用与修改表的定义。  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Mysql在表的某一位置增加一列的命令</span><br><span class="line"> 如果想在一个已经建好的表中添加一列，可以用诸如：</span><br><span class="line"> alter table t1 add column addr varchar(20) not null;</span><br><span class="line"></span><br><span class="line"> 这条语句会向已有的表t1中加入一列addr，这一列在表的最后一列位置。如果我们希望添加在指定的一列，可以用：</span><br><span class="line"> alter table t1 add column addr varchar(20) not null after user1;</span><br><span class="line"></span><br><span class="line"> 注意，上面这个命令的意思是说添加addr列到user1这一列后面。如果想添加到第一列的话，可以用：</span><br><span class="line"> alter table t1 add column addr varchar(20) not null first;</span><br></pre></td></tr></table></figure>
-
-<h3 id="语句执行顺序"><a href="#语句执行顺序" class="headerlink" title="语句执行顺序"></a>语句执行顺序</h3><p><img src="https://i.loli.net/2021/10/24/2oOPsryxkp1XGlZ.png" alt="image-20211024153315160"></p>
-]]></content>
-      <tags>
-        <tag>数据库</tag>
-        <tag>sql语句</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>最大公约数——欧几里得辗转相除法</title>
-    <url>/2023/03/06/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E2%80%94%E2%80%94%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="欧几里得——辗转相除法"><a href="#欧几里得——辗转相除法" class="headerlink" title="欧几里得——辗转相除法"></a>欧几里得——辗转相除法</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (b != <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">int</span> tem = a % b;</span><br><span class="line">    a = b;</span><br><span class="line">    b = tem;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">&quot;a和b的最大公约数为：&quot;</span> + a);</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据库驱动、jdbc、mybatis、数据源四者的关系</title>
     <url>/2022/04/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%A9%B1%E5%8A%A8%E3%80%81jdbc%E3%80%81mybatis%E3%80%81%E6%95%B0%E6%8D%AE%E6%BA%90%E5%9B%9B%E8%80%85%E7%9A%84%E5%85%B3%E7%B3%BB/</url>
     <content><![CDATA[<h2 id="四者关系，一图见之"><a href="#四者关系，一图见之" class="headerlink" title="四者关系，一图见之"></a>四者关系，一图见之</h2><span id="more"></span>
@@ -2750,6 +2763,30 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 ]]></content>
       <tags>
         <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬取网站常见错误</title>
+    <url>/2023/05/29/%E7%88%AC%E5%8F%96%E7%BD%91%E7%AB%99%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/</url>
+    <content><![CDATA[<h2 id="爬虫常见错误"><a href="#爬虫常见错误" class="headerlink" title="爬虫常见错误"></a>爬虫常见错误</h2><span id="more"></span>
+
+<ol>
+<li><p>url构造出错</p>
+</li>
+<li><p>referer中的一些参数有必要和url中的参数一样，需要动态变化</p>
+</li>
+<li><p>返回响应数据中，需要的数据不存在（越界，为空，获取到链接但网络资源不存在从而抛出异常）</p>
+</li>
+<li><p>解析数据，格式错误</p>
+</li>
+<li><p>存储数据库时，id（主键）错误、重复</p>
+</li>
+<li><p>在post请求，进入开发者工具，找到请求连接，最好找最后一次的请求链接，否则（使用最后一次之前的请求链接中的负载参数）可能所获得的响应中不包含全部的数据（即不完整）</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -2796,27 +2833,13 @@ version of the Java Runtime only recognizes class file versions up to 55.0
       </tags>
   </entry>
   <entry>
-    <title>爬取网站常见错误</title>
-    <url>/2023/05/29/%E7%88%AC%E5%8F%96%E7%BD%91%E7%AB%99%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/</url>
-    <content><![CDATA[<h2 id="爬虫常见错误"><a href="#爬虫常见错误" class="headerlink" title="爬虫常见错误"></a>爬虫常见错误</h2><span id="more"></span>
+    <title>最大公约数——欧几里得辗转相除法</title>
+    <url>/2023/03/06/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E2%80%94%E2%80%94%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="欧几里得——辗转相除法"><a href="#欧几里得——辗转相除法" class="headerlink" title="欧几里得——辗转相除法"></a>欧几里得——辗转相除法</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (b != <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">int</span> tem = a % b;</span><br><span class="line">    a = b;</span><br><span class="line">    b = tem;</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(<span class="string">&quot;a和b的最大公约数为：&quot;</span> + a);</span><br></pre></td></tr></table></figure>
 
-<ol>
-<li><p>url构造出错</p>
-</li>
-<li><p>referer中的一些参数有必要和url中的参数一样，需要动态变化</p>
-</li>
-<li><p>返回响应数据中，需要的数据不存在（越界，为空，获取到链接但网络资源不存在从而抛出异常）</p>
-</li>
-<li><p>解析数据，格式错误</p>
-</li>
-<li><p>存储数据库时，id（主键）错误、重复</p>
-</li>
-<li><p>在post请求，进入开发者工具，找到请求连接，最好找最后一次的请求链接，否则（使用最后一次之前的请求链接中的负载参数）可能所获得的响应中不包含全部的数据（即不完整）</p>
-</li>
-</ol>
 ]]></content>
       <tags>
-        <tag>爬虫</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -2937,19 +2960,6 @@ return 0;
       </tags>
   </entry>
   <entry>
-    <title>解决spring中Get、Post请求出现的乱码</title>
-    <url>/2021/11/15/%E8%A7%A3%E5%86%B3spring%E4%B8%ADGet%E3%80%81Post%E8%AF%B7%E6%B1%82%E5%87%BA%E7%8E%B0%E7%9A%84%E4%B9%B1%E7%A0%81/</url>
-    <content><![CDATA[<h2 id="Spring的Get、POST请求的中文乱吗"><a href="#Spring的Get、POST请求的中文乱吗" class="headerlink" title="Spring的Get、POST请求的中文乱吗"></a>Spring的Get、POST请求的中文乱吗</h2><span id="more"></span>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lry.filter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.*;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequestWrapper;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.UnsupportedEncodingException;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 解决get和post请求 全部乱码的过滤器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericEncodingFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest request, ServletResponse response, FilterChain chain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        <span class="comment">//处理response的字符编码</span></span><br><span class="line">        HttpServletResponse myResponse=(HttpServletResponse) response;</span><br><span class="line">        myResponse.setContentType(<span class="string">&quot;text/html;charset=UTF-8&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 转型为与协议相关对象</span></span><br><span class="line">        HttpServletRequest httpServletRequest = (HttpServletRequest) request;</span><br><span class="line">        <span class="comment">// 对request包装增强</span></span><br><span class="line">        HttpServletRequest myrequest = <span class="keyword">new</span> MyRequest(httpServletRequest);</span><br><span class="line">        chain.doFilter(myrequest, response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义request对象，HttpServletRequest的包装类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyRequest</span> <span class="keyword">extends</span> <span class="title">HttpServletRequestWrapper</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> HttpServletRequest request;</span><br><span class="line">    <span class="comment">//是否编码的标记</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> hasEncode;</span><br><span class="line">    <span class="comment">//定义一个可以传入HttpServletRequest对象的构造函数，以便对其进行装饰</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyRequest</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(request);<span class="comment">// super必须写</span></span><br><span class="line">        <span class="keyword">this</span>.request = request;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 对需要增强方法 进行覆盖</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map <span class="title">getParameterMap</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 先获得请求方式</span></span><br><span class="line">        String method = request.getMethod();</span><br><span class="line">        <span class="keyword">if</span> (method.equalsIgnoreCase(<span class="string">&quot;post&quot;</span>)) &#123;</span><br><span class="line">            <span class="comment">// post请求</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">// 处理post乱码</span></span><br><span class="line">                request.setCharacterEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span> request.getParameterMap();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equalsIgnoreCase(<span class="string">&quot;get&quot;</span>)) &#123;</span><br><span class="line">            <span class="comment">// get请求</span></span><br><span class="line">            Map&lt;String, String[]&gt; parameterMap = request.getParameterMap();</span><br><span class="line">            <span class="keyword">if</span> (!hasEncode) &#123; <span class="comment">// 确保get手动编码逻辑只运行一次</span></span><br><span class="line">                <span class="keyword">for</span> (String parameterName : parameterMap.keySet()) &#123;</span><br><span class="line">                    String[] values = parameterMap.get(parameterName);</span><br><span class="line">                    <span class="keyword">if</span> (values != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; values.length; i++) &#123;</span><br><span class="line">                            <span class="keyword">try</span> &#123;</span><br><span class="line">                                <span class="comment">// 处理get乱码</span></span><br><span class="line">                                values[i] = <span class="keyword">new</span> String(values[i]</span><br><span class="line">                                                       .getBytes(<span class="string">&quot;ISO-8859-1&quot;</span>), <span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">                            &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">                                e.printStackTrace();</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                hasEncode = <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> parameterMap;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.getParameterMap();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//取一个值</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getParameter</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        Map&lt;String, String[]&gt; parameterMap = getParameterMap();</span><br><span class="line">        String[] values = parameterMap.get(name);</span><br><span class="line">        <span class="keyword">if</span> (values == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> values[<span class="number">0</span>]; <span class="comment">// 取回参数的第一个值</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//取所有值</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String[] getParameterValues(String name) &#123;</span><br><span class="line">        Map&lt;String, String[]&gt; parameterMap = getParameterMap();</span><br><span class="line">        String[] values = parameterMap.get(name);</span><br><span class="line">        <span class="keyword">return</span> values;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Spring</tag>
-        <tag>中文乱码</tag>
-        <tag>Get、Post请求</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>虚拟机之间的入侵——永恒之蓝</title>
     <url>/2021/05/23/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%A5%E4%BE%B5%E2%80%94%E2%80%94%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/</url>
     <content><![CDATA[<h2 id="永恒之蓝"><a href="#永恒之蓝" class="headerlink" title="永恒之蓝"></a>永恒之蓝</h2><span id="more"></span>
@@ -2967,6 +2977,78 @@ return 0;
 <p>3.举例：控制对方的电脑截个屏，并获取照片<br>    screenshot        //截屏<br><img src="https://i.loli.net/2021/05/23/nlOxuUZqJvpBANT.png" alt="屏幕截图 2021-05-23 210457.png"></p>
 <p>图片文件保存的路径在命令行中显示的地址处，如下：<br><img src="https://i.loli.net/2021/05/23/cAqGLFyilZboErQ.png" alt="屏幕截图 2021-05-23 210920.png"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>计算机执行所生成的jar文件报错：版本不支持</title>
+    <url>/2021/06/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%89%A7%E8%A1%8C%E6%89%80%E7%94%9F%E6%88%90%E7%9A%84jar%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99%E2%80%94%E2%80%94%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/</url>
+    <content><![CDATA[<h2 id="简要说明"><a href="#简要说明" class="headerlink" title="简要说明"></a>简要说明</h2><span id="more"></span>
+
+<ul>
+<li>在IDE编辑器中也会出现和本文中讨论的问题一样的错误，两种情况的原因是一样的，其解决方法可以参考我的另一篇文章：<a href="https://liu-ruyang.github.io/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/">MyEclipse——jdk版本不支持</a></li>
+</ul>
+<h2 id="报错信息："><a href="#报错信息：" class="headerlink" title="报错信息："></a>报错信息：</h2><pre><code>Error: A JNI error has occurred, please check your
+installation and try again
+Exception in thread &quot;main&quot; java.lang.UnsupportedClassVersionError: Option has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0
+    at java.lang.ClassLoader.defineClass1(Native Method)
+    at java.lang.ClassLoader.defineClass(Unknown Source)
+    at java.security.SecureClassLoader.defineClass(Unknown Source)
+    at java.net.URLClassLoader.defineClass(Unknown Source)
+    at java.net.URLClassLoader.access$100(Unknown Source)
+    at java.net.URLClassLoader$1.run(Unknown Source)
+    at java.net.URLClassLoader$1.run(Unknown Source)
+    at java.security.AccessController.doPrivileged(Native Method)
+    at java.net.URLClassLoader.findClass(Unknown Source)
+    at java.lang.ClassLoader.loadClass(Unknown Source)
+    at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+    at java.lang.ClassLoader.loadClass(Unknown Source)
+    at sun.launcher.LauncherHelper.checkAndLoadMain(Unknown Source)
+</code></pre>
+<h3 id="具体报错（来波图更清楚）"><a href="#具体报错（来波图更清楚）" class="headerlink" title="具体报错（来波图更清楚）"></a>具体报错（来波图更清楚）</h3><ol>
+<li>下面是我在idea中写java项目的时候所使用的jdk版本：jdk11<br><img src="https://i.loli.net/2021/06/11/4kM98ENw1rX3Ai7.png" alt="屏幕截图 2021-06-11 221943.png"></li>
+<li>以下是我生成的jar文件所存放的地址<br><img src="https://i.loli.net/2021/06/11/JLrIlSF9aWjz3Bw.png" alt="屏幕截图 2021-06-11 220448.png"></li>
+<li>项目在idea中的正常执行效果如下图<br><img src="https://i.loli.net/2021/06/11/5ydtn129GNIJVRE.png" alt="屏幕截图 2021-06-11 223921.png"></li>
+<li> 可是，然后我在cmd中执行这个jar文件，开始报错，如下图<br><img src="https://i.loli.net/2021/06/11/nSP6EuXJTVUo5fO.png" alt="屏幕截图 2021-06-11 220834.png"><h2 id="原因解释："><a href="#原因解释：" class="headerlink" title="原因解释："></a>原因解释：</h2></li>
+</ol>
+<p><strong>简而言之：这是因为计算机上java的编译版本和java的运行版本不一致的原因</strong></p>
+<ul>
+<li><strong>尽管你是在环境变量中已经修改了jdk的配置如下图（我习惯是用的jdk11，所以以jdk11为例，其他版本也是一样的道理，操作过程一样）：</strong><br><img src="https://i.loli.net/2021/06/11/4DalxifhVoFLu2Y.png" alt="屏幕截图 2021-06-11 224304.png"></li>
+<li><strong>但是仍然会发现，jar文件还会报上面的错误</strong><br><img src="https://i.loli.net/2021/06/11/nSP6EuXJTVUo5fO.png" alt="屏幕截图 2021-06-11 220834.png"><h3 id="原因验证步骤"><a href="#原因验证步骤" class="headerlink" title="原因验证步骤"></a>原因验证步骤</h3></li>
+</ul>
+<ol>
+<li>查看编译版本：在cmd中输入以下命令，可以发现此时的java的运行版本是jdk11的 <code>java -version</code></li>
+</ol>
+<p><img src="https://i.loli.net/2021/06/11/aHPtkx7rbldA942.png" alt="屏幕截图 2021-06-11 221513.png"></p>
+<ol start="2">
+<li><p>查看java运行版本：在cmd中输入以下命令，可以发现此时的java的编译版本是jdk1.8</p>
+<p> <code>javac -version</code></p>
+</li>
+</ol>
+<p><img src="https://i.loli.net/2021/06/11/vG8HKV3Pc6TeF15.png" alt="屏幕截图 2021-06-11 221647.png"></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul>
+<li>之所以会出现以上的编译版本和运行版本不一样，原因在于最先安装IDE编译器的时候，可能自动帮你写了一个环境变量，如下图：<br><img src="https://i.loli.net/2021/06/11/wYStXrCxE4nig61.png" alt="屏幕截图 2021-06-11 222847.png"></li>
+<li>这个路径下的有三个文件，见下图：<br><img src="https://i.loli.net/2021/06/11/xpgGWo1crdu8YnV.png" alt="屏幕截图 2021-06-11 224651.png"></li>
+<li>在安装了jdk11后，并且将其添加到了环境变量中的路径中后，应当<strong>将上图中的三个文件都删除掉</strong></li>
+</ul>
+<h3 id="效果如图"><a href="#效果如图" class="headerlink" title="效果如图"></a>效果如图</h3><p>会发现此时的编译版本和运行版本都变成了jdk11了<br><img src="https://i.loli.net/2021/06/11/SewUKAoyj2qgRrY.png" alt="屏幕截图 2021-06-11 223533.png"><br>此时再运行一下之前生成的jar文件，就执行成功啦，嘿嘿！<br><img src="https://i.loli.net/2021/06/11/8mYHXxQC3ubLgzv.png" alt="屏幕截图 2021-06-11 223635.png"></p>
+<p>到这就成功啦！！</p>
+<p>喝彩！！ </p>
+]]></content>
+      <tags>
+        <tag>jdk版本不支持</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决spring中Get、Post请求出现的乱码</title>
+    <url>/2021/11/15/%E8%A7%A3%E5%86%B3spring%E4%B8%ADGet%E3%80%81Post%E8%AF%B7%E6%B1%82%E5%87%BA%E7%8E%B0%E7%9A%84%E4%B9%B1%E7%A0%81/</url>
+    <content><![CDATA[<h2 id="Spring的Get、POST请求的中文乱吗"><a href="#Spring的Get、POST请求的中文乱吗" class="headerlink" title="Spring的Get、POST请求的中文乱吗"></a>Spring的Get、POST请求的中文乱吗</h2><span id="more"></span>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lry.filter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.*;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequestWrapper;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.UnsupportedEncodingException;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 解决get和post请求 全部乱码的过滤器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericEncodingFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest request, ServletResponse response, FilterChain chain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        <span class="comment">//处理response的字符编码</span></span><br><span class="line">        HttpServletResponse myResponse=(HttpServletResponse) response;</span><br><span class="line">        myResponse.setContentType(<span class="string">&quot;text/html;charset=UTF-8&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 转型为与协议相关对象</span></span><br><span class="line">        HttpServletRequest httpServletRequest = (HttpServletRequest) request;</span><br><span class="line">        <span class="comment">// 对request包装增强</span></span><br><span class="line">        HttpServletRequest myrequest = <span class="keyword">new</span> MyRequest(httpServletRequest);</span><br><span class="line">        chain.doFilter(myrequest, response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义request对象，HttpServletRequest的包装类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyRequest</span> <span class="keyword">extends</span> <span class="title">HttpServletRequestWrapper</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> HttpServletRequest request;</span><br><span class="line">    <span class="comment">//是否编码的标记</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> hasEncode;</span><br><span class="line">    <span class="comment">//定义一个可以传入HttpServletRequest对象的构造函数，以便对其进行装饰</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyRequest</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(request);<span class="comment">// super必须写</span></span><br><span class="line">        <span class="keyword">this</span>.request = request;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 对需要增强方法 进行覆盖</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map <span class="title">getParameterMap</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 先获得请求方式</span></span><br><span class="line">        String method = request.getMethod();</span><br><span class="line">        <span class="keyword">if</span> (method.equalsIgnoreCase(<span class="string">&quot;post&quot;</span>)) &#123;</span><br><span class="line">            <span class="comment">// post请求</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="comment">// 处理post乱码</span></span><br><span class="line">                request.setCharacterEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span> request.getParameterMap();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method.equalsIgnoreCase(<span class="string">&quot;get&quot;</span>)) &#123;</span><br><span class="line">            <span class="comment">// get请求</span></span><br><span class="line">            Map&lt;String, String[]&gt; parameterMap = request.getParameterMap();</span><br><span class="line">            <span class="keyword">if</span> (!hasEncode) &#123; <span class="comment">// 确保get手动编码逻辑只运行一次</span></span><br><span class="line">                <span class="keyword">for</span> (String parameterName : parameterMap.keySet()) &#123;</span><br><span class="line">                    String[] values = parameterMap.get(parameterName);</span><br><span class="line">                    <span class="keyword">if</span> (values != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; values.length; i++) &#123;</span><br><span class="line">                            <span class="keyword">try</span> &#123;</span><br><span class="line">                                <span class="comment">// 处理get乱码</span></span><br><span class="line">                                values[i] = <span class="keyword">new</span> String(values[i]</span><br><span class="line">                                                       .getBytes(<span class="string">&quot;ISO-8859-1&quot;</span>), <span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">                            &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">                                e.printStackTrace();</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                hasEncode = <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> parameterMap;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.getParameterMap();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//取一个值</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getParameter</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        Map&lt;String, String[]&gt; parameterMap = getParameterMap();</span><br><span class="line">        String[] values = parameterMap.get(name);</span><br><span class="line">        <span class="keyword">if</span> (values == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> values[<span class="number">0</span>]; <span class="comment">// 取回参数的第一个值</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//取所有值</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String[] getParameterValues(String name) &#123;</span><br><span class="line">        Map&lt;String, String[]&gt; parameterMap = getParameterMap();</span><br><span class="line">        String[] values = parameterMap.get(name);</span><br><span class="line">        <span class="keyword">return</span> values;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Spring</tag>
+        <tag>中文乱码</tag>
+        <tag>Get、Post请求</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式6大原则-开闭原则+依赖倒置原则</title>
@@ -3044,65 +3126,6 @@ return 0;
       </tags>
   </entry>
   <entry>
-    <title>计算机执行所生成的jar文件报错：版本不支持</title>
-    <url>/2021/06/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%89%A7%E8%A1%8C%E6%89%80%E7%94%9F%E6%88%90%E7%9A%84jar%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99%E2%80%94%E2%80%94%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/</url>
-    <content><![CDATA[<h2 id="简要说明"><a href="#简要说明" class="headerlink" title="简要说明"></a>简要说明</h2><span id="more"></span>
-
-<ul>
-<li>在IDE编辑器中也会出现和本文中讨论的问题一样的错误，两种情况的原因是一样的，其解决方法可以参考我的另一篇文章：<a href="https://liu-ruyang.github.io/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/">MyEclipse——jdk版本不支持</a></li>
-</ul>
-<h2 id="报错信息："><a href="#报错信息：" class="headerlink" title="报错信息："></a>报错信息：</h2><pre><code>Error: A JNI error has occurred, please check your
-installation and try again
-Exception in thread &quot;main&quot; java.lang.UnsupportedClassVersionError: Option has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only recognizes class file versions up to 52.0
-    at java.lang.ClassLoader.defineClass1(Native Method)
-    at java.lang.ClassLoader.defineClass(Unknown Source)
-    at java.security.SecureClassLoader.defineClass(Unknown Source)
-    at java.net.URLClassLoader.defineClass(Unknown Source)
-    at java.net.URLClassLoader.access$100(Unknown Source)
-    at java.net.URLClassLoader$1.run(Unknown Source)
-    at java.net.URLClassLoader$1.run(Unknown Source)
-    at java.security.AccessController.doPrivileged(Native Method)
-    at java.net.URLClassLoader.findClass(Unknown Source)
-    at java.lang.ClassLoader.loadClass(Unknown Source)
-    at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
-    at java.lang.ClassLoader.loadClass(Unknown Source)
-    at sun.launcher.LauncherHelper.checkAndLoadMain(Unknown Source)
-</code></pre>
-<h3 id="具体报错（来波图更清楚）"><a href="#具体报错（来波图更清楚）" class="headerlink" title="具体报错（来波图更清楚）"></a>具体报错（来波图更清楚）</h3><ol>
-<li>下面是我在idea中写java项目的时候所使用的jdk版本：jdk11<br><img src="https://i.loli.net/2021/06/11/4kM98ENw1rX3Ai7.png" alt="屏幕截图 2021-06-11 221943.png"></li>
-<li>以下是我生成的jar文件所存放的地址<br><img src="https://i.loli.net/2021/06/11/JLrIlSF9aWjz3Bw.png" alt="屏幕截图 2021-06-11 220448.png"></li>
-<li>项目在idea中的正常执行效果如下图<br><img src="https://i.loli.net/2021/06/11/5ydtn129GNIJVRE.png" alt="屏幕截图 2021-06-11 223921.png"></li>
-<li> 可是，然后我在cmd中执行这个jar文件，开始报错，如下图<br><img src="https://i.loli.net/2021/06/11/nSP6EuXJTVUo5fO.png" alt="屏幕截图 2021-06-11 220834.png"><h2 id="原因解释："><a href="#原因解释：" class="headerlink" title="原因解释："></a>原因解释：</h2></li>
-</ol>
-<p><strong>简而言之：这是因为计算机上java的编译版本和java的运行版本不一致的原因</strong></p>
-<ul>
-<li><strong>尽管你是在环境变量中已经修改了jdk的配置如下图（我习惯是用的jdk11，所以以jdk11为例，其他版本也是一样的道理，操作过程一样）：</strong><br><img src="https://i.loli.net/2021/06/11/4DalxifhVoFLu2Y.png" alt="屏幕截图 2021-06-11 224304.png"></li>
-<li><strong>但是仍然会发现，jar文件还会报上面的错误</strong><br><img src="https://i.loli.net/2021/06/11/nSP6EuXJTVUo5fO.png" alt="屏幕截图 2021-06-11 220834.png"><h3 id="原因验证步骤"><a href="#原因验证步骤" class="headerlink" title="原因验证步骤"></a>原因验证步骤</h3></li>
-</ul>
-<ol>
-<li>查看编译版本：在cmd中输入以下命令，可以发现此时的java的运行版本是jdk11的 <code>java -version</code></li>
-</ol>
-<p><img src="https://i.loli.net/2021/06/11/aHPtkx7rbldA942.png" alt="屏幕截图 2021-06-11 221513.png"></p>
-<ol start="2">
-<li><p>查看java运行版本：在cmd中输入以下命令，可以发现此时的java的编译版本是jdk1.8</p>
-<p> <code>javac -version</code></p>
-</li>
-</ol>
-<p><img src="https://i.loli.net/2021/06/11/vG8HKV3Pc6TeF15.png" alt="屏幕截图 2021-06-11 221647.png"></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul>
-<li>之所以会出现以上的编译版本和运行版本不一样，原因在于最先安装IDE编译器的时候，可能自动帮你写了一个环境变量，如下图：<br><img src="https://i.loli.net/2021/06/11/wYStXrCxE4nig61.png" alt="屏幕截图 2021-06-11 222847.png"></li>
-<li>这个路径下的有三个文件，见下图：<br><img src="https://i.loli.net/2021/06/11/xpgGWo1crdu8YnV.png" alt="屏幕截图 2021-06-11 224651.png"></li>
-<li>在安装了jdk11后，并且将其添加到了环境变量中的路径中后，应当<strong>将上图中的三个文件都删除掉</strong></li>
-</ul>
-<h3 id="效果如图"><a href="#效果如图" class="headerlink" title="效果如图"></a>效果如图</h3><p>会发现此时的编译版本和运行版本都变成了jdk11了<br><img src="https://i.loli.net/2021/06/11/SewUKAoyj2qgRrY.png" alt="屏幕截图 2021-06-11 223533.png"><br>此时再运行一下之前生成的jar文件，就执行成功啦，嘿嘿！<br><img src="https://i.loli.net/2021/06/11/8mYHXxQC3ubLgzv.png" alt="屏幕截图 2021-06-11 223635.png"></p>
-<p>到这就成功啦！！</p>
-<p>喝彩！！ </p>
-]]></content>
-      <tags>
-        <tag>jdk版本不支持</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java实现邮件推送+实战</title>
     <url>/2021/10/19/Java%E5%AE%9E%E7%8E%B0%E9%82%AE%E4%BB%B6%E6%8E%A8%E9%80%81-%E5%AE%9E%E6%88%98/</url>
     <content><![CDATA[<h2 id="jar包的支持"><a href="#jar包的支持" class="headerlink" title="jar包的支持"></a>jar包的支持</h2><span id="more"></span>
@@ -3152,6 +3175,84 @@ Exception in thread &quot;main&quot; java.lang.UnsupportedClassVersionError: Opt
         <tag>POP接收</tag>
         <tag>servlet</tag>
         <tag>代码发送邮件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>访问权限修饰符</title>
+    <url>/2021/12/19/%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90/</url>
+    <content><![CDATA[<h2 id="Java中的访问权限"><a href="#Java中的访问权限" class="headerlink" title="Java中的访问权限"></a>Java中的访问权限</h2><span id="more"></span>
+
+<table>
+<thead>
+<tr>
+<th align="left">访问权限</th>
+<th>本类</th>
+<th>本包的类</th>
+<th>子类</th>
+<th>非子类的外包类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">public</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td align="left">protected</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td align="left">default</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td align="left">private</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+</tr>
+</tbody></table>
+<h2 id="C-中派生类对基类的访问权限"><a href="#C-中派生类对基类的访问权限" class="headerlink" title="C++中派生类对基类的访问权限"></a>C++中派生类对基类的访问权限</h2><table>
+<thead>
+<tr>
+<th>基类修饰符\继承方式</th>
+<th>public</th>
+<th>protected</th>
+<th>private</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public</td>
+<td>public</td>
+<td>protected</td>
+<td>private</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>protected</td>
+<td>protected</td>
+<td>private</td>
+</tr>
+<tr>
+<td>private</td>
+<td>NO（即不可直接访问）</td>
+<td>NO（即不可直接访问）</td>
+<td>NO（即不可直接访问）</td>
+</tr>
+</tbody></table>
+]]></content>
+      <tags>
+        <tag>java访问权限修饰符</tag>
+        <tag>C++访问权限修饰符</tag>
       </tags>
   </entry>
   <entry>
@@ -3369,84 +3470,6 @@ Exception in thread &quot;main&quot; java.lang.UnsupportedClassVersionError: Opt
       <tags>
         <tag>Linux</tag>
         <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>访问权限修饰符</title>
-    <url>/2021/12/19/%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90/</url>
-    <content><![CDATA[<h2 id="Java中的访问权限"><a href="#Java中的访问权限" class="headerlink" title="Java中的访问权限"></a>Java中的访问权限</h2><span id="more"></span>
-
-<table>
-<thead>
-<tr>
-<th align="left">访问权限</th>
-<th>本类</th>
-<th>本包的类</th>
-<th>子类</th>
-<th>非子类的外包类</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">public</td>
-<td>是</td>
-<td>是</td>
-<td>是</td>
-<td>是</td>
-</tr>
-<tr>
-<td align="left">protected</td>
-<td>是</td>
-<td>是</td>
-<td>是</td>
-<td>否</td>
-</tr>
-<tr>
-<td align="left">default</td>
-<td>是</td>
-<td>是</td>
-<td>否</td>
-<td>否</td>
-</tr>
-<tr>
-<td align="left">private</td>
-<td>是</td>
-<td>否</td>
-<td>否</td>
-<td>否</td>
-</tr>
-</tbody></table>
-<h2 id="C-中派生类对基类的访问权限"><a href="#C-中派生类对基类的访问权限" class="headerlink" title="C++中派生类对基类的访问权限"></a>C++中派生类对基类的访问权限</h2><table>
-<thead>
-<tr>
-<th>基类修饰符\继承方式</th>
-<th>public</th>
-<th>protected</th>
-<th>private</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>public</td>
-<td>public</td>
-<td>protected</td>
-<td>private</td>
-</tr>
-<tr>
-<td>protected</td>
-<td>protected</td>
-<td>protected</td>
-<td>private</td>
-</tr>
-<tr>
-<td>private</td>
-<td>NO（即不可直接访问）</td>
-<td>NO（即不可直接访问）</td>
-<td>NO（即不可直接访问）</td>
-</tr>
-</tbody></table>
-]]></content>
-      <tags>
-        <tag>java访问权限修饰符</tag>
-        <tag>C++访问权限修饰符</tag>
       </tags>
   </entry>
 </search>

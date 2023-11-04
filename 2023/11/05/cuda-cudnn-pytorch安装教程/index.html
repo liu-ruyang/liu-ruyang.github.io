@@ -18,26 +18,18 @@
 
 
 
-<meta name="description" content="简要说明">
+<meta name="description" content="安装Cuda和Pytorch">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MyEclipse——jdk版本不支持">
-<meta property="og:url" content="http://example.com/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/index.html">
+<meta property="og:title" content="cuda+cudnn+pytorch安装教程">
+<meta property="og:url" content="http://example.com/2023/11/05/cuda-cudnn-pytorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="代码流畅，心情舒畅！">
-<meta property="og:description" content="简要说明">
+<meta property="og:description" content="安装Cuda和Pytorch">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.loli.net/2021/05/29/IlKuxRMXBepzTQq.png">
-<meta property="og:image" content="https://i.loli.net/2021/05/29/Y1OJycCIPq8aHAK.png">
-<meta property="og:image" content="https://i.loli.net/2021/05/29/BRp4XsO6WTI51mJ.png">
-<meta property="og:image" content="https://i.loli.net/2021/05/29/wHCYGEOyL8kvanZ.png">
-<meta property="og:image" content="https://i.loli.net/2021/05/29/FrywNIpWDX3mPeM.png">
-<meta property="og:image" content="https://i.loli.net/2021/05/29/XSBMowaq8DrLfEd.png">
-<meta property="og:image" content="https://i.loli.net/2021/05/29/LI6VqRWouS5QKkT.png">
-<meta property="og:image" content="https://i.loli.net/2021/05/29/ETzhQY87PFvcbfO.png">
-<meta property="article:published_time" content="2021-05-29T06:40:17.000Z">
-<meta property="article:modified_time" content="2023-09-29T18:17:39.399Z">
+<meta property="article:published_time" content="2023-11-04T16:35:23.000Z">
+<meta property="article:modified_time" content="2023-11-04T16:36:51.748Z">
 <meta property="article:author" content="liu-ruyang">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/05/29/IlKuxRMXBepzTQq.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -71,7 +63,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>MyEclipse——jdk版本不支持 | 代码流畅，心情舒畅！</title>
+<title>cuda+cudnn+pytorch安装教程 | 代码流畅，心情舒畅！</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -296,11 +288,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-MyEclipse——jdk版本不支持" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-cuda-cudnn-pytorch安装教程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/" class="article-date">
-      <time datetime="2021-05-29T06:40:17.000Z" itemprop="datePublished">2021-05-29</time>
+      <a href="/2023/11/05/cuda-cudnn-pytorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="article-date">
+      <time datetime="2023-11-04T16:35:23.000Z" itemprop="datePublished">2023-11-05</time>
 </a>
 
 
@@ -315,7 +307,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      MyEclipse——jdk版本不支持
+      cuda+cudnn+pytorch安装教程
     </h1>
   
 
@@ -325,6 +317,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -332,33 +328,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="简要说明"><a href="#简要说明" class="headerlink" title="简要说明"></a>简要说明</h2><span id="more"></span>
+        <h2 id="安装Cuda和Pytorch"><a href="#安装Cuda和Pytorch" class="headerlink" title="安装Cuda和Pytorch"></a>安装Cuda和Pytorch</h2><span id="more"></span>
 
-<ul>
-<li>在计算机中执行生成jar文件也会出现和本文中讨论的问题一样的错误，两种情况的原因是一样的，其解决方法可以参考我的另一篇文章：<a target="_blank" rel="noopener" href="https://liu-ruyang.github.io/2021/06/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%89%A7%E8%A1%8C%E6%89%80%E7%94%9F%E6%88%90%E7%9A%84jar%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99%E2%80%94%E2%80%94%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/">计算机执行所生成的jar文件报错：版本不支持</a></li>
-</ul>
-<h2 id="报错信息——java-lang-UnsupportedClassVersionError"><a href="#报错信息——java-lang-UnsupportedClassVersionError" class="headerlink" title="报错信息——java.lang.UnsupportedClassVersionError"></a>报错信息——java.lang.UnsupportedClassVersionError</h2><h3 id="在编译运行的时候报如下的错误"><a href="#在编译运行的时候报如下的错误" class="headerlink" title="在编译运行的时候报如下的错误"></a>在编译运行的时候报如下的错误</h3><pre><code>错误: 加载主类 Test 时出现 LinkageError
-java.lang.UnsupportedClassVersionError: Test has been compiled by a more recent version of the Java Runtime (class file version 58.0), this
-version of the Java Runtime only recognizes class file versions up to 55.0
-</code></pre>
-<p><img src="https://i.loli.net/2021/05/29/IlKuxRMXBepzTQq.png" alt="屏幕截图 2021-05-29 145337.png"></p>
-<p>放大看错误</p>
-<p><img src="https://i.loli.net/2021/05/29/Y1OJycCIPq8aHAK.png" alt="屏幕截图 2021-05-29 145604.png"></p>
-<h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><p><strong>这是因为MyEclipse所设置支持的编译器的版本和自己本项目所使用的jdk版本不同，需要手动改一下（二者随便改哪一个都行，目标都是改成一致的）</strong></p>
-<h3 id="解决办法①：查看、修改jdk版本"><a href="#解决办法①：查看、修改jdk版本" class="headerlink" title="解决办法①：查看、修改jdk版本"></a>解决办法①：查看、修改jdk版本</h3><p>例如：本人所使用的jdk版本是<strong>jdk11</strong></p>
-<p>修改jdk版本方法如下：</p>
-<p>①依次点击：<strong>Window - preference - java - installed JREs - add</strong>，出现下面界面（初始时列表里只有一个jdk版本的（即只有第一行那个））</p>
-<p><img src="https://i.loli.net/2021/05/29/BRp4XsO6WTI51mJ.png" alt="屏幕截图 2021-05-29 150338.png"></p>
-<p>②选择<strong>Standard VM</strong>，点击 <strong>Directory（选择自己的jdk）- 输入JRE name（随意）- Finish</strong></p>
-<p><img src="https://i.loli.net/2021/05/29/wHCYGEOyL8kvanZ.png" alt="屏幕截图 2021-05-29 150415.png"></p>
-<p><img src="https://i.loli.net/2021/05/29/FrywNIpWDX3mPeM.png" alt="屏幕截图 2021-05-29 150622.png"></p>
-<p>③勾选自己添加的jdk，然后点击Apply，然后结束。</p>
-<p><img src="https://i.loli.net/2021/05/29/XSBMowaq8DrLfEd.png" alt="屏幕截图 2021-05-29 150722.png"></p>
-<h3 id="解决方法②：查看、修改eclipse选择支持使用的编译器版本"><a href="#解决方法②：查看、修改eclipse选择支持使用的编译器版本" class="headerlink" title="解决方法②：查看、修改eclipse选择支持使用的编译器版本"></a>解决方法②：查看、修改eclipse选择支持使用的编译器版本</h3><p>①依次点击：<strong>Window - preference - java - Compiler</strong></p>
-<p><img src="https://i.loli.net/2021/05/29/LI6VqRWouS5QKkT.png" alt="屏幕截图 2021-05-29 152127.png"></p>
-<p>②将编译器版本改为自己想要使用的版本（与上面设置的那个版本相同就行了），点击Apply应用结束</p>
-<h3 id="修改效果"><a href="#修改效果" class="headerlink" title="修改效果"></a>修改效果</h3><p>编译运行成功</p>
-<p><img src="https://i.loli.net/2021/05/29/ETzhQY87PFvcbfO.png" alt="屏幕截图 2021-05-29 152341.png"></p>
+<p>1.查看自己的nvidia驱动对cuda的最高支持的版本（通过nvidia-smi查看）<br>2.安装该cuda版本（通过nvcc -V和环境变量检查）<br>3.安装cudnn对应该cuda版本的版本<br>4.安装适配该cuda+python+系统版本的pytorch版本（可以去官网或者<a target="_blank" rel="noopener" href="https://download.pytorch.org/whl/torch_stable.html%E4%B8%8B%E8%BD%BD%E8%BD%AE%E5%AD%90%E5%88%B0%E6%9C%AC%E5%9C%B0%E5%86%8D%E5%AE%89%E8%A3%85%EF%BC%89">https://download.pytorch.org/whl/torch_stable.html下载轮子到本地再安装）</a></p>
 
       
     </div>
@@ -367,13 +339,13 @@ version of the Java Runtime only recognizes class file versions up to 55.0
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/">MyEclipse——jdk版本不支持</a></p>
+        <p><span>Title:</span><a href="/2023/11/05/cuda-cudnn-pytorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">cuda+cudnn+pytorch安装教程</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
-        <p><span>Created:</span>2021-05-29, 14:40:17</p>
-        <p><span>Updated:</span>2023-09-30, 02:17:39</p>
+        <p><span>Created:</span>2023-11-05, 00:35:23</p>
+        <p><span>Updated:</span>2023-11-05, 00:36:51</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/" title="MyEclipse——jdk版本不支持">http://example.com/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/</a>
-            <span class="copy-path" data-clipboard-text="From http://example.com/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2023/11/05/cuda-cudnn-pytorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="cuda+cudnn+pytorch安装教程">http://example.com/2023/11/05/cuda-cudnn-pytorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</a>
+            <span class="copy-path" data-clipboard-text="From http://example.com/2023/11/05/cuda-cudnn-pytorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -385,16 +357,10 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2021/06/08/%E5%B0%8F%E6%96%B0%E5%9C%A8windows10%E4%B8%8A%E5%AE%89%E8%A3%85kali%E5%8F%8C%E7%B3%BB%E7%BB%9F/">
-                    小新在windows10上安装kali双系统
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2021/05/27/%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%8D%95%E8%B0%83%E5%A2%9E-%E5%87%8F/">
-                    判断数组是否单调增/减
+                <a href="/2023/11/04/openpyxl%E4%BD%BF%E7%94%A8%EF%BC%882%EF%BC%89-%E5%85%AC%E5%BC%8F/">
+                    openpyxl使用-公式
                 </a>
             </div>
         
@@ -406,7 +372,7 @@ version of the Java Runtime only recognizes class file versions up to 55.0
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E8%A6%81%E8%AF%B4%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">简要说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF%E2%80%94%E2%80%94java-lang-UnsupportedClassVersionError"><span class="toc-number">2.</span> <span class="toc-text">报错信息——java.lang.UnsupportedClassVersionError</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C%E7%9A%84%E6%97%B6%E5%80%99%E6%8A%A5%E5%A6%82%E4%B8%8B%E7%9A%84%E9%94%99%E8%AF%AF"><span class="toc-number">2.1.</span> <span class="toc-text">在编译运行的时候报如下的错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A"><span class="toc-number">2.2.</span> <span class="toc-text">解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%E2%91%A0%EF%BC%9A%E6%9F%A5%E7%9C%8B%E3%80%81%E4%BF%AE%E6%94%B9jdk%E7%89%88%E6%9C%AC"><span class="toc-number">2.3.</span> <span class="toc-text">解决办法①：查看、修改jdk版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E2%91%A1%EF%BC%9A%E6%9F%A5%E7%9C%8B%E3%80%81%E4%BF%AE%E6%94%B9eclipse%E9%80%89%E6%8B%A9%E6%94%AF%E6%8C%81%E4%BD%BF%E7%94%A8%E7%9A%84%E7%BC%96%E8%AF%91%E5%99%A8%E7%89%88%E6%9C%AC"><span class="toc-number">2.4.</span> <span class="toc-text">解决方法②：查看、修改eclipse选择支持使用的编译器版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%95%88%E6%9E%9C"><span class="toc-number">2.5.</span> <span class="toc-text">修改效果</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Cuda%E5%92%8CPytorch"><span class="toc-number">1.</span> <span class="toc-text">安装Cuda和Pytorch</span></a></li></ol>
         
     </div>
     <style>
@@ -442,7 +408,7 @@ version of the Java Runtime only recognizes class file versions up to 55.0
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"MyEclipse——jdk版本不支持　| 代码流畅，心情舒畅！　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"cuda+cudnn+pytorch安装教程　| 代码流畅，心情舒畅！　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -462,15 +428,13 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2021/06/08/%E5%B0%8F%E6%96%B0%E5%9C%A8windows10%E4%B8%8A%E5%AE%89%E8%A3%85kali%E5%8F%8C%E7%B3%BB%E7%BB%9F/" title="Pre: 小新在windows10上安装kali双系统">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2021/05/27/%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%8D%95%E8%B0%83%E5%A2%9E-%E5%87%8F/" title="Next: 判断数组是否单调增/减">
+            <a href="/2023/11/04/openpyxl%E4%BD%BF%E7%94%A8%EF%BC%882%EF%BC%89-%E5%85%AC%E5%BC%8F/" title="Next: openpyxl使用-公式">
                 <i class="fa fa-angle-right"></i>
             </a>
         

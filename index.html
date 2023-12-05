@@ -321,11 +321,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="java读取文件的相对路径"><a href="#java读取文件的相对路径" class="headerlink" title="java读取文件的相对路径"></a>java读取文件的相对路径</h2><h3 id="本地运行"><a href="#本地运行" class="headerlink" title="本地运行"></a>本地运行</h3><p>在本地运行时可参考我的另一篇博客：<a target="_blank" rel="noopener" href="https://liu-ruyang.github.io/2021/09/07/java%E4%B8%AD%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%94%A8%E6%B3%95/">java中的相对路径用法 | 代码流畅，心情舒畅！ (liu-ruyang.github.io)</a></p>
-<h3 id="打包后运行"><a href="#打包后运行" class="headerlink" title="打包后运行"></a>打包后运行</h3><p>打包成jar包之后，应该使用classpath的路径，classpath的下一级即为resources或者java文件夹的下一级。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// properties类型文件</span></span><br><span class="line">InputStream inputStream = Main.class.getResourceAsStream(<span class="string">&quot;/params.properties&quot;</span>);</span><br><span class="line">Reader reader = <span class="keyword">new</span> InputStreamReader(inputStream, StandardCharsets.UTF_8);		<span class="comment">// 以utf-8格式读取</span></span><br><span class="line">Properties properties = <span class="keyword">new</span> Properties();</span><br><span class="line">properties.load(reader);</span><br><span class="line"></span><br><span class="line"><span class="comment">// json类型文件（使用com.alibaba.fastjson2依赖）</span></span><br><span class="line">InputStream inputStream = Main.class.getResourceAsStream(<span class="string">&quot;/data.json&quot;</span>);</span><br><span class="line">jsonObject = JSON.parseObject(inputStream, StandardCharsets.UTF_8);</span><br></pre></td></tr></table></figure>
-
-
+              <h2 id="java读取文件的相对路径"><a href="#java读取文件的相对路径" class="headerlink" title="java读取文件的相对路径"></a>java读取文件的相对路径</h2>
+          
       
     </div>
     
@@ -338,6 +335,10 @@
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2023/12/05/java%E6%89%93%E5%8C%85%E5%90%8E%E8%AF%BB%E5%8F%96resource%E6%96%87%E4%BB%B6%E4%B8%8B%E7%9A%84%E8%B7%AF%E5%BE%84/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

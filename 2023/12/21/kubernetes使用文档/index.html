@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+
+<meta name="referrer" content="no-referrer" />
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="liu-ruyang" />
+
+
+
+<meta name="description" content="核心概念">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kubernetes使用文档">
+<meta property="og:url" content="http://example.com/2023/12/21/kubernetes%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/index.html">
+<meta property="og:site_name" content="代码流畅，心情舒畅！">
+<meta property="og:description" content="核心概念">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231226151518.png?token=AQXPXNRJQXMJV72UJT35CA3FRJ64G">
+<meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231225145013.png?token=AQXPXNX2KRSEX7N6D6R7ANDFRETGE">
+<meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231225151913.png?token=AQXPXNXY6FUDMULJHCXLIGLFREWS4">
+<meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231225181318.png?token=AQXPXNQO7F5UXTUEONC77E3FRFK7W">
+<meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231225203028.png?token=AQXPXNW2EPIZBBYPMRNUS23FRF3CC">
+<meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231226155227.png?token=AQXPXNSWKSRZH2EYTM6SECDFRKDHQ">
+<meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231226155240.png?token=AQXPXNWKUZNMJVJP4BIMRBDFRKDII">
+<meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231226223601.png?token=AQXPXNSR5HYSJCX2G4UO4STFRLSQ2">
+<meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231227102122.png?token=AQXPXNULJ2MCCOQVLFY2ZELFROFF6">
+<meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231227105533.png?token=AQXPXNQ4ZQP2JTP56ECTMTTFROJGC">
+<meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231227110521.png?token=AQXPXNR3M2KSXQQNGUAV2OLFROKK4">
+<meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231227110709.png?token=AQXPXNWJ2B2R6RKQUO6I6ODFROKRU">
+<meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231226163113.png?token=AQXPXNWS2JFP2GRESYDUW2LFRKHY6">
+<meta property="article:published_time" content="2023-12-21T08:57:25.000Z">
+<meta property="article:modified_time" content="2023-12-27T03:44:15.571Z">
+<meta property="article:author" content="liu-ruyang">
+<meta property="article:tag" content="k8s、Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231226151518.png?token=AQXPXNRJQXMJV72UJT35CA3FRJ64G">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="代码流畅，心情舒畅！" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/bitbug_favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>kubernetes使用文档 | 代码流畅，心情舒畅！</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar2.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/%E9%9A%8F%E7%AC%94">随笔</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/HTML/%E7%BD%91%E9%A1%B5%E7%9B%B8%E5%86%8C%E5%85%A5%E5%8F%A3">网页相册</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" rel="noopener" href="https://github.com/liu-ruyang" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa CSDN" target="_blank" rel="noopener" href="https://blog.csdn.net/m0_49343723?spm=1010.2135.3001.5343" title="CSDN"></a>
+                            
+                                <a class="fa QQ" target="_blank" rel="noopener" href="https://user.qzone.qq.com/2920255877/infocenter" title="QQ"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%A6%E5%8F%B7/" rel="tag">$符号</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8C%E5%86%92%E5%8F%B7/" rel="tag">::双冒号</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E7%AC%A6/" rel="tag">C++访问权限修饰符</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E6%A0%B7%E5%BC%8F/" rel="tag">CSS样式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cloneable%E6%8E%A5%E5%8F%A3/" rel="tag">Cloneable接口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DatagramPacket/" rel="tag">DatagramPacket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DatagramSocket/" rel="tag">DatagramSocket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Document%E8%A7%A3%E6%9E%90/" rel="tag">Document解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Get%E3%80%81Post%E8%AF%B7%E6%B1%82/" rel="tag">Get、Post请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/" rel="tag">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HttpClient/" rel="tag">HttpClient</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/I-O/" rel="tag">I/O</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO%E6%B5%81/" rel="tag">IO流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea%E4%BD%BF%E7%94%A8/" rel="tag">Idea使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" rel="tag">Idea使用教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/InvocationHandler/" rel="tag">InvocationHandler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" rel="tag">JVM体系结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/" rel="tag">JVM内存分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%9F%BA%E7%A1%80/" rel="tag">Java基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Json%E8%A7%A3%E6%9E%90/" rel="tag">Json解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP/" rel="tag">KMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kali/" rel="tag">Kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MachineLearning/" rel="tag">MachineLearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mapper-xml/" rel="tag">Mapper.xml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis/" rel="tag">Mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mybatis-Spring/" rel="tag">Mybatis-Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/" rel="tag">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/POP%E6%8E%A5%E6%94%B6/" rel="tag">POP接收</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Promise%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="tag">Promise的使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Proxy/" rel="tag">Proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SMTP%E5%8F%91%E9%80%81/" rel="tag">SMTP发送</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSM/" rel="tag">SSM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/" rel="tag">Servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/" rel="tag">Socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/" rel="tag">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thread/" rel="tag">Thread</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/" rel="tag">Tomcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/" rel="tag">Typora图床配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/" rel="tag">UDP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UUID/" rel="tag">UUID</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/class%E5%B8%B8%E9%87%8F%E6%B1%A0/" rel="tag">class常量池</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F/" rel="tag">cmd编码格式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/enum%E6%9E%9A%E4%B8%BE/" rel="tag">enum枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git%E6%93%8D%E4%BD%9C/" rel="tag">git操作</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery%E6%A1%86%E6%9E%B6/" rel="tag">jQuery框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jar%E6%96%87%E4%BB%B6/" rel="tag">jar文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java8%E6%96%B0%E7%89%B9%E6%80%A7/" rel="tag">java8新特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javaweb%E9%A1%B9%E7%9B%AE/" rel="tag">javaweb项目</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/" rel="tag">java创建对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E6%BA%90%E6%96%87%E4%BB%B6%E4%B8%8D%E7%BC%96%E8%AF%91/" rel="tag">java源文件不编译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84/" rel="tag">java相对路径</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E7%AC%A6/" rel="tag">java访问权限修饰符</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/" rel="tag">jdk版本不支持</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/k8s%E3%80%81Linux/" rel="tag">k8s、Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">lambda表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/log4j/" rel="tag">log4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven%E4%BE%9D%E8%B5%96%E5%8C%85/" rel="tag">maven依赖包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven%E5%AF%BC%E5%85%A5%E8%B5%84%E6%BA%90/" rel="tag">maven导入资源</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven%E9%95%9C%E5%83%8F%E9%85%8D%E7%BD%AE/" rel="tag">maven镜像配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/new%E5%85%B3%E9%94%AE%E5%AD%97/" rel="tag">new关键字</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/" rel="tag">servlet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E8%AF%AD%E5%8F%A5/" rel="tag">sql语句</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/static/" rel="tag">static</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/super/" rel="tag">super</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/super%E4%BD%9C%E7%94%A8/" rel="tag">super作用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this/" rel="tag">this</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this%E4%BD%9C%E7%94%A8/" rel="tag">this作用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/try%E4%B8%AD%E7%9A%84return/" rel="tag">try中的return</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-router/" rel="tag">vue-router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-xml%E9%85%8D%E7%BD%AE/" rel="tag">web.xml配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows%E5%90%8E%E5%8F%B0%E5%BA%94%E7%94%A8/" rel="tag">windows后台应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/" rel="tag">中文乱码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E5%8A%A1/" rel="tag">事务</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" rel="tag">代理模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%A0%81%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/" rel="tag">代码发送邮件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%80%BC%E7%B1%BB%E5%9E%8B%E3%80%81%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" rel="tag">值类型、引用类型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A8%E5%B1%80%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%B1%A0/" rel="tag">全局字符串池</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E5%AD%98%E4%B8%8D%E8%B6%B3/" rel="tag">内存不足</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/" rel="tag">内存分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%99%E6%96%87%E4%BB%B6/" rel="tag">写文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/" rel="tag">函数式接口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1/" rel="tag">创建对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B/" rel="tag">创建线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/" rel="tag">动态代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB/" rel="tag">匿名内部类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%9C%BA%E5%88%B6/" rel="tag">双亲委派机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F/" rel="tag">双系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8F%8D%E5%B0%84/" rel="tag">反射</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8C%E6%AD%A5%E9%94%81/" rel="tag">同步锁</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag">后端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A3%B0%E6%98%8E%E3%80%81%E5%AE%9A%E4%B9%89%E5%8C%BA%E5%88%AB/" rel="tag">声明、定义区别</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/" rel="tag">字符串匹配</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA/" rel="tag">对象创建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" rel="tag">序列化和反序列化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%90%E5%91%98%E5%8F%AF%E8%A7%81%E6%80%A7/" rel="tag">成员可见性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" rel="tag">文件上传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/" rel="tag">方法引用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%BF%97/" rel="tag">日志</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AC%E5%9C%B0%E4%BE%9D%E8%B5%96%E5%BC%95%E7%94%A8/" rel="tag">本地依赖引用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AC%E5%9C%B0%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8/" rel="tag">本地命令使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A6%82%E5%BF%B5/" rel="tag">概念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="tag">正则表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%A9%E6%9C%BA/" rel="tag">玩机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD/" rel="tag">类加载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B1%BB%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E8%BF%87%E7%A8%8B/" rel="tag">类的初始化过程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%99%A8/" rel="tag">类的加载器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B1%BB%E9%87%8A%E6%94%BE/" rel="tag">类释放</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%A6%E7%91%9F%E5%A4%AB%E9%97%AE%E9%A2%98/" rel="tag">约瑟夫问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B%E4%BA%94%E7%8A%B6%E6%80%81/" rel="tag">线程五状态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/" rel="tag">线程同步机制</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/" rel="tag">编程基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/" rel="tag">网络请求</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" rel="tag">背包问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8E%B7%E5%8F%96class%E5%AF%B9%E8%B1%A1/" rel="tag">获取class对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A3%85%E7%AE%B1%E3%80%81%E6%8B%86%E7%AE%B1/" rel="tag">装箱、拆箱</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F6%E5%A4%A7%E5%8E%9F%E5%88%99/" rel="tag">设计模式6大原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%80%BB%E8%A7%88/" rel="tag">设计模式总览</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7/" rel="tag">访问对象属性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BF%E9%97%AE%E7%88%B6%E7%B1%BB%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7/" rel="tag">访问父类私有属性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B8%B8%E9%87%8F%E6%B1%A0/" rel="tag">运行时常量池</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE/" rel="tag">部署项目</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE/" rel="tag">配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF/" rel="tag">配置模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%99%E6%80%81%E4%BB%A3%E7%90%86/" rel="tag">静态代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/" rel="tag">项目打包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/" rel="tag">项目结构</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">小六猪在一点点的学习呢</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar2.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/%E9%9A%8F%E7%AC%94">随笔</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/HTML/%E7%BD%91%E9%A1%B5%E7%9B%B8%E5%86%8C%E5%85%A5%E5%8F%A3">网页相册</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/liu-ruyang" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="https://blog.csdn.net/m0_49343723?spm=1010.2135.3001.5343" title="CSDN"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="https://user.qzone.qq.com/2920255877/infocenter" title="QQ"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-kubernetes使用文档" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/12/21/kubernetes%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" class="article-date">
+      <time datetime="2023-12-21T08:57:25.000Z" itemprop="datePublished">2023-12-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      kubernetes使用文档
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/k8s%E3%80%81Linux/" rel="tag">k8s、Linux</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h1><span id="more"></span>
+
+<p>[toc]</p>
+<h2 id="认识Kubernetes？"><a href="#认识Kubernetes？" class="headerlink" title="认识Kubernetes？"></a>认识Kubernetes？</h2><p>开源的、用于管理云平台中<strong>多个主机</strong>上的容器化的应用，<strong>目标</strong>是然给部署容器化的应用简单并且高效（Docker-compose不借助其他工具只可以管理单主机上的）</p>
+<h3 id="为什么需要Kubernetes"><a href="#为什么需要Kubernetes" class="headerlink" title="为什么需要Kubernetes"></a>为什么需要Kubernetes</h3><h4 id="传统部署"><a href="#传统部署" class="headerlink" title="传统部署"></a>传统部署</h4><p>两个应用之间环境不隔离（比如写文件时冲突）</p>
+<h4 id="虚拟化部署（部署在虚拟机上）"><a href="#虚拟化部署（部署在虚拟机上）" class="headerlink" title="虚拟化部署（部署在虚拟机上）"></a>虚拟化部署（部署在虚拟机上）</h4><p>占用资源过多（启用虚拟机要分配较大的内存）</p>
+<h4 id="容器化部署"><a href="#容器化部署" class="headerlink" title="容器化部署"></a>容器化部署</h4><p>环境隔离、占用资源少</p>
+<p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231226151518.png?token=AQXPXNRJQXMJV72UJT35CA3FRJ64G" alt="image-20231225140219138"></p>
+<h4 id="Kubernetes的特点"><a href="#Kubernetes的特点" class="headerlink" title="Kubernetes的特点"></a>Kubernetes的特点</h4><ol>
+<li>自我修复</li>
+<li>弹性伸缩</li>
+<li>自动部署和回滚</li>
+<li>服务发现和负载均衡</li>
+<li>机密和配置管理</li>
+<li>存储编排</li>
+<li>批处理</li>
+</ol>
+<h3 id="企业级容器调度平台"><a href="#企业级容器调度平台" class="headerlink" title="企业级容器调度平台"></a>企业级容器调度平台</h3><p>Apache Mesos：</p>
+<p>一个分布式调度系统内核、遭遇DOcker产生，Mesos作为资源管理器，从DC/OS角度提供资源视图，主/从结构工作模式，主节点分配任务，并用从节点上的Executor负责执行，通过Zookeeper给主节点提供服务注册、服务发现功能。通过Framwork Marthon提供容器调度的能力。支模拟测试支持超过5w+节点，在大规模上拥有较大优势。</p>
+<p>Docker Swarm：</p>
+<p>一个有Docker开发的调度框架。好处之一是标准Docker API的使用。由于随Docker引擎一起发布，无需额外安装，配置简单，支持服务注册、服务发现，内置Overlay Network以及Load Balancer。与Docker  CLI非常类似的操作命令，对熟悉Docker的人非常容易上手。适用于中小型系统。</p>
+<p>Google Kubernetes：</p>
+<p>最流行的容器编排解决方案框架，基于Google庞大的生态圈及社区产生的产品。通过Pods这一抽象的概念，解决Container之间的依赖与通信问题。Pods，Services，Deployments是独立部署的部分，可以通过Selector提供更多的灵活性，内置服务注册表的负载均衡。实用度更广，功能更强大，相较于Mesos拉力说哦节点规模较小。</p>
+<h2 id="集群架构与组件"><a href="#集群架构与组件" class="headerlink" title="集群架构与组件"></a>集群架构与组件</h2><p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231225145013.png?token=AQXPXNX2KRSEX7N6D6R7ANDFRETGE" alt="image-20231225145012183"></p>
+<ol>
+<li>节点分为主、从节点<ol>
+<li>只有从节点部署任务</li>
+<li>主节点可只做主节点，也可以同时做从节点</li>
+</ol>
+</li>
+<li>所有的操作有个汇聚中心api-server，它维护了k8s中所有对于节点或者任务处理的操作 </li>
+<li>对于用户而言，我们通过命令行操作k8s，经由api-server，转换为api调用请求，所以对于机器而言，看到的是restful的请求</li>
+</ol>
+<h3 id="相关组件"><a href="#相关组件" class="headerlink" title="相关组件"></a>相关组件</h3><h4 id="控制面板组件（在Master节点上）"><a href="#控制面板组件（在Master节点上）" class="headerlink" title="控制面板组件（在Master节点上）"></a>控制面板组件（在Master节点上）</h4><ol>
+<li>kube-api-server</li>
+<li>kube-controller-manager</li>
+<li>cloud-controller-manager</li>
+<li>kube-scheduler </li>
+<li>etcd</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231225151913.png?token=AQXPXNXY6FUDMULJHCXLIGLFREWS4" alt="image-20231225151912828"></p>
+<h4 id="节点组件-普通节点上"><a href="#节点组件-普通节点上" class="headerlink" title="节点组件(普通节点上)"></a>节点组件(普通节点上)</h4><ol>
+<li>kubelet</li>
+<li>kube-proxy</li>
+<li>container runtime</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231225181318.png?token=AQXPXNQO7F5UXTUEONC77E3FRFK7W" alt="image-20231225181317304"></p>
+<ol>
+<li>一台服务器是一个节点</li>
+<li>一个节点中可以有多个Pod</li>
+<li>一个Pod中至少有一个容器</li>
+</ol>
+<h4 id="附加组件（可选）"><a href="#附加组件（可选）" class="headerlink" title="附加组件（可选）"></a>附加组件（可选）</h4><ol>
+<li>kube-dns：负责为整个集群提供DNS服务</li>
+<li>Ingress Controller：为服务提供外网入口</li>
+<li>Heapster（或者Prometheus）：提供资源监控</li>
+<li>Dashboard：提供GUI</li>
+<li>Federation：提供可用区的集群</li>
+<li>Fluentd-elasticsearch：提供集群日志采集、存储与查询</li>
+</ol>
+<h3 id="分层架构"><a href="#分层架构" class="headerlink" title="分层架构"></a>分层架构</h3><ol>
+<li>生态系统</li>
+<li>接口层</li>
+<li>管理层：系统度量（如基础设施、容器和网络的度量）、自动化（如自动扩展、动态Provision等）以及策略管理（RVAC、Quota、PSP、NetworkPolicy等）</li>
+<li>应用层：部署（无状态应用、有状态应用、批处理任务、集群应用等）和路由（服务发现、DNS解析等）</li>
+<li>核心层：最核心的功能、对外提供API构建高层的应用，对内提供插件式应用执行环境</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231225203028.png?token=AQXPXNW2EPIZBBYPMRNUS23FRF3CC" alt="image-20231225203027131"></p>
+<h3 id="服务的分类"><a href="#服务的分类" class="headerlink" title="服务的分类"></a>服务的分类</h3><h4 id="无状态应用"><a href="#无状态应用" class="headerlink" title="无状态应用"></a>无状态应用</h4><ol>
+<li>Nginx</li>
+<li>Apache</li>
+</ol>
+<p>不会对本地环境产生任何依赖，例如不会存储数据到本地磁盘</p>
+<p>优点：对客户端透明，无依赖关系，可以高效实现扩容、迁移</p>
+<p>缺点：不能存储数据，需要额外的数据服务支撑</p>
+<p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231226155227.png?token=AQXPXNSWKSRZH2EYTM6SECDFRKDHQ" alt="image-20231226155226896"></p>
+<h4 id="有状态应用"><a href="#有状态应用" class="headerlink" title="有状态应用"></a>有状态应用</h4><ol>
+<li>MySQL</li>
+<li>Redis</li>
+</ol>
+<p>会对本地环境产生依赖，例如需要存储数据到本地磁盘</p>
+<p>优点：可以独立存储数据，实现数据管理</p>
+<p>缺点：集群环境下需要实现主从、数据同步、备份、水平扩容复杂 </p>
+<p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231226155240.png?token=AQXPXNWKUZNMJVJP4BIMRBDFRKDII" alt="image-20231226155239190"></p>
+<h3 id="资源和对象"><a href="#资源和对象" class="headerlink" title="资源和对象"></a>资源和对象</h3><p>k8s中所有内容都抽象为资源，如Pod、Service、Node等都是资源。“对象”就是“资源”的实例。</p>
+<p>对象的创建、删除、修改，都是通过Kubernetes API（即Api Server）进行的。</p>
+<h4 id="资源的分类"><a href="#资源的分类" class="headerlink" title="资源的分类"></a>资源的分类</h4><ol>
+<li>元数据：<ol>
+<li>Horizontal Pod Autoscaler（HPA）：<ul>
+<li>Pod自动扩容，可以根据CPU使用率或自定义指标自动对Pod进行扩/缩容</li>
+<li>控制管理器每隔30s，查询metrics地资源使用情况</li>
+<li>支持三种metrics类型<ul>
+<li>预定义metrics（比如Pod的CPU），以利用率地方式计算</li>
+<li>自定义地Pod metrics，以原始值（raw value）的方式计算</li>
+<li>自定义的object metrics</li>
+</ul>
+</li>
+<li>支持两种metrics查询方式：Heapster和自定义的REST API</li>
+<li>支持多metrics</li>
+</ul>
+</li>
+<li>PodTemplate：<ul>
+<li>关于Pod的定义，到那时被包含在其他的Kubernetes对象中（例如Deployment、StatefulSet、DaemonSet等控制器）。控制器通过Pod Template信息来创建Pod。</li>
+</ul>
+</li>
+<li>LimitRange：<ul>
+<li>对集群内Request和Limits的配置做一个全局统一的限制，相当于批量设置了某一个范围内（某个命名空间）的Pod的资源使用限制</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>集群：<ol>
+<li>Namespace</li>
+<li>Node<ul>
+<li>节点相当于一台服务器的概念</li>
+</ul>
+</li>
+<li>ClusterRole</li>
+<li>ClusterRoleBinding：将ClusterRole和Role绑定到对应的集群上去</li>
+</ol>
+</li>
+<li>命名空间<ol>
+<li><p>工作负载型（Pod）</p>
+<ol>
+<li><p>Pod（容器组）是Kubernetes中最小的可部署单元。一个Pod（容器组）包含了一个应用程序容器（某些情况下可以是多个）、存储资源、一个唯一的网络IP地址、以及一些确定容器该如何运行的选项。Pod容器代表了Kubernetes中一个独立的应用程序运行实例，该实例可能有单个容器或者几个紧耦合在一起的容器组成。</p>
+</li>
+<li><p>Docker是Kubernetes Pod中施一公最广泛的容器引擎</p>
+</li>
+<li><p>Kubernetes集群中的Pod存在如下两种使用途径</p>
+<ol>
+<li>一个Pod中只运行一个容器</li>
+<li>一个Pod中运行多个需要互相协作的容器。</li>
+</ol>
+</li>
+<li><p>副本（replicas）：一个Pod可以被复制成多份，每一份可以称为一个副本</p>
+</li>
+<li><p>控制器：每一个控制器都是一个Pod对象</p>
+<ol>
+<li><p>适用无状态服务</p>
+<ol>
+<li>ReplicationController（RC）：<ol>
+<li>V1.11就已经废除了</li>
+<li>在资源足够情况下，帮助动态更新Pod的副本数</li>
+</ol>
+</li>
+<li>ReplicaSet（RS）：<ol>
+<li>对RC的一次升级</li>
+<li>帮助我们动态更新Pod的副本数</li>
+<li>可以通过selector来选择对哪些Pod生效</li>
+<li>只有扩容、缩容能力</li>
+</ol>
+</li>
+<li>Deployment<ol>
+<li>对RS的更高层次的封装</li>
+<li>创建Replica Set/Pod</li>
+<li>滚动升级/回滚</li>
+<li>平滑扩容和缩容</li>
+<li>暂停与恢复Deployment</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>适用有状态服务</p>
+<ol>
+<li><p>StatefulSet：专门针对有状态服务的控制器</p>
+<ol>
+<li><p>介绍：</p>
+<ol>
+<li>StatefulSet中每个Pod的DNS格式为statefulSetName（0，…，N-1）.serviceName.namespace.svc.cluster.local<ul>
+<li>serviceName为Headless Service的名字</li>
+<li>0，…，N-1为Pod所在的序号，从0开始到N-1</li>
+<li>statefulSetName为StatefulSet的名字</li>
+<li>namespace为服务所在的namespace，Headless Service和StatefulSet必须在相同的namespace</li>
+<li>.cluster.local为Cluster Domain</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>特点</p>
+<ul>
+<li><p>解决网络、数据、顺序问题</p>
+</li>
+<li><p>稳定的持久化存储</p>
+</li>
+<li><p>稳定的网络标志</p>
+</li>
+<li><p>有序部署、有序扩展（即Pod是有顺序的，在部署或者扩展的时候要依据定义的顺序依次进行，即从0到N-1，在下一个Pod运行之前所有之前的Pod必须是Running和Ready状态）（基于init containers来实现）</p>
+</li>
+<li><p>有序收缩、有序删除</p>
+</li>
+</ul>
+</li>
+<li><p>组成</p>
+<ol>
+<li>Headless Service：用于定义网络标志<ol>
+<li>Domain Name Server<ul>
+<li>域名服务将域名与ip绑定映射</li>
+<li>服务名 =&gt; 访问路径（域名） =&gt; ip</li>
+</ul>
+</li>
+<li>VolumeClaimTmplate<ul>
+<li>用于创建持久化卷的模板</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231226223601.png?token=AQXPXNSR5HYSJCX2G4UO4STFRLSQ2" alt="image-20231226223600059"></p>
+</li>
+<li><p>注意事项：</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>守护进程</p>
+<ol>
+<li>DaemonSet：为每一个匹配的Node都部署一个守护进程<ol>
+<li>保证在每个Node上都运行一个容器副本，常用来部署一些集群的日志、监控或者其他系统管理员应用。有：<ul>
+<li>日志搜集，比如fluentd，logstash等</li>
+<li>系统监控，比如Prometheus Node Exporter，colletd，New Relic agent，Ganglia gmond等</li>
+<li>系统程序，比如kube-proxy，kube-dns，glusterd，ceph等</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231227102122.png?token=AQXPXNULJ2MCCOQVLFY2ZELFROFF6" alt="image-20231227102121136"></p>
+</li>
+<li><p>任务/定时任务：</p>
+<ol>
+<li>Job：一次性任务，运行完成后Pod销毁，不再重新启动新容器</li>
+<li>CronJob：在Job基础上加上了定时功能</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>服务发现</p>
+<p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231227105533.png?token=AQXPXNQ4ZQP2JTP56ECTMTTFROJGC" alt="image-20231227105532226"></p>
+<ol>
+<li><p>Service：</p>
+<ul>
+<li>k8s集群内部的网络通信，简写“svc”。Pod不能直接提供给外网访问，而是应该使用service。Service就是把Pod暴漏出来提供服务，Service才是真正的“服务”，它的中文名就叫“服务”</li>
+<li>Service是一个应用服务的抽象，定义了Pod逻辑集合和访问这个Pod集合的策略。Service代理Pod集合，对外表现为一个访问入口，访问该入口的请求将经过负载均衡，转发到后端Pod中的容器。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231227110521.png?token=AQXPXNR3M2KSXQQNGUAV2OLFROKK4" alt="image-20231227110520744"></p>
+</li>
+<li><p>Ingress：：实现嫁给你k8s内部服务暴漏给外网访问的服务</p>
+<ol>
+<li>ingress-nginx<ul>
+<li>反向代理</li>
+<li>负载均衡（七层负载）</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231227110709.png?token=AQXPXNWJ2B2R6RKQUO6I6ODFROKRU" alt="image-20231227110708645"></p>
+</li>
+</ol>
+</li>
+<li><p>存储：</p>
+<ol>
+<li>Volume：数据卷，共享Pod中容器使用的数据。用来放持久化的数据，比如数据库数据。</li>
+<li>CSI（Container Storage Interface）：<ol>
+<li>来自Kubernetes、Mesos、Docker等社区成员联合制定的一个行业标准接口规范，旨在将任意存储系统暴漏给容器化应用程序</li>
+<li>CSI规范定义了存储提供商实现CSI兼容的Volume Plugin的最小操作集和部署建议。CSI规范的主要焦点是声明Volume Plugin必须实现的接口。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>特殊类型配置：</p>
+<ol>
+<li>ConfigMap：“键值对”配置文件</li>
+<li>Secret：作用同ConfigMap，区别在于可以加密<ol>
+<li>Service Account：用来访问Kubernetes API，由Kubernetes自动创建，并且会自动挂载到Pod的/run/secrets/kubernetes.io/serviceaccount目录中</li>
+<li>Opaque：base64编码格式的Secret，用来存储密码、密钥等</li>
+<li>kubernetes.io/dockerfonfigjson：用来存储私有docker</li>
+</ol>
+</li>
+<li>DownwardAPI：这个模式和其他模式不一样的地方在于它不是为了存放容器的数据也不是用来进行容器和宿主机的数据交换的，而是让pod里的容器能够直接获取到这个pod对象本身的一些信息。<ol>
+<li>downwardAPI提供了两种方式用于将pod的信息注入到容器内部<ul>
+<li>环境变量：用于单个变量，可以将pod信息和容器信息直接注入容器内部</li>
+<li>volume挂在：将pod信息生成文件，直接挂在到容器内部中去</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>其他：</p>
+<ol>
+<li>Role：一组权限的集合，例如Role可以包含列出Pod权限及列出Deployment权限，Role用于给某个Namespace中的资源进行鉴权</li>
+<li>RoldBinding：绑定到对应的命名空间去，可以作用于Role和ClusterRole</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20231226163113.png?token=AQXPXNWS2JFP2GRESYDUW2LFRKHY6" alt="image-20231226163112787"></p>
+<h4 id="资源清单"><a href="#资源清单" class="headerlink" title="资源清单"></a>资源清单</h4><h3 id="对象规约和状态"><a href="#对象规约和状态" class="headerlink" title="对象规约和状态"></a>对象规约和状态</h3><h4 id="规约（Spec）"><a href="#规约（Spec）" class="headerlink" title="规约（Spec）"></a>规约（Spec）</h4><p>必需的，描述对象的期望状态</p>
+<h4 id="状态（Status）"><a href="#状态（Status）" class="headerlink" title="状态（Status）"></a>状态（Status）</h4><p>表示对象的实际状态，该属性有k8s自己维护，k8s会通过一系列的控制器对对应对象进行管理，让对象尽可能地让实际状态与期望状态重合</p>
+<h1 id="深入k8s实战进阶"><a href="#深入k8s实战进阶" class="headerlink" title="深入k8s实战进阶"></a>深入k8s实战进阶</h1>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2023/12/21/kubernetes%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">kubernetes使用文档</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
+        <p><span>Created:</span>2023-12-21, 16:57:25</p>
+        <p><span>Updated:</span>2023-12-27, 11:44:15</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2023/12/21/kubernetes%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" title="kubernetes使用文档">http://example.com/2023/12/21/kubernetes%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/</a>
+            <span class="copy-path" data-clipboard-text="From http://example.com/2023/12/21/kubernetes%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2023/12/05/java%E6%89%93%E5%8C%85%E5%90%8E%E8%AF%BB%E5%8F%96resource%E6%96%87%E4%BB%B6%E4%B8%8B%E7%9A%84%E8%B7%AF%E5%BE%84/">
+                    java打包后读取resource文件下的路径
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86Kubernetes%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">认识Kubernetes？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81Kubernetes"><span class="toc-number">1.1.1.</span> <span class="toc-text">为什么需要Kubernetes</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E9%83%A8%E7%BD%B2"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">传统部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%8C%96%E9%83%A8%E7%BD%B2%EF%BC%88%E9%83%A8%E7%BD%B2%E5%9C%A8%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%EF%BC%89"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">虚拟化部署（部署在虚拟机上）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E5%8C%96%E9%83%A8%E7%BD%B2"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">容器化部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kubernetes%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">Kubernetes的特点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%81%E4%B8%9A%E7%BA%A7%E5%AE%B9%E5%99%A8%E8%B0%83%E5%BA%A6%E5%B9%B3%E5%8F%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">企业级容器调度平台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E7%BE%A4%E6%9E%B6%E6%9E%84%E4%B8%8E%E7%BB%84%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text">集群架构与组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E7%BB%84%E4%BB%B6"><span class="toc-number">1.2.1.</span> <span class="toc-text">相关组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF%E7%BB%84%E4%BB%B6%EF%BC%88%E5%9C%A8Master%E8%8A%82%E7%82%B9%E4%B8%8A%EF%BC%89"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">控制面板组件（在Master节点上）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E7%BB%84%E4%BB%B6-%E6%99%AE%E9%80%9A%E8%8A%82%E7%82%B9%E4%B8%8A"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">节点组件(普通节点上)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%99%84%E5%8A%A0%E7%BB%84%E4%BB%B6%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">附加组件（可选）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B1%82%E6%9E%B6%E6%9E%84"><span class="toc-number">1.2.2.</span> <span class="toc-text">分层架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.2.3.</span> <span class="toc-text">服务的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E7%8A%B6%E6%80%81%E5%BA%94%E7%94%A8"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">无状态应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E7%8A%B6%E6%80%81%E5%BA%94%E7%94%A8"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">有状态应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E5%92%8C%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.4.</span> <span class="toc-text">资源和对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">资源的分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E6%B8%85%E5%8D%95"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">资源清单</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E8%A7%84%E7%BA%A6%E5%92%8C%E7%8A%B6%E6%80%81"><span class="toc-number">1.2.5.</span> <span class="toc-text">对象规约和状态</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%84%E7%BA%A6%EF%BC%88Spec%EF%BC%89"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">规约（Spec）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%EF%BC%88Status%EF%BC%89"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">状态（Status）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B1%E5%85%A5k8s%E5%AE%9E%E6%88%98%E8%BF%9B%E9%98%B6"><span class="toc-number">2.</span> <span class="toc-text">深入k8s实战进阶</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-4 i,
+        .toc-level-4 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"true"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"kubernetes使用文档　| 代码流畅，心情舒畅！　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2023/12/05/java%E6%89%93%E5%8C%85%E5%90%8E%E8%AF%BB%E5%8F%96resource%E6%96%87%E4%BB%B6%E4%B8%8B%E7%9A%84%E8%B7%AF%E5%BE%84/" title="Next: java打包后读取resource文件下的路径">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/12/21/kubernetes%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/">kubernetes使用文档</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/12/05/java%E6%89%93%E5%8C%85%E5%90%8E%E8%AF%BB%E5%8F%96resource%E6%96%87%E4%BB%B6%E4%B8%8B%E7%9A%84%E8%B7%AF%E5%BE%84/">java打包后读取resource文件下的路径</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/11/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/11/05/cuda-cudnn-pytorch%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">cuda+cudnn+pytorch安装教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/11/04/openpyxl%E4%BD%BF%E7%94%A8%EF%BC%882%EF%BC%89-%E5%85%AC%E5%BC%8F/">openpyxl使用-公式</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/11/03/openpyxl%E4%BD%BF%E7%94%A8%EF%BC%881%EF%BC%89-%E8%A1%A8%E5%92%8C%E5%8D%95%E5%85%83%E6%A0%BC/">openpyxl使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/07/vue%E9%A1%B9%E7%9B%AE%E5%92%8Cspringboot%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/">vue项目和springboot项目部署到服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/04/vue-router%E7%9F%A5%E8%AF%86%E6%9E%B6%E6%9E%84/">vue-router知识架构</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/26/%E4%B8%BB%E6%9C%BA%E8%BF%9E%E6%8E%A5%E8%99%9A%E6%8B%9F%E6%9C%BA/">主机连接虚拟机</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/25/docker%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8%E6%96%87%E6%A1%A3/">docker使用入门文档</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/23/%E5%AE%89%E8%A3%85VMwareTools/">安装VMwareTools</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/21/nginx%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">nginx常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/06/21/js%E5%88%9B%E5%BB%BA%E3%80%81%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9/">js创建、插入节点</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/29/%E5%90%8E%E7%AB%AF%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%8F%E9%AA%8C/">后端和数据库经验</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/29/%E7%88%AC%E5%8F%96%E7%BD%91%E7%AB%99%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/">爬取网站常见错误</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/29/%E5%89%8D%E7%AB%AF%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">前端问题和经验总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/29/%E5%B8%B8%E7%94%A8CSS%E5%B1%9E%E6%80%A7/">常用CSS属性</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/03/06/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E2%80%94%E2%80%94%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95/">最大公约数——欧几里得辗转相除法</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/02/16/git%20pull%E5%92%8Cgit%20push%E5%8F%91%E7%94%9F%E5%86%B2%E7%AA%81/">git pull和git push发生冲突</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/18/Regular%20Expression/">Regular Expression</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/16/%E4%BA%94%E7%A7%8DI-O%E6%A8%A1%E5%BC%8F/">五种I/O模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E7%9B%B4100-%E8%B4%9F%E8%BD%BD%E3%80%81CPU100-%E4%BD%BF%E7%94%A8%E7%8E%87/">服务器一直100%负载、CPU100%使用率</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/01/07/Linux%E9%98%B2%E7%81%AB%E5%A2%99%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/">Linux防火墙相关命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/12/31/Linux%E8%A7%A3%E3%80%81%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/">Linux解、压缩命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/06/06/OkHttp3%E7%88%AC%E8%99%AB-FastJson%E8%A7%A3%E6%9E%90json-Jsoup%E8%A7%A3%E6%9E%90Document%E8%8A%82%E7%82%B9+%E6%96%87%E6%9C%AC%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6/">OkHttp3爬虫+FastJson解析json+Jsoup解析Document节点+文本写入文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/05/03/PicGo%E4%B8%AD%E7%9A%84Gitee%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE/">Typora利用PicGo配置Gitee图床</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/05/03/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%AD%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">虚拟机中网络配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/27/java-%E4%BD%BF%E7%94%A8HttpClient%E7%88%AC%E8%99%AB/">java-使用HttpClient爬虫</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%A9%B1%E5%8A%A8%E3%80%81jdbc%E3%80%81mybatis%E3%80%81%E6%95%B0%E6%8D%AE%E6%BA%90%E5%9B%9B%E8%80%85%E7%9A%84%E5%85%B3%E7%B3%BB/">数据库驱动、jdbc、mybatis、数据源四者的关系</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/24/Node%E5%92%8Cnpm%E7%9A%84%E9%85%8D%E7%BD%AE/">Node和npm的配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/03/02/windows%E5%92%8CUbuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85(%E7%BB%88%E4%BA%8E%E8%A7%A3%E5%86%B3!)/">windows和Ubuntu双系统安装(终于解决!)</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/02/26/SDK%E3%80%81Language%20Level%E5%92%8CCompiler%20version/">SDK、Language Level和Compiler version</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/02/24/AndroidStudio%E7%9A%84Gradle%E9%85%8D%E7%BD%AE/">AndroidStudio的Gradle配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/02/22/javascript%E4%B8%AD%E7%9A%84this%E6%8C%87%E5%90%91/">javascript中的this指向</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/02/20/%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BF%90%E8%A1%8Cjar%E6%96%87%E4%BB%B6%E5%92%8C%E7%82%B9%E5%87%BB%E8%BF%90%E8%A1%8Cjar%E6%96%87%E4%BB%B6%E5%8C%BA%E5%88%AB/">命令行运行jar文件和点击运行jar文件区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/02/11/Idea%E6%B7%BB%E5%8A%A0pom%E4%BE%9D%E8%B5%96%E6%97%B6%EF%BC%8C%E6%8A%A5%E5%86%85%E5%AD%98%E4%B8%8D%E8%B6%B3/">Idea添加pom依赖时，报内存不足</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/08/Win10-Ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">Win10+Ubuntu双系统安装教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/04/git%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B/">git提交项目到github</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/23/css%E8%AE%BE%E7%BD%AEdiv%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/">css设置div垂直水平居中</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/19/%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90/">访问权限修饰符</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/02/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%885%EF%BC%89-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">23种设计模式（5）-抽象工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/30/KMP%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/">算法-KMP字符串匹配</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/29/java8%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%9A%E5%8F%8C%E5%86%92%E5%8F%B7%E3%80%81lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">java8新特性：方法引用(双冒号)、lambda表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/15/%E8%A7%A3%E5%86%B3spring%E4%B8%ADGet%E3%80%81Post%E8%AF%B7%E6%B1%82%E5%87%BA%E7%8E%B0%E7%9A%84%E4%B9%B1%E7%A0%81/">解决spring中Get、Post请求出现的乱码</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/10/springMVC%E7%9A%84web-xml%E9%85%8D%E7%BD%AE/">springMVC的web.xml配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/08/Idea%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E6%95%99%E7%A8%8B/">Idea的项目结构教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/06/Mybatis-Spring%E7%9A%84%E4%BA%8B%E5%8A%A1%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF/">Mybatis-Spring的事务配置模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/06/Mybatis%E7%9A%84Mapper%E7%9A%84xml%E6%A8%A1%E6%9D%BF/">Mybatis的Mapper的xml模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/06/Mybatis%E7%9A%84%E6%A0%B8%E5%BF%83%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF/">Mybatis的核心配置模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/06/Spring%E7%9A%84%E6%A0%B8%E5%BF%83%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF/">Spring的核心配置模板</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/06/SSM%E5%BC%80%E5%8F%91-%E4%BE%9D%E8%B5%96-%E8%B5%84%E6%BA%90%E5%AF%BC%E5%85%A5/">SSM开发-依赖-资源导入</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/01/%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">序列化和反序列化</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/11/01/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%883%EF%BC%89-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/">23种设计模式（3）-原型模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/26/log4j-properties%E7%9A%84%E9%85%8D%E7%BD%AE/">log4j.properties的配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B8%B8%E7%94%A8sql%E8%AF%AD%E5%8F%A5/">数据库常用sql语句</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/24/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%881%EF%BC%89-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">23种设计模式（1）-单例模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/23/java%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%EF%BC%883%EF%BC%89%E2%80%94%E2%80%94java%E7%9A%84%E5%B8%B8%E9%87%8F%E6%B1%A0%E7%9A%84%E7%90%86%E8%A7%A3/">java内存分析（3）——java的常量池的理解</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/23/java%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%EF%BC%882%EF%BC%89%E2%80%94%E2%80%94static%E9%9D%99%E6%80%81%E7%9A%84%E5%8E%9F%E7%90%86/">java内存分析（2）——static静态的原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/23/java%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%EF%BC%884%EF%BC%89%E2%80%94%E2%80%94new%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%BA%95%E5%B1%82%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E4%BA%8B%E6%83%85/">java内存分析（4）new一个对象，底层做了哪些事情</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/23/JVM%E7%9A%84%E4%BD%8D%E7%BD%AE%E5%92%8C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/">JVM的位置和体系结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/23/Servlet%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">Servlet文件上传</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/21/Promise%E5%9C%A8%E5%89%8D%E7%AB%AF%E7%9A%84%E4%BD%9C%E7%94%A8/">Promise在前端的作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/21/Jquery%E6%A1%86%E6%9E%B6%E4%B8%AD%E7%9A%84%E2%80%9C%E7%BE%8E%E5%85%83%E7%AC%A6%E5%8F%B7%E2%80%9D%E7%9A%84%E4%BD%9C%E7%94%A8/">jQuery框架中的“美元符号”的作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/20/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%880%EF%BC%89-%E6%80%BB%E8%A7%88/">23种设计模式（0）-总览</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/20/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%882%EF%BC%89-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">23种设计模式（2）-工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F6%E5%A4%A7%E5%8E%9F%E5%88%99-%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99-%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%E5%8E%9F%E5%88%99/">设计模式6大原则-开闭原则+依赖倒置原则</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/19/Java%E5%AE%9E%E7%8E%B0%E9%82%AE%E4%BB%B6%E6%8E%A8%E9%80%81-%E5%AE%9E%E6%88%98/">Java实现邮件推送+实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/19/Java%E4%B8%AD%E6%9C%89%E5%85%B3%E5%AD%90%E7%B1%BB%E8%AE%BF%E9%97%AE%E7%88%B6%E7%B1%BB%E6%88%90%E5%91%98/">Java中有关子类访问父类成员</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/18/idea%E4%B8%AD%E4%BD%BF%E7%94%A8maven%E4%B8%8D%E4%BE%9D%E8%B5%96%E5%85%B6%E6%A8%A1%E6%9D%BF%E5%88%9B%E5%BB%BAjavaweb%E9%A1%B9%E7%9B%AE%EF%BC%8Cjava%E6%BA%90%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8D%E7%BC%96%E8%AF%91/">idea中使用maven不依赖其模板创建javaweb项目，java源文件夹不编译</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/16/%E5%A3%B0%E6%98%8E%E5%92%8C%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8C%BA%E5%88%AB/">声明和定义的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/16/cmd%E4%B8%B4%E6%97%B6%E4%BF%AE%E6%94%B9%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F/">cmd临时修改编码格式</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/16/java%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1/">Java装箱和拆箱</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/14/%E5%87%A0%E7%A7%8D%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F/">几种网络请求方式</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/09/07/java%E4%B8%AD%E7%9A%84IO%E6%B5%81%E4%BD%BF%E7%94%A8/">java中的IO流使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/09/07/java%E4%B8%AD%E7%9A%84%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E7%94%A8%E6%B3%95/">java中的相对路径用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/08/31/JAVA%E4%B8%ADUDP%E5%92%8CTCP%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B/">JAVA中UDP和TCP协议的简单使用流程</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/08/31/Lamda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">Lambda表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/08/31/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%884%EF%BC%89-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">23种设计模式（4）-代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/08/26/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/08/19/java%E4%B8%AD%E7%BB%8F%E5%B8%B8%E5%BF%98%E8%AE%B0%E7%9A%84%E5%87%A0%E4%B8%AA%E7%9F%A5%E8%AF%86%E7%82%B9/">java中经常忘记的几个知识点</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/08/19/java%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%EF%BC%881%EF%BC%89%E2%80%94%E2%80%94%E7%B1%BB%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/">java内存分析（1）——类加载的内存分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/08/18/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94java%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84/">学习笔记——java中的注解和反射</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/08/17/%E4%B8%BAidea%E9%85%8D%E7%BD%AE%E5%85%A8%E5%B1%80maven%E5%8A%A0%E9%80%9F%E9%95%9C%E5%83%8F%E3%80%81%E5%B1%80%E9%83%A8%E9%A1%B9%E7%9B%AEmaven%E5%8A%A0%E9%80%9F%E9%95%9C%E5%83%8F/">为idea配置全局maven加速镜像、单个项目maven（阿里）加速镜像</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/08/08/%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%EF%BC%8C%E5%87%BA%E7%8E%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/">导入项目，出现中文乱码</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/06/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%89%A7%E8%A1%8C%E6%89%80%E7%94%9F%E6%88%90%E7%9A%84jar%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99%E2%80%94%E2%80%94%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/">计算机执行所生成的jar文件报错：版本不支持</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/06/10/VMware%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8E%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB/">VMware中的虚拟机与宿主机的文件共享</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/06/08/%E5%B0%8F%E6%96%B0%E5%9C%A8windows10%E4%B8%8A%E5%AE%89%E8%A3%85kali%E5%8F%8C%E7%B3%BB%E7%BB%9F/">小新在windows10上安装kali双系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/29/MyEclipse%E2%80%94%E2%80%94jdk%E7%89%88%E6%9C%AC%E4%B8%8D%E6%94%AF%E6%8C%81/">MyEclipse——jdk版本不支持</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/27/%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E6%98%AF%E5%90%A6%E5%8D%95%E8%B0%83%E5%A2%9E-%E5%87%8F/">判断数组是否单调增/减</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/27/%E7%BA%A6%E7%91%9F%E5%A4%AB%E9%97%AE%E9%A2%98%E2%80%94%E2%80%94%E5%9D%8F%E4%BA%BA%E5%BF%85%E9%A1%BB%E6%AD%BB/">约瑟夫问题——坏人必须死</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/27/%E8%83%8C%E5%8C%85%E7%AE%97%E6%B3%95/">背包算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/23/%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%A5%E4%BE%B5%E2%80%94%E2%80%94%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D/">虚拟机之间的入侵——永恒之蓝</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2023 liu-ruayng
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+	    <span id="busuanzi_container_site_uv">
+		本站访客数<span id="busuanzi_value_site_uv"></span>人次
+	    </span>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+             post: ".article-entry a[href], .copyright a[href]", 
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "o(╥﹏╥)o" + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*^▽^*)" + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+
+    
+    
+    
+    
+
+    
+    <script type="text/javascript" src="/js/custom_js/love.js"></script>
+    
+    <script type="text/javascript" color="102,102,102" opacity='1' zIndex="-1" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>

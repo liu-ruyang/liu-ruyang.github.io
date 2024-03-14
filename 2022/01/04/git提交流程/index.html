@@ -26,7 +26,7 @@
 <meta property="og:description" content="Git操作步骤">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-01-04T09:34:13.000Z">
-<meta property="article:modified_time" content="2024-03-14T12:44:55.273Z">
+<meta property="article:modified_time" content="2024-03-14T16:47:15.780Z">
 <meta property="article:author" content="liu-ruyang">
 <meta property="article:tag" content="git操作">
 <meta name="twitter:card" content="summary">
@@ -357,6 +357,31 @@
 <h2 id="git-log命令"><a href="#git-log命令" class="headerlink" title="git log命令"></a>git log命令</h2><p><code>git log</code>查看commit的历史，最近的更新排在上面</p>
 <p><code>git log 分支名</code>查看指定分支名的提交历史记录</p>
 <p><code>git log --graph</code>绘制一个ASCII图像来展示提交历史的分支结构（<strong>重点使用</strong>）</p>
+<h2 id="git-tag命令"><a href="#git-tag命令" class="headerlink" title="git tag命令"></a>git tag命令</h2><ol>
+<li><p>确保通过了<code>git add</code>和<code>git commit</code>提交到了本地仓库</p>
+</li>
+<li><p>使用<code>git log</code>在提交历史中找到响应的commit。复制该commit的哈希值</p>
+</li>
+<li><p>使用<code>git tag</code>命令创建新的标签（轻量标签），并将其与指定的commit关联</p>
+<blockquote>
+<p><strong>轻量标签：</strong></p>
+<p><code>git tag &lt;tag_name&gt; &lt;commit_hash&gt;</code>    </p>
+<p>将 <code>&lt;tag_name&gt;</code> 替换为您要为 commit 创建的标签名称，<code>&lt;commit_hash&gt;</code> 替换为相应 commit 的哈希值。</p>
+<p><strong>附注标签：</strong></p>
+<p><code>git tag -a &lt;tag_name&gt; &lt;commit_hash&gt; -m &quot;&lt;tag_message&gt;&quot;</code>    </p>
+<p>将 <code>&lt;tag_name&gt;</code> 替换为标签名称，<code>&lt;commit_hash&gt;</code> 替换为相应 commit 的哈希值，<code>&lt;tag_message&gt;</code> 替换为标签的消息或说明。</p>
+</blockquote>
+</li>
+<li><p>可以使用 <code>git tag</code> 命令检查已创建的标签列表<br><code>git tag</code></p>
+</li>
+<li><p>将本地的标签推送至远程仓库</p>
+<blockquote>
+<p><code>git push origin &lt;tag_name&gt;</code>    </p>
+<p>或者下面命令，推送所有标签至远程仓库</p>
+<p><code>git push origin --tags</code></p>
+</blockquote>
+</li>
+</ol>
 <h2 id="git-rebase-和git-merge比较"><a href="#git-rebase-和git-merge比较" class="headerlink" title="git rebase 和git merge比较"></a>git rebase 和git merge比较</h2><p><code>git rebase 目标分支</code>：变基，从当前的分之和目标分支的最近公共祖先结点开始，将当前的分支新产生的结点依次与该公共结点合并，并在所有结点都合并完成之后，将当前分支指向最新的合并之后的结点；（最终效果：<strong>合成一条分支</strong>）</p>
 <p><code>git merge  目标分支</code>：将当前分支最新结点与目标分支最新结点合并，并将当前结点指针指向合并之后的、新产生的结点</p>
 <blockquote>
@@ -388,7 +413,7 @@
         <p><span>Title:</span><a href="/2022/01/04/git%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B/">git提交项目到github</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
         <p><span>Created:</span>2022-01-04, 17:34:13</p>
-        <p><span>Updated:</span>2024-03-14, 20:44:55</p>
+        <p><span>Updated:</span>2024-03-15, 00:47:15</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2022/01/04/git%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B/" title="git提交项目到github">http://example.com/2022/01/04/git%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B/</a>
             <span class="copy-path" data-clipboard-text="From http://example.com/2022/01/04/git%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
@@ -424,7 +449,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.</span> <span class="toc-text">Git操作步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-log%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">git log命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-rebase-%E5%92%8Cgit-merge%E6%AF%94%E8%BE%83"><span class="toc-number">3.</span> <span class="toc-text">git rebase 和git merge比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-pull"><span class="toc-number">4.</span> <span class="toc-text">git pull</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Git%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.</span> <span class="toc-text">Git操作步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-log%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">git log命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-tag%E5%91%BD%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">git tag命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-rebase-%E5%92%8Cgit-merge%E6%AF%94%E8%BE%83"><span class="toc-number">4.</span> <span class="toc-text">git rebase 和git merge比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-pull"><span class="toc-number">5.</span> <span class="toc-text">git pull</span></a></li></ol>
         
     </div>
     <style>

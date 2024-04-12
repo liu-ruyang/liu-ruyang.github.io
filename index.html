@@ -321,42 +321,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的最长子串 的长度。</p>
-</blockquote>
-<h4 id="方法一：滑动窗口（官方）"><a href="#方法一：滑动窗口（官方）" class="headerlink" title="方法一：滑动窗口（官方）"></a>方法一：滑动窗口（官方）</h4><p><strong>分析：</strong></p>
-<ul>
-<li>以<code>(a)bcabcbb</code> 开始的最长字符串为<code>(abc)abcbb</code>；</li>
-<li>以<code>a(b)cabcbb</code>开始的最长字符串为<code>a(bca)bcbb</code>；</li>
-<li>以<code>ab(c)abcbb</code>开始的最长字符串为<code>ab(cab)cbb</code>；</li>
-<li>……</li>
-</ul>
-<p>需要考虑的特殊情况有：</p>
-<ul>
-<li>字符串为空的情况</li>
-<li>字符串均为重复字符的情况</li>
-<li>测试其他常规输入</li>
-</ul>
-<p><strong>算法：</strong></p>
-<ul>
-<li><p>我们使用两个指针表示字符串中的某个子串（或窗口）的左右边界，其中左指针代表着上文中「枚举子串的起始位置」，而右指针即为上文中的<code>Rk</code></p>
-</li>
-<li><p>在每一步的操作中，我们会将左指针向右移动一格，表示<strong>我们开始枚举下一个字符作为起始位置</strong>，然后我们可以不断地向右移动右指针，但需要保证这两个指针对应的子串中没有重复的字符。在移动结束后，这个子串就对应着<strong>以左指针开始的，不包含重复字符的最长子串</strong>。我们记录下这个子串的长度；</p>
-</li>
-<li><p>在枚举结束后，我们找到的最长的子串的长度即为答案。</p>
-</li>
-</ul>
-<p><strong>判断重复字符</strong></p>
-<p>在上面的流程中，还需要使用一种数据结构来判断<strong>是否有重复的字符</strong>，常用的数据结构是哈希集合。在左指针向右移动的时候，我们从哈希集合中移除一个字符，在右指针向右移动的时候，往哈希集合中添加一个字符</p>
-<p><strong>①官方代码（使用哈希保存字符）</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 哈希集合，记录每个字符是否出现过</span></span><br><span class="line">        Set&lt;Character&gt; occ = <span class="keyword">new</span> HashSet&lt;Character&gt;();</span><br><span class="line">        <span class="keyword">int</span> n = s.length();</span><br><span class="line">        <span class="comment">// 右指针，初始值为 -1，相当于我们在字符串的左边界的左侧，还没有开始移动</span></span><br><span class="line">        <span class="keyword">int</span> rk = -<span class="number">1</span>, ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i != <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">// 左指针向右移动一格，移除一个字符</span></span><br><span class="line">                occ.remove(s.charAt(i - <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (rk + <span class="number">1</span> &lt; n &amp;&amp; !occ.contains(s.charAt(rk + <span class="number">1</span>))) &#123;</span><br><span class="line">                <span class="comment">// 不断地移动右指针</span></span><br><span class="line">                occ.add(s.charAt(rk + <span class="number">1</span>));</span><br><span class="line">                ++rk;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 第 i 到 rk 个字符是一个极长的无重复字符子串</span></span><br><span class="line">            ans = Math.max(ans, rk - i + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>②我的代码（使用int数组保存状态）</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Question3</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Question3 question3 = <span class="keyword">new</span> Question3();</span><br><span class="line">        <span class="keyword">int</span> maxLength = question3.lengthOfLongestSubstring(<span class="string">&quot;dvdf&quot;</span>);</span><br><span class="line">        System.out.println(maxLength);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s.equals(<span class="string">&quot;&quot;</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] length = <span class="keyword">new</span> <span class="keyword">int</span>[s.length()];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length.length; i++) &#123;</span><br><span class="line">            length[i] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> maxLength = length[<span class="number">0</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">char</span>[] charArray = s.toCharArray();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; charArray.length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> diffStringLength = getLastCommonCharBefore(s, charArray[i], i - length[i - <span class="number">1</span>], i);</span><br><span class="line">            <span class="keyword">if</span> (diffStringLength == length[i - <span class="number">1</span>]) &#123;	<span class="comment">// 当前字符可以直接加入前一个字符所在子串</span></span><br><span class="line">                length[i] += length[i - <span class="number">1</span>];</span><br><span class="line">                maxLength = maxLength &gt; length[i] ? maxLength : length[i];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;						<span class="comment">// 当前字符只能加入前一个字符所在子串的子串中去（即有字符和当前字符一样）</span></span><br><span class="line">                length[i] = diffStringLength + <span class="number">1</span>;</span><br><span class="line">                maxLength = maxLength &gt; length[i] ? maxLength : length[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxLength;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string     源字符串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> targetChar 查找的字符</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> startIndex 源字符串要查找字符范围的起点（包括）</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> endIndex   源字符串要查找字符范围的终点（不包括）</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 前一个字符所在的子串中可以与当前字符处在同一个子串中的子串的最大长度</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLastCommonCharBefore</span><span class="params">(String string, <span class="keyword">char</span> targetChar, <span class="keyword">int</span> startIndex, <span class="keyword">int</span> endIndex)</span> </span>&#123;</span><br><span class="line">        String substring = string.substring(startIndex, endIndex);<span class="comment">// beginIndex：指定子串的起始索引位置（包含）,endIndex：指定子串的结束索引位置（不包含）</span></span><br><span class="line">        <span class="keyword">int</span> index = substring.indexOf(targetChar);</span><br><span class="line">        <span class="keyword">return</span> substring.length() - <span class="number">1</span> - index;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="方法二：暴力求解"><a href="#方法二：暴力求解" class="headerlink" title="方法二：暴力求解"></a>方法二：暴力求解</h4><p>思路：遍历所有子串进行判断</p>
-<p>评价：一般不用</p>
-
+              <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2>
+          
       
     </div>
     
@@ -369,6 +335,10 @@
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" rel="tag">滑动窗口</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95-%E4%B8%AD%E7%AD%89/" rel="tag">算法-中等</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2024/04/11/%E5%8A%9B%E6%89%A33-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -415,58 +385,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>安装顺序：</p>
-<ol>
-<li>检查硬件驱动支持的cuda版本<code>nvidia-smi</code></li>
-<li>安装cuda（一种通用的并行计算平台和编程模型，由 NVIDIA 开发）（可跳过）<ul>
-<li><p>（一般可以直接从第三步开始，因为cudatoolkit的安装包中包含了 CUDA 驱动程序和其他与 CUDA 相关的组件）</p>
-</li>
-<li><p>一般而言，cuda是<strong>向下兼容</strong>的，但是<strong>不绝对</strong>(见下述常见错误2)</p>
-</li>
-</ul>
-</li>
-<li>安装cudatoolkit<ul>
-<li>它包含了 CUDA 编译器、CUDA 运行时库、CUDA 驱动程序等，为开发和运行 CUDA 程序提供基础。CUDA Toolkit 提供了 GPU 计算的基础设施和接口，并包含了与硬件交互的驱动程序。</li>
-</ul>
-</li>
-<li>安装cudnn（ NVIDIA 提供的一个针对深度学习的 GPU 加速库）</li>
-<li>安装pytorch（和cuda有对应关系，pytorch发布时会说明cuda的版本要求，二者版本要是配）</li>
-</ol>
-<h4 id="方式一：本地安装"><a href="#方式一：本地安装" class="headerlink" title="方式一：本地安装"></a>方式一：本地安装</h4><p>在windows中，cuda或者cudatoolkit安装时候是exe文件安装，cudnn是压缩包或者exe可执行程序</p>
-<p>按照版本对应关系安装完后，其中cuda是需要在系统环境变量中添加变量的</p>
-<h4 id="方式二：在Anaconda的创建的虚拟环境中安装"><a href="#方式二：在Anaconda的创建的虚拟环境中安装" class="headerlink" title="方式二：在Anaconda的创建的虚拟环境中安装"></a>方式二：在Anaconda的创建的虚拟环境中安装</h4><p>安装上述库的时候可以指定版本</p>
-<h3 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h3><h4 id="错误1"><a href="#错误1" class="headerlink" title="错误1"></a>错误1</h4><p><strong>报错</strong>如下：</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Solving environment: failed with initial frozen solve. Retrying with flexible solve.</span><br></pre></td></tr></table></figure>
-
-<p><strong>解释</strong>:</p>
-<p>这通常是指一个软件包管理器(如pip、conda等)在尝试安装某个软件包时遇到了问题，并且在第一次尝试使用’frozen solve”方法时失败了。</p>
-<p>“Frozen solve”是一种求解器的方法，它会尝试使用已知的软件包版本和其依赖项版本来解决软件包之间的冲突。但是，如果冻结的版本之间存在冲突，求解器就无法找到解决方案，就会导致失败。<br>因此，软件包管理器会自动切换到l”flexible sove”方法，这种方法会更加灵活，可以在软件包的版本之间进行权衡，以找到一个可行的解决方案。这可能需要更长的时间和计算资源，但通常可以解决冲突并成功安装所需的软件包。</p>
-<p><strong>解决:</strong></p>
-<p>不用管，继续等待即可</p>
-<h4 id="错误2"><a href="#错误2" class="headerlink" title="错误2"></a>错误2</h4><p>报错如下:</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">UserWarning: </span></span><br><span class="line"><span class="function"><span class="title">NVIDIA</span> <span class="title">GeForce</span> <span class="title">RTX</span> 3060 <span class="title">Laptop</span> <span class="title">GPU</span> <span class="title">with</span> <span class="title">CUDA</span> <span class="title">capability</span> <span class="title">sm_86</span> <span class="title">is</span> <span class="title">not</span> <span class="title">compatible</span> <span class="title">with</span> <span class="title">the</span> <span class="title">current</span> <span class="title">PyTorch</span> <span class="title">installation</span>.</span></span><br><span class="line"><span class="function"><span class="title">The</span> <span class="title">current</span> <span class="title">PyTorch</span> <span class="title">install</span> <span class="title">supports</span> <span class="title">CUDA</span> <span class="title">capabilities</span> <span class="title">sm_37</span> <span class="title">sm_50</span> <span class="title">sm_60</span> <span class="title">sm_61</span> <span class="title">sm_70</span> <span class="title">sm_75</span> <span class="title">compute_37</span>.</span></span><br><span class="line"><span class="function"><span class="title">If</span> <span class="title">you</span> <span class="title">want</span> <span class="title">to</span> <span class="title">use</span> <span class="title">the</span> <span class="title">NVIDIA</span> <span class="title">GeForce</span> <span class="title">RTX</span> 3060 <span class="title">Laptop</span> <span class="title">GPU</span> <span class="title">GPU</span> <span class="title">with</span> <span class="title">PyTorch</span>, <span class="title">please</span> <span class="title">check</span> <span class="title">the</span> <span class="title">instructions</span> <span class="title">at</span> <span class="title">https</span>://<span class="title">pytorch.org</span>/<span class="title">get</span>-<span class="title">started</span>/<span class="title">locally</span>/</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>解释:</strong></p>
-<p>具有CUDA功能的笔记本GPU sm_86与当前PyTorch不兼容”</p>
-<p>三种可能原因</p>
-<ol>
-<li>显卡与CUDA版本不对应</li>
-<li>CUDA版本与pytorch版本不对应</li>
-<li>三者都不对应</li>
-</ol>
-<p><strong>解决:</strong></p>
-<p>首先牢记:<strong>GPU&gt;CUDA&gt;Pytorch</strong>(就是说显卡越好，需要的CUDA版本要越高。</p>
-<p>换种说法就是算力越强，CUDA版本。比如3060计算能力为8.6，但是CUDA10.×的计算能力最大为7.5，则就会出现GPU和CUDA不匹配的问题。</p>
-<blockquote>
-<p>GPU算力查询：<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-gpus#collapseOne">CUDA GPUs - Compute Capability | NVIDIA Developer</a></p>
-<p>CUDA算力支持查询：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/CUDA#GPUs_supported">CUDA - Wikipedia</a></p>
-</blockquote>
-<h2 id="conda环境移植"><a href="#conda环境移植" class="headerlink" title="conda环境移植"></a>conda环境移植</h2><p>思路：先导出环境配置文件、依赖包信息，然后到目标计算机中使用该配置文件创建新的环境</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env <span class="keyword">export</span> --no-builds &gt; environment.yml   <span class="comment">// 添加 --no-builds 参数，可以防止构建信息包含在生成的环境文件中，从而减少等号的数量。</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env create -f environment.yml				 <span class="comment">// 在新环境中创建环境</span></span><br></pre></td></tr></table></figure>
-
-
+              <h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2>
+          
       
     </div>
     
@@ -479,6 +399,10 @@
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2024/04/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

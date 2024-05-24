@@ -26,8 +26,10 @@
 <meta property="og:description" content="Java集合概述">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20240520165648.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20240524114659.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20240524114251.png">
 <meta property="article:published_time" content="2024-05-20T08:52:28.000Z">
-<meta property="article:modified_time" content="2024-05-22T05:25:29.979Z">
+<meta property="article:modified_time" content="2024-05-24T04:03:12.073Z">
 <meta property="article:author" content="liu-ruyang">
 <meta property="article:tag" content="Java基础">
 <meta name="twitter:card" content="summary">
@@ -417,6 +419,157 @@
 </ul>
 </li>
 </ol>
+<h3 id="Stack接口"><a href="#Stack接口" class="headerlink" title="Stack接口"></a>Stack接口</h3><p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20240524114659.png" alt="在这里插入图片描述"></p>
+<ol>
+<li><p>Stack继承了Vector，Vector和ArrayList类似，都是动态的顺序表</p>
+</li>
+<li><p>常用方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Stack()</td>
+<td>构造一个空的栈</td>
+</tr>
+<tr>
+<td>E push(E e)</td>
+<td>将e入栈，并返回e</td>
+</tr>
+<tr>
+<td>E pop()</td>
+<td>将栈顶元素出栈并返回</td>
+</tr>
+<tr>
+<td>E peek()</td>
+<td>获取栈顶元素</td>
+</tr>
+<tr>
+<td>int size()</td>
+<td>获取栈中有效元素个数</td>
+</tr>
+<tr>
+<td>boolean empty()</td>
+<td>检测栈是否为空</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h3 id="Queue接口"><a href="#Queue接口" class="headerlink" title="Queue接口"></a>Queue接口</h3><p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20240524114251.png" alt="image-20240524114244817"></p>
+<ol>
+<li><p>Queue是普通队列，Deque是双端队列</p>
+</li>
+<li><p>普通队列常用的类有：PriorityQueue优先权队列</p>
+</li>
+<li><p>双端队列常用类有：LinkedList队列、ArrayDeque队列</p>
+</li>
+<li><p><strong>Java 已不推荐使用 Stack，而是推荐使用更高效的 ArrayDeque，次选 LinkedList</strong> 。</p>
+</li>
+<li><p><strong>Queue</strong>和<strong>Deque</strong>常用方法对比：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>Queue方法</th>
+<th>Deque方法</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>会抛异常</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>入队</td>
+<td>add(e)</td>
+<td>addLast(e)</td>
+<td></td>
+</tr>
+<tr>
+<td>出队</td>
+<td>remove()</td>
+<td>removeFirst()</td>
+<td></td>
+</tr>
+<tr>
+<td>得到队头的引用</td>
+<td>element()</td>
+<td>getFirst()</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>不会抛异常</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>入队</td>
+<td>offer(e)</td>
+<td>offerLast(e)</td>
+<td></td>
+</tr>
+<tr>
+<td>出队</td>
+<td>poll()</td>
+<td>pollFirst()</td>
+<td></td>
+</tr>
+<tr>
+<td>得到队头的引用</td>
+<td>peek()</td>
+<td>peekFirst()</td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li><p><strong>Deque</strong>作为双端队列的特有方法：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>操作头</th>
+<th>操作头</th>
+<th>操作尾</th>
+<th>操作尾</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>会抛异常</td>
+<td>不会抛异常</td>
+<td>会抛异常</td>
+<td>不会抛异常</td>
+</tr>
+<tr>
+<td>插入</td>
+<td>addFirst(e)</td>
+<td>offerFirst(e)</td>
+<td>addLast(e)</td>
+<td>offerLast(e)</td>
+</tr>
+<tr>
+<td>删除</td>
+<td>removeFirst()</td>
+<td>pollFirst()</td>
+<td>removeLast()</td>
+<td>pollLast()</td>
+</tr>
+<tr>
+<td>取值</td>
+<td>getFirst()</td>
+<td>peekFirst()</td>
+<td>getLast()</td>
+<td>peekLast()</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
 
       
     </div>
@@ -428,7 +581,7 @@
         <p><span>Title:</span><a href="/2024/05/20/Java%E9%9B%86%E5%90%88%E5%85%A8%E9%9B%86/">Java集合全集</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
         <p><span>Created:</span>2024-05-20, 16:52:28</p>
-        <p><span>Updated:</span>2024-05-22, 13:25:29</p>
+        <p><span>Updated:</span>2024-05-24, 12:03:12</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2024/05/20/Java%E9%9B%86%E5%90%88%E5%85%A8%E9%9B%86/" title="Java集合全集">http://example.com/2024/05/20/Java%E9%9B%86%E5%90%88%E5%85%A8%E9%9B%86/</a>
             <span class="copy-path" data-clipboard-text="From http://example.com/2024/05/20/Java%E9%9B%86%E5%90%88%E5%85%A8%E9%9B%86/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
@@ -464,7 +617,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">Java集合概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Collection%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.</span> <span class="toc-text">Collection接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#List%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.2.</span> <span class="toc-text">List接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Set%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.3.</span> <span class="toc-text">Set接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Iterator%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.4.</span> <span class="toc-text">Iterator接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Map%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.5.</span> <span class="toc-text">Map接口</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">Java集合概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Collection%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.</span> <span class="toc-text">Collection接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#List%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.2.</span> <span class="toc-text">List接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Set%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.3.</span> <span class="toc-text">Set接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Iterator%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.4.</span> <span class="toc-text">Iterator接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Map%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.5.</span> <span class="toc-text">Map接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stack%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.6.</span> <span class="toc-text">Stack接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Queue%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.7.</span> <span class="toc-text">Queue接口</span></a></li></ol></li></ol>
         
     </div>
     <style>

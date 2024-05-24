@@ -26,7 +26,7 @@
 <meta property="og:description" content="常见问题">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-13T14:36:51.000Z">
-<meta property="article:modified_time" content="2024-05-17T03:35:46.291Z">
+<meta property="article:modified_time" content="2024-05-22T13:57:49.240Z">
 <meta property="article:author" content="liu-ruyang">
 <meta property="article:tag" content="中间件">
 <meta name="twitter:card" content="summary">
@@ -340,6 +340,9 @@
 
 <h3 id="问题三：使用fanout模式指定routing-key发布消息，无法过滤"><a href="#问题三：使用fanout模式指定routing-key发布消息，无法过滤" class="headerlink" title="问题三：使用fanout模式指定routing-key发布消息，无法过滤"></a>问题三：使用fanout模式指定routing-key发布消息，无法过滤</h3><p><strong>解答：</strong></p>
 <p>fanout模式发布消息后，全部队列都会收到消息，即使指定了routing-key也没用。要想实现根据routing-key过滤推送的效果，可以使用direct路由、topic模式</p>
+<h3 id="问题四：在代码中修改了队列声明时的配置，运行报错"><a href="#问题四：在代码中修改了队列声明时的配置，运行报错" class="headerlink" title="问题四：在代码中修改了队列声明时的配置，运行报错"></a>问题四：在代码中修改了队列声明时的配置，运行报错</h3><p><strong>解答：</strong></p>
+<p>如果在<strong>队列已经存在</strong>，然后修改了代码中的队列的声明时的配置，再次运行代码，修改并不会生效，且会报错。</p>
+<p><strong>解决方法：</strong>需要将队列删除，重新执行代码，创建队列</p>
 
       
     </div>
@@ -351,7 +354,7 @@
         <p><span>Title:</span><a href="/2024/05/13/RabbitMQ%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">RabbitMQ常见问题</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
         <p><span>Created:</span>2024-05-13, 22:36:51</p>
-        <p><span>Updated:</span>2024-05-17, 11:35:46</p>
+        <p><span>Updated:</span>2024-05-22, 21:57:49</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2024/05/13/RabbitMQ%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="RabbitMQ常见问题">http://example.com/2024/05/13/RabbitMQ%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</a>
             <span class="copy-path" data-clipboard-text="From http://example.com/2024/05/13/RabbitMQ%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
@@ -387,7 +390,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80%EF%BC%9A%E5%AE%89%E8%A3%85Rabbit-MQ%E7%9A%84%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2"><span class="toc-number">1.1.</span> <span class="toc-text">问题一：安装Rabbit MQ的管理界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C%EF%BC%9AVMware%E6%8C%82%E8%B5%B7%E5%90%8E%EF%BC%8C%E5%86%8D%E9%87%8D%E5%90%AF%EF%BC%8CRabbitMQ%E7%9A%84%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2%E8%AE%BF%E9%97%AE%E4%B8%8D%E4%BA%86"><span class="toc-number">1.2.</span> <span class="toc-text">问题二：VMware挂起后，再重启，RabbitMQ的管理界面访问不了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%89%EF%BC%9A%E4%BD%BF%E7%94%A8fanout%E6%A8%A1%E5%BC%8F%E6%8C%87%E5%AE%9Arouting-key%E5%8F%91%E5%B8%83%E6%B6%88%E6%81%AF%EF%BC%8C%E6%97%A0%E6%B3%95%E8%BF%87%E6%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text">问题三：使用fanout模式指定routing-key发布消息，无法过滤</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80%EF%BC%9A%E5%AE%89%E8%A3%85Rabbit-MQ%E7%9A%84%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2"><span class="toc-number">1.1.</span> <span class="toc-text">问题一：安装Rabbit MQ的管理界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C%EF%BC%9AVMware%E6%8C%82%E8%B5%B7%E5%90%8E%EF%BC%8C%E5%86%8D%E9%87%8D%E5%90%AF%EF%BC%8CRabbitMQ%E7%9A%84%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2%E8%AE%BF%E9%97%AE%E4%B8%8D%E4%BA%86"><span class="toc-number">1.2.</span> <span class="toc-text">问题二：VMware挂起后，再重启，RabbitMQ的管理界面访问不了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%89%EF%BC%9A%E4%BD%BF%E7%94%A8fanout%E6%A8%A1%E5%BC%8F%E6%8C%87%E5%AE%9Arouting-key%E5%8F%91%E5%B8%83%E6%B6%88%E6%81%AF%EF%BC%8C%E6%97%A0%E6%B3%95%E8%BF%87%E6%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text">问题三：使用fanout模式指定routing-key发布消息，无法过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%9B%9B%EF%BC%9A%E5%9C%A8%E4%BB%A3%E7%A0%81%E4%B8%AD%E4%BF%AE%E6%94%B9%E4%BA%86%E9%98%9F%E5%88%97%E5%A3%B0%E6%98%8E%E6%97%B6%E7%9A%84%E9%85%8D%E7%BD%AE%EF%BC%8C%E8%BF%90%E8%A1%8C%E6%8A%A5%E9%94%99"><span class="toc-number">1.4.</span> <span class="toc-text">问题四：在代码中修改了队列声明时的配置，运行报错</span></a></li></ol></li></ol>
         
     </div>
     <style>

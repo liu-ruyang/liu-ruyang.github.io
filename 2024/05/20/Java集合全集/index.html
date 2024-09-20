@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20240524114659.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20240524114251.png">
 <meta property="article:published_time" content="2024-05-20T08:52:28.000Z">
-<meta property="article:modified_time" content="2024-06-10T06:33:31.783Z">
+<meta property="article:modified_time" content="2024-09-14T01:30:36.399Z">
 <meta property="article:author" content="liu-ruyang">
 <meta property="article:tag" content="Java基础">
 <meta name="twitter:card" content="summary">
@@ -394,7 +394,7 @@
 <li><p>常用子类：HashSet、TreeSet</p>
 </li>
 <li><p>与list转换：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set.stream().toList();	<span class="comment">// 借助流，转换为List类型</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set.stream().collect(Collectors.toList());		<span class="comment">// 借助流，转换为List类型</span></span><br><span class="line"><span class="keyword">new</span> ArrayList&lt;&gt;(itemIds)			<span class="comment">// 效果等同</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="Iterator接口"><a href="#Iterator接口" class="headerlink" title="Iterator接口"></a>Iterator接口</h3><ol>
 <li><p>集合输出的标准操作：标准操作，使用Iterator接口</p>
@@ -581,7 +581,7 @@
         <p><span>Title:</span><a href="/2024/05/20/Java%E9%9B%86%E5%90%88%E5%85%A8%E9%9B%86/">Java集合全集</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
         <p><span>Created:</span>2024-05-20, 16:52:28</p>
-        <p><span>Updated:</span>2024-06-10, 14:33:31</p>
+        <p><span>Updated:</span>2024-09-14, 09:30:36</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2024/05/20/Java%E9%9B%86%E5%90%88%E5%85%A8%E9%9B%86/" title="Java集合全集">http://example.com/2024/05/20/Java%E9%9B%86%E5%90%88%E5%85%A8%E9%9B%86/</a>
             <span class="copy-path" data-clipboard-text="From http://example.com/2024/05/20/Java%E9%9B%86%E5%90%88%E5%85%A8%E9%9B%86/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>

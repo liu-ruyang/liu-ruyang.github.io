@@ -26,7 +26,7 @@
 <meta property="og:description" content="Git操作步骤">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-01-04T09:34:13.000Z">
-<meta property="article:modified_time" content="2024-04-11T03:01:13.863Z">
+<meta property="article:modified_time" content="2024-10-16T12:14:26.506Z">
 <meta property="article:author" content="liu-ruyang">
 <meta property="article:tag" content="git操作">
 <meta name="twitter:card" content="summary">
@@ -347,6 +347,7 @@
 <blockquote>
 <p>可以加上如下参数<code>--rebase</code>：</p>
 <p><code>git pull --rebase  &lt;远程主机名，可以是别名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</code>的结合方式是<code>git fetch</code>和<code>git rebase</code>结合</p>
+<p><strong>解释：所以这条命令是先拉取远程最新代码到本地，再将拉取下来的分支的提交 变基到本地分支上（可以对应到下文的<code>git rebase 目标分支</code>的理解，本条<code>--rebase</code>对应的命令只是将本地分支的提交换成从远程拉取下来的提交，然后都是变基到目标分支上）</strong></p>
 </blockquote>
 </blockquote>
 <p><strong>提交到暂存区：</strong><code>git add .</code>  <code>git commit -m &quot;备注&quot;</code></p>
@@ -435,7 +436,7 @@
         <p><span>Title:</span><a href="/2022/01/04/git%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B/">git提交项目到github</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage"></a></p>
         <p><span>Created:</span>2022-01-04, 17:34:13</p>
-        <p><span>Updated:</span>2024-04-11, 11:01:13</p>
+        <p><span>Updated:</span>2024-10-16, 20:14:26</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2022/01/04/git%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B/" title="git提交项目到github">http://example.com/2022/01/04/git%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B/</a>
             <span class="copy-path" data-clipboard-text="From http://example.com/2022/01/04/git%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B/　　By " title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>

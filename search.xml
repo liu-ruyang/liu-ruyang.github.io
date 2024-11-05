@@ -3188,7 +3188,8 @@ version of the Java Runtime only recognizes class file versions up to 55.0
     <url>/2024/11/05/synchronized%E7%94%A8%E6%B3%95/</url>
     <content><![CDATA[<h2 id="synchronized用法"><a href="#synchronized用法" class="headerlink" title="synchronized用法"></a>synchronized用法</h2><span id="more"></span>
 
-<p>synchronized三种使用方式：</p>
+<p>首先，<code>synchronized</code>不可以修饰变量</p>
+<p><code>synchronized</code>三种使用方式：</p>
 <ul>
 <li>修饰实例方法：作用于当前实例加锁</li>
 <li>修饰静态方法：作用于当前类对象加锁</li>
@@ -4939,6 +4940,53 @@ Exception in thread &quot;main&quot; java.lang.UnsupportedClassVersionError: Opt
       <tags>
         <tag>Linux</tag>
         <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>volatile用法</title>
+    <url>/2024/11/05/volatile%E7%94%A8%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="volatile的作用"><a href="#volatile的作用" class="headerlink" title="volatile的作用"></a>volatile的作用</h2><span id="more"></span>
+
+<p>首先，<code>volatile</code>关键字<strong>只能修饰变量</strong>，不能修饰方法或者代码块</p>
+<p><code>volatile</code>有两个作用：</p>
+<ul>
+<li><strong>保证线程的可见性</strong>：一个线程对<code>volatile</code>变量的修改，会立刻反映到其他线程中，其他线程能够立刻看到这个变量的最新值，<strong>避免出现多线程中变量数据不一致的问题</strong></li>
+<li><strong>禁止指令重排序</strong>：<code>volatile</code>变量的写操作之前的所有操作，即使重排序，会被重排序到写操作之前；而写操作之后的所有操作，即使重排序，也只会重排序到写操作之后。保证了多线程操作的逻辑正确性</li>
+</ul>
+<h2 id="为什么会指令重排序？"><a href="#为什么会指令重排序？" class="headerlink" title="为什么会指令重排序？"></a>为什么会指令重排序？</h2><p>白话就是“<strong>实际执行的代码顺序和写的代码顺序不一样</strong>”</p>
+<p><strong>原因：</strong>指令重排序是由编译器、处理器（CPU）或多线程调度器在优化程序执行效率时进行的一种操作，<strong>改变了代码中的某些指令的执行顺序</strong>（<strong>但不会更改代码的逻辑顺序</strong>）。</p>
+<p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20241105163614.png" alt="image-20241105163613068"></p>
+<p><strong>特点：</strong></p>
+<ul>
+<li>单线程中，即使指令重排序，因为不会改变逻辑顺序（依赖关系），所以不会对结果产生影响，只会提升效率</li>
+<li>多线程中，由于在不同线程之间存在共享资源，指令重排序改变了程序中的某些操作的执行顺序，可能导致不同线程之间的操作不按预期顺序进行的问题。</li>
+</ul>
+<h2 id="volatile如何禁止指令重排序？"><a href="#volatile如何禁止指令重排序？" class="headerlink" title="volatile如何禁止指令重排序？"></a>volatile如何禁止指令重排序？</h2><p>更严格地说，应该叫做“<strong>volatile禁止指定变量参与指令重排序</strong>”</p>
+<p><strong>原理：</strong>volatile通过<strong>内存屏障</strong>来禁止指令重排序</p>
+<p>JVM内存屏障地策略</p>
+<ul>
+<li>在每个<code>volatile</code>写操作的前面插入一个StoreStore屏障。</li>
+<li>在每个<code>volatile</code>写操作的后面插入一个StoreLoad屏障。</li>
+<li>在每个<code>volatile</code>读操作的前面插入一个LoadLoad屏障。</li>
+<li>在每个<code>volatile</code>读操作的后面插入一个LoadStore屏障。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/20241105164822.png" alt="image-20241105164821128"></p>
+<blockquote>
+<p>这个原理流程图我还没琢磨透，但是简而言之，按照如下意思理解就可以了：</p>
+</blockquote>
+<p>原本代码块都会被指令重排，但是如果一个变量被<code>volatile</code>修饰了，在编译和处理器阶段（即发生指令重排序的时候），将会分为三部分：</p>
+<ul>
+<li>①<code>volatile</code>之前的代码</li>
+<li>②<code>volatile</code>修饰的变量的代码</li>
+<li>③<code>volatile</code>之后的代码；</li>
+<li>其中①和③分别进行指令重排序（前面的代码不会重拍到后面，后面的代码不会重排到前面），这样就避免了重排序导致的多线程逻辑错误</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>JVM</tag>
+        <tag>多线程</tag>
+        <tag>锁</tag>
+        <tag>指令重排序</tag>
       </tags>
   </entry>
 </search>

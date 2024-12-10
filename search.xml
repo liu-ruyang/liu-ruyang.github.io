@@ -2534,6 +2534,7 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 <li>在类加载完成，经过验证，准备阶段之后，在堆中生成字符串对象实例之后，再将<strong>该字符串对象实例的引用值</strong>存到string pool中。</li>
 <li>string pool的功能由谁实现？由StringTable类实现，它是一个哈希表，里面存的是驻留字符串的引用，可以依据它找到堆中的字符串实例</li>
 <li>这个StringTable在每个htoSpot  VM 的实例只有一份，也就是说它<strong>被所有的类共享</strong></li>
+<li>==<strong>在jdk1.7版本以后，字符串池已经不在方法区，移到了堆中了</strong>==</li>
 </ul>
 <p><img src="https://i.loli.net/2021/10/23/Q3Cye58TvcFBI7L.png" alt="image-20211023224256460"></p>
 <h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String str1 = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">String str2 = <span class="keyword">new</span> String(<span class="string">&quot;def&quot;</span>);</span><br><span class="line">String str3 = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">String str4 = str2.intern();</span><br><span class="line">String str5 = <span class="string">&quot;def&quot;</span>;</span><br><span class="line"></span><br><span class="line">System.out.println(str1 == str3);<span class="comment">//true</span></span><br><span class="line">System.out.println(str2 == str4);<span class="comment">//false</span></span><br><span class="line">System.out.println(str4 == str5);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
@@ -6883,6 +6884,42 @@ Exception in thread &quot;main&quot; java.lang.UnsupportedClassVersionError: Opt
         <tag>UML</tag>
         <tag>设计原则</tag>
         <tag>Spring源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java内存分析（5）——理解方法区（元空间、永久代）</title>
+    <url>/2024/12/10/java%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%EF%BC%885%EF%BC%89%E2%80%94%E2%80%94%E7%90%86%E8%A7%A3%E6%96%B9%E6%B3%95%E5%8C%BA%EF%BC%88%E5%85%83%E7%A9%BA%E9%97%B4%E3%80%81%E6%B0%B8%E4%B9%85%E4%BB%A3%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h2><span id="more"></span>
+
+<p>在<code>JDK 8</code>版本之前，也叫<strong>永久代</strong>；<code>JDK 8</code>版本之后，改名为了<strong>方法区（元空间，方法区的实现是元空间）</strong></p>
+<p><strong>功能：</strong></p>
+<ul>
+<li>存储一些<code>static</code>修饰的东西</li>
+<li>存储一些<code>classloader</code>和一些<code>class</code>对象（包含类的元信息，例如方法表、字段表）（<strong>而实例对象在堆中</strong>）</li>
+<li><strong>在<code>JDK 1.7</code>版本以前，方法区还存储字符串常量池；但是，从<code>JDK1.7</code>开始，字符串常量池转移到堆中</strong></li>
+</ul>
+<h2 id="其他区域解释"><a href="#其他区域解释" class="headerlink" title="其他区域解释"></a>其他区域解释</h2><p><img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/2024/2024-12-10-18-18-37.png" alt="image-20241210181836591"></p>
+<h3 id="各区解释"><a href="#各区解释" class="headerlink" title="各区解释"></a>各区解释</h3><p><strong>栈（JVM栈）：存储一些函数方法当前运行中的临时变量</strong></p>
+<p>本地方法栈：存储C++的一些native的方法（因为Java的底层就是C++）</p>
+<p>程序计数器：指向程序当前执行的位置</p>
+<p><strong>方法区：存储一些一些静态的方法、变量，还有类加载器之类的数据</strong></p>
+<p><strong>堆区：存储对象实例数据（而对应的变量，即对象的引用变量，是存储在栈中，或者堆中的对象实例数据中的变量（即对象的引用变量可能在栈中，也可能在堆中的对象实例数据中）），还有字符串常量池也在堆区</strong></p>
+<blockquote>
+<p>从 <code>JDK 7</code> 开始，字符串常量池被移到了堆内存中，而不再存储在方法区（永久代）中</p>
+<p><strong>字符串常量池的位置</strong>:</p>
+<ul>
+<li><strong><code>JDK 7</code> 之前</strong>: 方法区（永久代）。</li>
+<li><strong><code>JDK 7</code> 及之后</strong>: 堆内存。</li>
+</ul>
+<p>移动到堆内存后，字符串常量池更加灵活，避免了永久代空间不足的问题。</p>
+</blockquote>
+<h3 id="共享性"><a href="#共享性" class="headerlink" title="共享性"></a>共享性</h3><p><strong>栈（JVM栈）、本地方法栈、程序计数器，这三个是==线程私有==的，有多少个线程，就有多少个这样的区域</strong></p>
+<p><strong>堆区、方法区是==全局共享==的（即线程共享，都可以访问）</strong></p>
+]]></content>
+      <tags>
+        <tag>JVM内存分析</tag>
+        <tag>java基础</tag>
+        <tag>方法区</tag>
       </tags>
   </entry>
 </search>

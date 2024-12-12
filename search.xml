@@ -2532,12 +2532,12 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 <li><strong>出现时间：</strong>在准备阶段之后（因为解析阶段运行时常量池需要查询全局字符串）</li>
 <li><strong>存放内容：</strong>驻留字符串的引用</li>
 <li>在类加载完成，经过验证，准备阶段之后，在堆中生成字符串对象实例之后，再将<strong>该字符串对象实例的引用值</strong>存到string pool中。</li>
-<li>string pool的功能由谁实现？由StringTable类实现，它是一个哈希表，里面存的是驻留字符串的引用，可以依据它找到堆中的字符串实例</li>
+<li>string pool的功能由谁实现？由StringTable类实现，它是一个哈希表，里面存的是驻留字符串的引用，可以<strong>依据它找到堆中的字符串实例</strong></li>
 <li>这个StringTable在每个htoSpot  VM 的实例只有一份，也就是说它<strong>被所有的类共享</strong></li>
 <li>==<strong>在jdk1.7版本以后，字符串池已经不在方法区，移到了堆中了</strong>==</li>
 </ul>
 <p><img src="https://i.loli.net/2021/10/23/Q3Cye58TvcFBI7L.png" alt="image-20211023224256460"></p>
-<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String str1 = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">String str2 = <span class="keyword">new</span> String(<span class="string">&quot;def&quot;</span>);</span><br><span class="line">String str3 = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">String str4 = str2.intern();</span><br><span class="line">String str5 = <span class="string">&quot;def&quot;</span>;</span><br><span class="line"></span><br><span class="line">System.out.println(str1 == str3);<span class="comment">//true</span></span><br><span class="line">System.out.println(str2 == str4);<span class="comment">//false</span></span><br><span class="line">System.out.println(str4 == str5);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String str1 = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">String str2 = <span class="keyword">new</span> String(<span class="string">&quot;def&quot;</span>);</span><br><span class="line">String str3 = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">String str4 = str2.intern();</span><br><span class="line">String str5 = <span class="string">&quot;def&quot;</span>;</span><br><span class="line">String str6 = <span class="string">&quot;def&quot;</span>+<span class="string">&quot;ine&quot;</span>;</span><br><span class="line"></span><br><span class="line">System.out.println(str1 == str3);<span class="comment">//true</span></span><br><span class="line">System.out.println(str2 == str4);<span class="comment">//false</span></span><br><span class="line">System.out.println(str4 == str5);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 
 <p>上面的例子虽然简单，但是，几种情况都已经囊括在内了</p>
 <h3 id="分析第一句"><a href="#分析第一句" class="headerlink" title="分析第一句"></a>分析第一句</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String str1 = <span class="string">&quot;abc&quot;</span>;</span><br></pre></td></tr></table></figure>
@@ -2563,6 +2563,11 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 <h3 id="分析第五句"><a href="#分析第五句" class="headerlink" title="分析第五句"></a>分析第五句</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String str5 = <span class="string">&quot;def&quot;</span>;</span><br></pre></td></tr></table></figure>
 
 <p>这一句，在类加载完成后，在这里，由于StringTable中已经有了”def”的引用值了，所以返回上面在new str2的时候添加到StringTable中的 “def”引用值</p>
+<h3 id="分析第六句"><a href="#分析第六句" class="headerlink" title="分析第六句"></a>分析第六句</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String str6 = <span class="string">&quot;def&quot;</span>+<span class="string">&quot;ine&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><code>javac</code>编译器会在编译过程进行一个<strong>常量折叠（Constant Folding）</strong>的代码优化。经过代码优化之后，这句编译结果是<code>String str6 = &quot;define&quot;;</code></p>
+<p>同时，这一句的<code>def</code>和<code>ine</code>不会进到字符串常量池中判断有无，是否需要添加进字符串常量池；</p>
+<p>而是只判断一下<code>define</code>是否需要添加进字符串常量池中</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>java的常量池主要有这么几个内容：</p>
 <ol>
 <li>class常量池：①在编译后就有  ②存储的是对象的符号引用</li>

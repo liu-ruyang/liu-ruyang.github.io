@@ -2579,7 +2579,7 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 <p><strong>在上述例子中，得出一下结论：</strong></p>
 <p><strong>①直接用引号的（可以有+号进行连接），内容也一样的，引用的就是一个对象</strong></p>
 <p><strong>②如果出现类似<code>String c = b + &quot;a&quot;;</code>这样的，那么就是在堆中生成了一个新的对象。</strong></p>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>今天偶然间看到了韩顺平老师在B站讲String的特性的课程，看完后，忽然间觉得自己这块瞬间好像明朗了</p>
+<h2 id="补充①：常量折叠和字符串的“-”运算符重载"><a href="#补充①：常量折叠和字符串的“-”运算符重载" class="headerlink" title="补充①：常量折叠和字符串的“+”运算符重载"></a>补充①：常量折叠和字符串的“+”运算符重载</h2><p>今天偶然间看到了韩顺平老师在B站讲String的特性的课程，看完后，忽然间觉得自己这块瞬间好像明朗了</p>
 <p>（上面的内容虽然也差不多，但总觉得还是繁琐，好像有哪些地方不透彻）</p>
 <p>主要是补充对于下面这一句代码的理解（根据韩顺平老师将它底层分析的理解）：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String a = <span class="string">&quot;a&quot;</span>;</span><br><span class="line">String b = <span class="string">&quot;b&quot;</span>;</span><br><span class="line">String ab = a+b;	<span class="comment">//这句是重点，在这一句的背后，底层做了很多事情</span></span><br><span class="line">String c = <span class="string">&quot;ab&quot;</span>;</span><br></pre></td></tr></table></figure>
@@ -2598,6 +2598,7 @@ version of the Java Runtime only recognizes class file versions up to 55.0
 <li>然后又向其中追加了“b”（使用的还是它的append方法）</li>
 <li>然后执行了（且返回给ab）<code>return new String(value,0,count) </code>（value指的是上面的StringBuilder对象），这样在字符串常量池中就有了“ab”了，同时堆中也new了一个String类型的对象（值就是value中的数据），并且ab就是指向了这个String类型的对象（不是字符串常量池中的）——（这里和是上面的分析第二句是一样的原理）</li>
 </ol>
+<h2 id="补充②：String的split-方法"><a href="#补充②：String的split-方法" class="headerlink" title="补充②：String的split()方法"></a>补充②：String的<code>split()</code>方法</h2><p><code>String</code> 类的 <code>split</code> 方法返回的是一个 <code>String</code> 数组，其中的元素是新的字符串对象，并不是复用的字符串常量池中的字符。</p>
 ]]></content>
       <tags>
         <tag>JVM内存分析</tag>
@@ -5034,7 +5035,9 @@ Exception in thread &quot;main&quot; java.lang.UnsupportedClassVersionError: Opt
   <entry>
     <title>算法-并查集</title>
     <url>/2024/12/11/%E7%AE%97%E6%B3%95-%E5%B9%B6%E6%9F%A5%E9%9B%86/</url>
-    <content><![CDATA[<h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
+    <content><![CDATA[<h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><span id="more"></span>
+
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
 <li>将两个元素添加到一个集合中。</li>
 <li>判断两个元素在不在同一个集合</li>
 </ul>

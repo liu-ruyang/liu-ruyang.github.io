@@ -2380,12 +2380,35 @@ version of the Java Runtime only recognizes class file versions up to 55.0
     <url>/2021/09/07/java%E4%B8%AD%E7%9A%84IO%E6%B5%81%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="IO流体系"><a href="#IO流体系" class="headerlink" title="IO流体系"></a>IO流体系</h2><span id="more"></span>
 
+<h3 id="四个基类"><a href="#四个基类" class="headerlink" title="四个基类"></a>四个基类</h3><p>字节类型：<code>InputStream</code>、<code>OutputStream</code></p>
+<p>字符类型：``Reader<code>、</code>Writer`</p>
 <h3 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h3><p><img src="https://i.loli.net/2021/11/01/SegF6hJp2XWVUtK.jpg" alt="img"></p>
 <h3 id="完整API体系"><a href="#完整API体系" class="headerlink" title="完整API体系"></a>完整API体系</h3><p>序列化时，还学习到了<strong>ByteArrayOutputStream流</strong> </p>
 <p><strong>ByteArrayOutputStream 对byte类型数据进行写入的类 相当于一个中间缓冲层，将类写入到文件等其他outputStream。它是对字节进行操作，属于内存操作流</strong></p>
 <p><img src="https://i.loli.net/2021/11/01/nRey7Ogr1PI8Hql.jpg" alt="img"></p>
 <p><img src="https://i.loli.net/2021/11/01/OeoYDKUvqTIgyV4.jpg" alt="img"></p>
-<h2 id="从控制台读取输入流（三种方法）"><a href="#从控制台读取输入流（三种方法）" class="headerlink" title="从控制台读取输入流（三种方法）"></a>从控制台读取输入流（三种方法）</h2><p><img src="https://i.loli.net/2021/11/01/4GPOydoXVN5cqiJ.jpg" alt="img"></p>
+<h2 id="IO设计模式"><a href="#IO设计模式" class="headerlink" title="IO设计模式"></a>IO设计模式</h2><h3 id="装饰器模式"><a href="#装饰器模式" class="headerlink" title="装饰器模式"></a>装饰器模式</h3><p>IO操作时很消耗性能的，缓冲流将数据加载至缓冲区，一次性读取/写入多个字节，从而避免频繁的IO操作，提高流的传输效率</p>
+<p>字节缓冲流（<code>BufferedInputStream</code>、<code>BufferedOutputStream</code>）和字符缓冲流（<code>BufferedReader</code>、<code>BufferedWriter</code>）都采用的是**==装饰器模式==**，来增强各自基类的子类对象的功能</p>
+<blockquote>
+<p><strong>字节类型：</strong></p>
+<p><code>BufferedInputStream</code>增强的是<code>FileInputStream</code></p>
+<p><code>BufferedOutputStream</code>增强的是<code>FileOutputStream</code></p>
+<p>原理就是内部维护了一个字节数组作为缓冲区</p>
+<p><strong>字符类型：</strong></p>
+<p><code>BufferedReader</code>增强的是<code>FileReader</code></p>
+<p><code>BufferedWriter</code>增强的是<code>FileWriter</code></p>
+<p>原理就是内部维护了一个字符数组作为缓冲区</p>
+</blockquote>
+<h3 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h3><p>适配器模式用于接口互不兼容的类的协调工作，如下图（仅列出<code>InpuptStreamReader</code>）所示。</p>
+<p>转换流的两个类的设计就是两个适配器模式（）</p>
+<blockquote>
+<p><strong>转换流解释：</strong></p>
+<p>其中<code>InputStreamReader</code>是字节流转换为字符流的桥梁，其子类<code>FileReader</code>是基于该基础上的封装，可以直接操作字符文件。</p>
+<p>其中<code>OutputStreamWriter</code>是字符流转换为字节流的桥梁，其子类<code>FileWriter</code>是基于该基础上的封装，可以直接将字符写入到文件。</p>
+</blockquote>
+<img src="https://raw.githubusercontent.com/liu-ruyang/MyPicturesReposity/main/img/2024/2024-11-18-18-11-41.png" style="zoom:80%;" />
+
+<h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><h3 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h3><h2 id="举例：从控制台读取输入流（三种方法）"><a href="#举例：从控制台读取输入流（三种方法）" class="headerlink" title="举例：从控制台读取输入流（三种方法）"></a>举例：从控制台读取输入流（三种方法）</h2><p><img src="https://i.loli.net/2021/11/01/4GPOydoXVN5cqiJ.jpg" alt="img"></p>
 ]]></content>
       <tags>
         <tag>Java基础</tag>

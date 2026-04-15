@@ -101,10 +101,30 @@ define(function () {
     }
     TocNoWarp(yiliaConfig.toc[2]);
 
-    var activeTocLink = function () {
-        $("#toc a.toc-link").click(function () {
+    var activeTocLink = function(){
+        $("#toc a.toc-link").click(function(){
             $("#toc a.toc-link").removeClass("active");
             $(this).addClass("active");
+        });
+    }()
+
+    var scrollTocLink = function(){
+        $(window).scroll(function(){
+            var scrollTop = $(window).scrollTop();
+            var $sections = $("article h1, article h2, article h3, article h4, article h5, article h6");
+            var currentSection = "";
+            
+            $sections.each(function(){
+                var sectionTop = $(this).offset().top - 100;
+                if(scrollTop >= sectionTop){
+                    currentSection = $(this).attr("id");
+                }
+            });
+            
+            if(currentSection){
+                $("#toc a.toc-link").removeClass("active");
+                $("#toc a.toc-link[href='#" + currentSection + "']").addClass("active");
+            }
         });
     }()
 

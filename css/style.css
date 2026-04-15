@@ -671,7 +671,7 @@ a {
   text-transform: uppercase;
   float: none;
   min-height: 5.25rem;
-  max-height: 17.5rem;
+  max-height: 8.75rem;
   overflow: visible;
   text-align: center;
   display: -webkit-box;
@@ -1761,12 +1761,15 @@ li:hover {
   color: #808080;
 }
 #toc ol.toc a.toc-link:visited {
-  color: #f48385;
+  color: #808080;
 }
 #toc ol.toc a.toc-link:hover {
   color: #88acdb;
   text-decoration: none;
   background: rgba(158,188,226,0.21);
+}
+#toc ol.toc a.toc-link.active {
+  color: #f48385;
 }
 #toc ol.toc ol.toc-child {
   padding-left: 1.25em;

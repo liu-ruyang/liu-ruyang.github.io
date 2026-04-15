@@ -1,12 +1,12 @@
-define(function (){
+define(function () {
 
-    var toggleTocArea = function(){
+    var toggleTocArea = function () {
         var valueHide = yiliaConfig.toc[0];
         var valueShow = yiliaConfig.toc[1];
         if ($(".left-col").is(":hidden")) {
             $("#tocButton").attr("value", valueShow);
         }
-        $("#tocButton").click(function() {
+        $("#tocButton").click(function () {
             if ($("#toc").is(":hidden")) {
                 $("#tocButton").attr("value", valueHide);
                 $("#toc").slideDown(320);
@@ -20,7 +20,7 @@ define(function (){
         })
     }()
 
-    var HideTOCifNoHeader = function(){
+    var HideTOCifNoHeader = function () {
         if (!$(".toc").length) {
             $("#toc, #tocButton").hide();
             $(".switch-btn, .switch-area").show();
@@ -31,21 +31,21 @@ define(function (){
     var $titleHasChild = $itemHasChild.children(".toc-link");
     $itemHasChild.prepend("<i class='fa fa-caret-down'></i><i class='fa fa-caret-right'></i>");
 
-    var clickIcon = function(){
-        $("#toc .toc-item > i").click(function(){
+    var clickIcon = function () {
+        $("#toc .toc-item > i").click(function () {
             $(this).siblings(".toc-child").slideToggle(100);
             $(this).toggleClass("hide");
             $(this).siblings("i").toggleClass("hide");
         })
     }()
 
-    var clickTitle = function(){
-        $titleHasChild.dblclick(function(){
+    var clickTitle = function () {
+        $titleHasChild.dblclick(function () {
             $(this).siblings(".toc-child").hide(100);
             $(this).siblings("i").toggleClass("hide");
         })
         // After dblclick enent
-        $titleHasChild.click(function(){
+        $titleHasChild.click(function () {
             var $curentTocChild = $(this).siblings(".toc-child");
             if ($curentTocChild.is(":hidden")) {
                 $curentTocChild.show(100);
@@ -54,7 +54,7 @@ define(function (){
         })
     }()
 
-    var clickTocTitle = function(){
+    var clickTocTitle = function () {
         var $iconToExpand = $(".toc-item > .fa-caret-right");
         var $iconToFold = $(".toc-item > .fa-caret-down");
         var $subToc = $titleHasChild.next(".toc-child");
@@ -63,7 +63,7 @@ define(function (){
         var $tocTitle = $("#toc .toc-title");
         if ($titleHasChild.length) {
             $tocTitle.addClass("clickable");
-            $tocTitle.click(function(){
+            $tocTitle.click(function () {
                 if ($subToc.is(":hidden")) {
                     $subToc.show(150);
                     $iconToExpand.removeClass("hide");
@@ -82,10 +82,10 @@ define(function (){
         }
     }()
 
-    var TocNoWarp = function(cond){
+    var TocNoWarp = function (cond) {
         if (cond) {
-            var $tocLink = $(".toc li a");
-            $tocLink.each(function(){
+            var $tocLink = $("#toc li a");
+            $tocLink.each(function () {
                 var title = $(this).find('.toc-text').text();
                 // Find elements with ellipsis
                 if (this.offsetWidth < this.scrollWidth) {
@@ -100,5 +100,12 @@ define(function (){
         }
     }
     TocNoWarp(yiliaConfig.toc[2]);
+
+    var activeTocLink = function () {
+        $("#toc a.toc-link").click(function () {
+            $("#toc a.toc-link").removeClass("active");
+            $(this).addClass("active");
+        });
+    }()
 
 })
